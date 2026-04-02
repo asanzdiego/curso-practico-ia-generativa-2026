@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla comparativa de modelos LLM</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            padding: 12px 16px;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            margin: 0 0 10px 0;
+            text-align: center;
+            color: #2563eb;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .tabla-llm {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border: 2px solid #2563eb;
+            border-radius: 14px;
+            overflow: hidden;
+            font-size: 12px;
+            table-layout: fixed;
+        }
+
+        .tabla-llm th,
+        .tabla-llm td {
+            padding: 6px 8px;
+            vertical-align: middle;
+            text-align: left;
+            border: none;
+            line-height: 1.15;
+        }
+
+        .tabla-llm thead th {
+            background: #2563eb;
+            color: white;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        .tabla-llm tbody tr:nth-child(odd) {
+            background: #eff6ff;
+        }
+
+        .tabla-llm tbody tr:nth-child(even) {
+            background: #ffffff;
+        }
+
+        .modelo {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        .modelo img {
+            width: 28px;
+            height: auto;
+            flex-shrink: 0;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 999px;
+            font-weight: 700;
+            color: white;
+            font-size: 10px;
+            line-height: 1.1;
+            white-space: nowrap;
+        }
+
+        .badge-cerrados {
+            background: #dc2626;
+        }
+
+        .badge-abiertos {
+            background: #16a34a;
+        }
+
+        .empresa {
+            line-height: 1.15;
+            font-size: 12px;
+        }
+
+        .empresa strong {
+            font-weight: 700;
+        }
+
+        .tabla-llm a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 12px;
+            word-break: break-word;
+        }
+
+        .tabla-llm a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Tabla comparativa de modelos LLM</h1>
+
+    <table class="tabla-llm">
+        <colgroup>
+            <col style="width: 13%" />
+            <col style="width: 17%" />
+            <col style="width: 10%" />
+            <col style="width: 18%" />
+            <col style="width: 42%" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Modelo</th>
+                <th>Enlace al chat</th>
+                <th>Pesos</th>
+                <th>Empresa (país)</th>
+                <th>Característica principal</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="modelo">
+                        <img src="../logos/010-chatgpt-logo.png" alt="ChatGPT" width="50">
+                        <span>ChatGPT</span>
+                    </div>
+                </td>
+                <td><a href="https://chatgpt.com/">chatgpt.com</a></td>
+                <td><span class="badge badge-cerrados">Cerrados</span></td>
+                <td class="empresa">
+                    <strong>OpenAI</strong>
+                    <span class="pais">(EE. UU.)</span>
+                </td>
+                <td>Ecosistema muy completo para trabajo general, documentos, razonamiento y herramientas</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="modelo">
+                        <img src="../logos/020-gemini-logo.png" alt="Gemini" width="50">
+                        <span>Gemini</span>
+                    </div>
+                </td>
+                <td><a href="https://gemini.google.com/">gemini.google.com</a></td>
+                <td><span class="badge badge-cerrados">Cerrados</span></td>
+                <td class="empresa">
+                    <strong>Google</strong>
+                    <span class="pais">(EE. UU.)</span>
+                </td>
+                <td>Multimodalidad muy amplia e integración con el ecosistema Google</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="modelo">
+                        <img src="../logos/030-copilot-logo.png" alt="Copilot" width="50">
+                        <span>Copilot</span>
+                    </div>
+                </td>
+                <td><a href="https://copilot.microsoft.com/">copilot.microsoft.com</a></td>
+                <td><span class="badge badge-cerrados">Cerrados</span></td>
+                <td class="empresa">
+                    <strong>Microsoft</strong>
+                    <span class="pais">(EE. UU.)</span>
+                </td>
+                <td>Productividad empresarial integrada en Microsoft 365, Windows y agentes</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="modelo">
+                        <img src="../logos/040-grok-logo.png" alt="Grok" width="50">
+                        <span>Grok</span>
+                    </div>
+                </td>
+                <td><a href="https://grok.com/">grok.com</a></td>
+                <td><span class="badge badge-cerrados">Cerrados</span></td>
+                <td class="empresa">
+                    <strong>xAI</strong>
+                    <span class="pais">(EE. UU.)</span>
+                </td>
+                <td>Búsqueda en tiempo real y experiencia conversacional ágil</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="modelo">
+                        <img src="../logos/050-claude-ai-logo.png" alt="Claude" width="50">
+                        <span>Claude</span>
+                    </div>
+                </td>
+                <td><a href="https://claude.ai/">claude.ai</a></td>
+                <td><span class="badge badge-cerrados">Cerrados</span></td>
+                <td class="empresa">
+                    <strong>Anthropic</strong>
+                    <span class="pais">(EE. UU.)</span>
+                </td>
+                <td>Muy alto nivel en escritura, programación, análisis documental y agentes</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="modelo">
+                        <img src="../logos/060-perplexity-ai-logo.png" alt="Sonar / Perplexity" width="50">
+                        <span>Sonar</span>
+                    </div>
+                </td>
+                <td><a href="https://www.perplexity.ai/">perplexity.ai</a></td>
+                <td><span class="badge badge-cerrados">Cerrados</span></td>
+                <td class="empresa">
+                    <strong>Perplexity</strong>
+                    <span class="pais">(EE. UU.)</span>
+                </td>
+                <td>Respuestas apoyadas en búsqueda web, grounding y fuentes recientes</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="modelo">
+                        <img src="../logos/070-deep-seek-logo.png" alt="DeepSeek" width="50">
+                        <span>DeepSeek</span>
+                    </div>
+                </td>
+                <td><a href="https://chat.deepseek.com/">chat.deepseek.com</a></td>
+                <td><span class="badge badge-abiertos">Abiertos</span></td>
+                <td class="empresa">
+                    <strong>DeepSeek AI</strong>
+                    <span class="pais">(China)</span>
+                </td>
+                <td>Gran relación calidad-coste en razonamiento, matemáticas, código y despliegue abierto</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="modelo">
+                        <img src="../logos/080-mistral-logo.png" alt="Mistral" width="50">
+                        <span>Mistral</span>
+                    </div>
+                </td>
+                <td><a href="https://chat.mistral.ai/">chat.mistral.ai</a></td>
+                <td><span class="badge badge-abiertos">Abiertos</span></td>
+                <td class="empresa">
+                    <strong>Mistral AI</strong>
+                    <span class="pais">(Francia)</span>
+                </td>
+                <td>Alternativa europea con combinación de modelos abiertos y producto comercial</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="modelo">
+                        <img src="../logos/090-meta-ai-logo.png" alt="Llama / Meta AI" width="50">
+                        <span>Llama</span>
+                    </div>
+                </td>
+                <td><a href="https://www.meta.ai/">meta.ai</a></td>
+                <td><span class="badge badge-abiertos">Abiertos</span></td>
+                <td class="empresa">
+                    <strong>Meta</strong>
+                    <span class="pais">(EE. UU.)</span>
+                </td>
+                <td>Ecosistema open weight muy extendido para despliegues propios y multimodalidad</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="modelo">
+                        <img src="../logos/100-qween-logo.png" alt="Qwen" width="50">
+                        <span>Qwen</span>
+                    </div>
+                </td>
+                <td><a href="https://chat.qwen.ai/">chat.qwen.ai</a></td>
+                <td><span class="badge badge-abiertos">Abiertos</span></td>
+                <td class="empresa">
+                    <strong>Alibaba</strong>
+                    <span class="pais">(China)</span>
+                </td>
+                <td>Familia muy amplia y competitiva en multimodalidad, agentes y variantes abiertas</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

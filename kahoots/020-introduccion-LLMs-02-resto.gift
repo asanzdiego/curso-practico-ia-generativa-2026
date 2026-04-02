@@ -1,0 +1,95 @@
+¿Cuál es una aplicación de los LLM en educación y formación?
+{
+=Explicar conceptos y generar actividades o cuestionarios.
+~Emitir títulos académicos oficiales sin intervención humana.
+~Sustituir automáticamente toda evaluación docente en cualquier centro.
+~Eliminar la necesidad de revisar errores conceptuales del alumnado.
+}
+
+¿Cuál es una aplicación de los LLM en empresa y productividad?
+{
+=Redactar informes, analizar documentos y asistir en flujos de trabajo.
+~Instalar cableado físico de red en una oficina sin intervención técnica.
+~Firmar contratos con validez legal en nombre de cualquier empresa.
+~Garantizar decisiones estratégicas correctas sin supervisión humana.
+}
+
+¿Qué caracteriza a las aplicaciones de los LLM en agentes y automatización?
+{
+=Combinar el modelo con herramientas, memoria y ejecución de acciones.
+~Usar solo el modelo para escribir poemas sin otros sistemas.
+~No poder interactuar con formularios, software ni varias fuentes.
+~La eliminación completa de riesgos de seguridad por diseño.
+}
+
+¿Cuál es una buena práctica al usar un LLM para obtener información?
+{
+=Contrastar datos, revisar citas y usar fuentes fiables cuando sea posible.
+~Aceptar como cierto todo lo que redacte con seguridad y fluidez.
+~Evitar cualquier comprobación para ahorrar tiempo.
+~Dar más valor al tono convincente que a la exactitud del contenido.
+}
+
+¿Qué significa proporcionar contexto de calidad a un LLM?
+{
+=Explicar objetivo, público, formato esperado y restricciones.
+~Escribir prompts deliberadamente ambiguos para que el modelo improvise.
+~Pedir siempre respuestas genéricas y sin indicar destinatario.
+~Ocultar la información relevante para ver si el modelo la adivina.
+}
+
+¿Qué plantea la buena práctica de supervisión humana en el uso de LLM?
+{
+=Que la persona responsable debe revisar, corregir y validar la salida.
+~Que en tareas críticas conviene eliminar la revisión humana.
+~Que la salida del modelo sustituye el criterio profesional.
+~Que solo hace falta supervisión en tareas creativas, no sensibles.
+}
+
+¿Cuál es una tendencia actual sobre el aumento del contexto en LLM?
+{
+=Crecen las ventanas de contexto y técnicas como RAG y compresión.
+~Reducir el contexto para impedir trabajar con documentos largos.
+~La desaparición de las bases documentales como apoyo al modelo.
+~El abandono de cualquier técnica de trazabilidad documental.
+}
+
+¿Qué tendencia describe mejor la especialización y eficiencia en los LLM?
+{
+=Crece el interés por modelos pequeños, rápidos y especializados.
+~La única opción válida es usar siempre el modelo más grande posible.
+~La eficiencia no importa porque todos tienen coste y latencia nulos.
+~Los modelos especializados han dejado de tener utilidad práctica.
+}
+
+¿Qué caracteriza el razonamiento más avanzado e inferencia adaptativa?
+{
+=Algunos modelos ajustan el esfuerzo computacional a la dificultad.
+~Todos resuelven cualquier problema complejo sin necesidad de contexto.
+~El razonamiento avanzado elimina por completo la verificación.
+~La inferencia adaptativa solo consiste en traducir idiomas.
+}
+
+¿Qué reto clave hay sobre privacidad y protección de datos en LLM?
+{
+=Posible exposición o mal uso de datos personales o confidenciales.
+~Es imposible introducir texto personal en cualquier sistema de IA.
+~La garantía automática de anonimización total en todas las plataformas.
+~Desaparecen las obligaciones legales al usar un modelo generativo.
+}
+
+¿Qué implica trabajar transparencia, trazabilidad y explicabilidad?
+{
+=Documentar fuentes, versiones, instrucciones, herramientas y cambios.
+~Ocultar el funcionamiento del sistema para hacerlo más eficiente.
+~Evitar cualquier auditoría para no ralentizar el despliegue.
+~Usar el modelo sin guardar evidencias de cómo se generó la respuesta.
+}
+
+¿Qué reto surge al conectar un LLM a herramientas, APIs o archivos?
+{
+=Aumentan riesgos como accesos indebidos, prompt injection o errores.
+~Que desaparecen por completo los problemas de permisos y seguridad.
+~Que el modelo deja de necesitar supervisión humana en tareas sensibles.
+~Toda acción ejecutada por el sistema es siempre correcta y reversible.
+}

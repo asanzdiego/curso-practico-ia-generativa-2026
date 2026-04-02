@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="description" content="Introducción a ChatGPT">
+  <title>Introducción a ChatGPT</title>
+  <style type="text/css">
+    pre, code {
+      background-color: #ddd;
+      white-space: pre;
+    }
+    aside.notes{
+      background-color: yellow;
+    }
+    img.center {
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body class="container">
+<header id="title-block-header">
+<h1 class="title">Introducción a ChatGPT</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#configuración" id="toc-configuración">Configuración</a>
+<ul>
+<li><a href="#configuración-general"
+id="toc-configuración-general">Configuración general</a></li>
+<li><a href="#configuración-de-personalización"
+id="toc-configuración-de-personalización">Configuración de
+personalización</a></li>
+<li><a href="#configuración-de-voz"
+id="toc-configuración-de-voz">Configuración de voz</a></li>
+<li><a href="#controles-de-datos" id="toc-controles-de-datos">Controles
+de datos</a></li>
+<li><a href="#perfil-del-constructor"
+id="toc-perfil-del-constructor">Perfil del constructor</a></li>
+<li><a href="#apps-y-conectores" id="toc-apps-y-conectores">Apps y
+conectores</a></li>
+<li><a href="#seguridad" id="toc-seguridad">Seguridad</a></li>
+<li><a href="#tabla-resumen-de-configuración"
+id="toc-tabla-resumen-de-configuración">Tabla resumen de
+configuración</a></li>
+</ul></li>
+<li><a href="#interfaz" id="toc-interfaz">Interfaz</a>
+<ul>
+<li><a href="#interfaz-conversacional"
+id="toc-interfaz-conversacional">Interfaz conversacional</a></li>
+<li><a href="#modelos-disponibles" id="toc-modelos-disponibles">Modelos
+disponibles</a></li>
+<li><a href="#barra-lateral-e-historial-de-conversaciones"
+id="toc-barra-lateral-e-historial-de-conversaciones">Barra lateral e
+historial de conversaciones</a></li>
+<li><a href="#gpts-projects-y-espacios-de-trabajo"
+id="toc-gpts-projects-y-espacios-de-trabajo">GPTs, Projects y espacios
+de trabajo</a></li>
+<li><a href="#canvas-voz-imagen-y-multimodalidad"
+id="toc-canvas-voz-imagen-y-multimodalidad">Canvas, voz, imagen y
+multimodalidad</a></li>
+<li><a href="#formularios-y-acciones-web"
+id="toc-formularios-y-acciones-web">Formularios y acciones web</a></li>
+<li><a href="#tabla-resumen-de-interfaz"
+id="toc-tabla-resumen-de-interfaz">Tabla resumen de interfaz</a></li>
+</ul></li>
+<li><a href="#funciones" id="toc-funciones">Funciones</a>
+<ul>
+<li><a href="#generación-y-edición-de-imágenes"
+id="toc-generación-y-edición-de-imágenes">Generación y edición de
+imágenes</a></li>
+<li><a href="#canvas" id="toc-canvas">Canvas</a></li>
+<li><a href="#búsqueda-web-integrada"
+id="toc-búsqueda-web-integrada">Búsqueda web integrada</a></li>
+<li><a href="#análisis-de-archivos-y-datos"
+id="toc-análisis-de-archivos-y-datos">Análisis de archivos y
+datos</a></li>
+<li><a href="#gpts-personalizados" id="toc-gpts-personalizados">GPTs
+personalizados</a></li>
+<li><a href="#projects" id="toc-projects">Projects</a></li>
+<li><a href="#tasks" id="toc-tasks">Tasks</a></li>
+<li><a href="#investigación-profunda"
+id="toc-investigación-profunda">Investigación profunda</a></li>
+<li><a href="#agent-mode" id="toc-agent-mode">Agent mode</a></li>
+<li><a href="#apps-en-chatgpt" id="toc-apps-en-chatgpt">Apps en
+ChatGPT</a></li>
+<li><a href="#voz-avanzada" id="toc-voz-avanzada">Voz avanzada</a></li>
+<li><a href="#personalización-con-instrucciones-y-memoria"
+id="toc-personalización-con-instrucciones-y-memoria">Personalización con
+instrucciones y memoria</a></li>
+<li><a href="#ejemplo-practicar-idiomas"
+id="toc-ejemplo-practicar-idiomas">Ejemplo: practicar idiomas</a></li>
+<li><a href="#limitaciones-y-precauciones"
+id="toc-limitaciones-y-precauciones">Limitaciones y
+precauciones</a></li>
+<li><a href="#razonamiento-antes-de-responder"
+id="toc-razonamiento-antes-de-responder">Razonamiento antes de
+responder</a></li>
+<li><a href="#tabla-resumen-de-funciones"
+id="toc-tabla-resumen-de-funciones">Tabla resumen de funciones</a></li>
+</ul></li>
+<li><a href="#chatgpt-gratuito-vs-chatgpt-plus"
+id="toc-chatgpt-gratuito-vs-chatgpt-plus">ChatGPT gratuito VS ChatGPT
+Plus</a>
+<ul>
+<li><a href="#nota-final" id="toc-nota-final">Nota final</a></li>
+</ul></li>
+</ul>
+</nav>
+<p>Documento revisado, ampliado y actualizado a <strong>marzo de
+2026</strong>. La disponibilidad exacta de algunas funciones puede
+variar según <strong>plan</strong>, <strong>país</strong>,
+<strong>plataforma</strong> y <strong>despliegue gradual</strong>.</p>
+<h1 id="configuración">Configuración</h1>
+<h2 id="configuración-general">Configuración general</h2>
+<ul>
+<li><strong>Apariencia y tema:</strong>
+<ul>
+<li>ChatGPT permite usar <strong>tema claro</strong>, <strong>tema
+oscuro</strong> o seguir el ajuste del <strong>sistema</strong>.</li>
+<li>También puede ofrecer <strong>color de acento</strong> para
+personalizar elementos de la interfaz, como burbujas de conversación, el
+botón de voz o resaltados.</li>
+<li>Los cambios de tema pueden ser <strong>específicos de cada
+dispositivo o plataforma</strong>, por lo que no siempre se sincronizan
+entre web, móvil y escritorio.</li>
+</ul></li>
+<li><strong>Idioma de uso:</strong>
+<ul>
+<li>ChatGPT puede utilizarse en <strong>varios idiomas</strong> y
+cambiar de idioma dentro de una misma conversación.</li>
+<li>Cuando se quiere un estilo estable, conviene fijarlo en las
+<strong>instrucciones personalizadas</strong>.</li>
+</ul></li>
+<li><strong>Gestión del historial:</strong>
+<ul>
+<li>Puedes <strong>buscar</strong>, <strong>renombrar</strong>,
+<strong>archivar</strong>, <strong>eliminar</strong> y, en muchos casos,
+<strong>compartir</strong> conversaciones.</li>
+<li>Los <strong>chats temporales</strong> permiten trabajar sin
+incorporar el chat al historial habitual.</li>
+</ul></li>
+<li><strong>Notificaciones y permisos:</strong>
+<ul>
+<li>En móvil y escritorio pueden aparecer permisos específicos para
+<strong>micrófono</strong>, <strong>cámara</strong>,
+<strong>notificaciones</strong>, <strong>fotos</strong> o acceso a
+determinados archivos.</li>
+</ul></li>
+</ul>
+<h2 id="configuración-de-personalización">Configuración de
+personalización</h2>
+<ul>
+<li><strong>Instrucciones personalizadas:</strong>
+<ul>
+<li>Permiten indicar cómo quieres que responda ChatGPT.</li>
+<li>Son útiles para fijar <strong>tono</strong>,
+<strong>idioma</strong>, <strong>nivel técnico</strong>, <strong>formato
+de salida</strong>, <strong>rol esperado</strong> o tipo de ayuda.</li>
+</ul></li>
+<li><strong>Personalidad base:</strong>
+<ul>
+<li>La interfaz actual permite elegir una <strong>personalidad
+base</strong>.</li>
+<li>Además de la opción <strong>predeterminada</strong>, OpenAI describe
+varias personalidades diferenciadas para modular el tono general de las
+respuestas.</li>
+</ul></li>
+<li><strong>Controles de estilo de respuesta:</strong>
+<ul>
+<li>En la experiencia reciente pueden aparecer controles para ajustar si
+las respuestas deben ser más <strong>breves</strong>,
+<strong>cálidas</strong>, <strong>profesionales</strong>,
+<strong>escaneables</strong> o con más o menos uso de elementos
+expresivos.</li>
+</ul></li>
+<li><strong>Memoria:</strong>
+<ul>
+<li>ChatGPT puede recordar información útil entre conversaciones.</li>
+<li>En la configuración actual conviene distinguir entre:
+<ul>
+<li><strong>memorias guardadas</strong>,</li>
+<li>y <strong>referencia al historial de chats</strong>.</li>
+</ul></li>
+<li>En la versión <strong>gratuita</strong>, la memoria es más
+limitada.</li>
+<li>En <strong>Plus</strong>, la experiencia de memoria es más amplia y
+puede usar tanto memorias guardadas como referencia al historial, según
+la configuración activa.</li>
+</ul></li>
+<li><strong>Características adicionales de personalización:</strong>
+<ul>
+<li>En algunos despliegues pueden aparecer más controles dentro de
+<strong>Personalization</strong>, no solo sobre memoria, sino también
+sobre estilo general y experiencia visual.</li>
+</ul></li>
+</ul>
+<h2 id="configuración-de-voz">Configuración de voz</h2>
+<ul>
+<li><strong>Selección de voz:</strong>
+<ul>
+<li>Es posible escoger entre distintas <strong>voces</strong> para
+conversar con ChatGPT.</li>
+</ul></li>
+<li><strong>Modo de voz:</strong>
+<ul>
+<li>ChatGPT permite mantener conversaciones habladas en clientes
+compatibles.</li>
+</ul></li>
+<li><strong>Permisos del dispositivo:</strong>
+<ul>
+<li>Para usar voz, cámara o captura de pantalla desde dispositivos
+compatibles, es necesario autorizar los permisos correspondientes.</li>
+</ul></li>
+<li><strong>Límites y capacidades:</strong>
+<ul>
+<li>La voz existe tanto en <strong>gratis</strong> como en
+<strong>Plus</strong>, pero los <strong>límites de uso</strong> y
+algunas capacidades avanzadas pueden variar.</li>
+</ul></li>
+</ul>
+<h2 id="controles-de-datos">Controles de datos</h2>
+<ul>
+<li><strong>Uso del contenido para mejorar modelos:</strong>
+<ul>
+<li>Puedes revisar si tu contenido se utiliza para ayudar a mejorar los
+modelos.</li>
+<li>Este ajuste se puede activar o desactivar y aplica a la cuenta.</li>
+</ul></li>
+<li><strong>Chats temporales:</strong>
+<ul>
+<li>Son una forma importante de control de privacidad.</li>
+<li>No aparecen en el historial habitual.</li>
+<li>No crean memorias nuevas ni usan memorias existentes.</li>
+<li>No se usan para entrenar los modelos.</li>
+</ul></li>
+<li><strong>Memoria e historial de referencia:</strong>
+<ul>
+<li>Puedes activar o desactivar el uso de memorias guardadas y, cuando
+proceda, la referencia al historial.</li>
+</ul></li>
+<li><strong>Enlaces compartidos:</strong>
+<ul>
+<li>Es posible crear y gestionar enlaces de conversaciones o activos
+compartidos cuando la interfaz lo permita.</li>
+</ul></li>
+<li><strong>Exportación de datos:</strong>
+<ul>
+<li>Puedes solicitar una <strong>exportación</strong> de tus datos.</li>
+</ul></li>
+<li><strong>Eliminación de cuenta:</strong>
+<ul>
+<li>Desde la configuración de cuenta puedes gestionar su
+eliminación.</li>
+</ul></li>
+</ul>
+<h2 id="perfil-del-constructor">Perfil del constructor</h2>
+<ul>
+<li><strong>GPTs personalizados:</strong>
+<ul>
+<li>Si trabajas con <strong>GPTs personalizados</strong>, puedes
+configurar nombre, descripción, instrucciones, capacidades y
+publicación.</li>
+</ul></li>
+<li><strong>Perfil del builder o constructor:</strong>
+<ul>
+<li>La experiencia de creación incluye elementos de perfil y publicación
+para el asistente personalizado.</li>
+</ul></li>
+<li><strong>Disponibilidad según plan:</strong>
+<ul>
+<li>La <strong>creación</strong> de GPTs personalizados corresponde a
+<strong>planes de pago</strong>.</li>
+<li>En la versión gratuita se pueden <strong>usar algunos GPTs</strong>,
+pero no es la opción adecuada para crearlos.</li>
+</ul></li>
+</ul>
+<h2 id="apps-y-conectores">Apps y conectores</h2>
+<ul>
+<li><strong>Nuevo nombre de la función:</strong>
+<ul>
+<li>OpenAI ha unificado la terminología y ahora habla de
+<strong>apps</strong>.</li>
+<li>El término incluye tanto apps con <strong>interfaz
+interactiva</strong> como las integraciones que permiten
+<strong>buscar</strong> y <strong>referenciar</strong> contenido.</li>
+</ul></li>
+<li><strong>Qué permiten hacer:</strong>
+<ul>
+<li>Conectar fuentes externas.</li>
+<li>Buscar archivos y datos.</li>
+<li>Recuperar información dentro del chat.</li>
+<li>En algunos casos, escribir o sincronizar contenido.</li>
+</ul></li>
+<li><strong>Disponibilidad según plan:</strong>
+<ul>
+<li>Las apps están presentes para usuarios conectados, pero <strong>no
+todas las apps ni todas sus capacidades</strong> están disponibles en
+todos los planes.</li>
+<li>En <strong>gratis</strong> puede haber acceso parcial.</li>
+<li>En <strong>Plus</strong> suele haber acceso más amplio a capacidades
+de apps, sobre todo en experiencias avanzadas.</li>
+</ul></li>
+<li><strong>Restricciones adicionales:</strong>
+<ul>
+<li>Algunas apps pueden no estar disponibles según
+<strong>región</strong>, <strong>workspace</strong> o <strong>tipo de
+plan</strong>.</li>
+</ul></li>
+</ul>
+<h2 id="seguridad">Seguridad</h2>
+<ul>
+<li><strong>Autenticación multifactor (MFA):</strong>
+<ul>
+<li>Añade una capa extra de seguridad a tu cuenta.</li>
+</ul></li>
+<li><strong>Gestión de sesiones:</strong>
+<ul>
+<li>Puedes revisar sesiones activas y cerrar sesión en otros
+dispositivos.</li>
+</ul></li>
+<li><strong>Privacidad operativa:</strong>
+<ul>
+<li>Conviene revisar periódicamente permisos, apps conectadas,
+historial, memoria y controles de datos, especialmente si se usa ChatGPT
+con información profesional o institucional.</li>
+</ul></li>
+</ul>
+<h2 id="tabla-resumen-de-configuración">Tabla resumen de
+configuración</h2>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>Área</th>
+<th>Qué permite configurar</th>
+<th>Relevancia práctica</th>
+<th>Gratis</th>
+<th>Plus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apariencia</td>
+<td>Tema claro/oscuro/sistema y color de acento según plataforma</td>
+<td>Mejora la experiencia de uso</td>
+<td><strong>Sí</strong></td>
+<td><strong>Sí</strong></td>
+</tr>
+<tr>
+<td>Personalización</td>
+<td>Instrucciones personalizadas, personalidad y estilo</td>
+<td>Ajusta cómo responde ChatGPT</td>
+<td><strong>Sí</strong></td>
+<td><strong>Sí</strong>, con experiencia más amplia</td>
+</tr>
+<tr>
+<td>Memoria</td>
+<td>Continuidad entre conversaciones</td>
+<td>Más personalización</td>
+<td><strong>Sí</strong>, pero principalmente con <strong>memorias
+guardadas</strong></td>
+<td><strong>Sí</strong>, con <strong>memorias guardadas</strong> y
+<strong>referencia al historial</strong></td>
+</tr>
+<tr>
+<td>Chats temporales</td>
+<td>Conversaciones aisladas del historial y de la memoria</td>
+<td>Más privacidad para usos puntuales</td>
+<td><strong>Sí</strong></td>
+<td><strong>Sí</strong></td>
+</tr>
+<tr>
+<td>Voz</td>
+<td>Conversaciones habladas</td>
+<td>Interacción más natural</td>
+<td><strong>Sí</strong>, con límites</td>
+<td><strong>Sí</strong>, con acceso ampliado</td>
+</tr>
+<tr>
+<td>GPTs personalizados</td>
+<td>Crear asistentes especializados</td>
+<td>Automatiza tareas recurrentes</td>
+<td><strong>No crear</strong></td>
+<td><strong>Sí</strong></td>
+</tr>
+<tr>
+<td>Apps</td>
+<td>Conectar fuentes y experiencias externas</td>
+<td>Más contexto y automatización</td>
+<td><strong>Sí</strong>, pero parcial según app/plan/región</td>
+<td><strong>Sí</strong>, con mayor amplitud</td>
+</tr>
+<tr>
+<td>Datos</td>
+<td>Exportación, entrenamiento, historial y enlaces compartidos</td>
+<td>Control de privacidad y trazabilidad</td>
+<td><strong>Sí</strong></td>
+<td><strong>Sí</strong></td>
+</tr>
+<tr>
+<td>Seguridad</td>
+<td>MFA y control de sesiones</td>
+<td>Protección de la cuenta</td>
+<td><strong>Sí</strong></td>
+<td><strong>Sí</strong></td>
+</tr>
+</tbody>
+</table>
+<h1 id="interfaz">Interfaz</h1>
+<h2 id="interfaz-conversacional">Interfaz conversacional</h2>
+<ul>
+<li><strong>Caja de entrada unificada:</strong>
+<ul>
+<li>La experiencia actual concentra en la misma zona de entrada el
+texto, los adjuntos y el acceso a distintas herramientas.</li>
+</ul></li>
+<li><strong>Adjuntar archivos e imágenes:</strong>
+<ul>
+<li>Puedes subir <strong>documentos</strong>, <strong>imágenes</strong>,
+<strong>PDF</strong>, <strong>presentaciones</strong>, <strong>hojas de
+cálculo</strong> y otros archivos comunes.</li>
+<li>En la versión gratuita esta capacidad existe, pero con
+<strong>límites más estrictos</strong> que en
+<strong>Plus</strong>.</li>
+</ul></li>
+<li><strong>Accesos rápidos en el composer:</strong>
+<ul>
+<li>Según el cliente, pueden aparecer iconos o atajos para lanzar
+funciones como <strong>búsqueda web</strong>, <strong>canvas</strong>,
+<strong>voz</strong>, <strong>imágenes</strong> u otras
+herramientas.</li>
+</ul></li>
+<li><strong>Trabajo directo con datos:</strong>
+<ul>
+<li>Cuando subes ciertos archivos, ChatGPT puede mostrar una
+<strong>tabla interactiva</strong> y generar gráficos a partir de los
+datos.</li>
+</ul></li>
+<li><strong>Seguimiento de tareas complejas:</strong>
+<ul>
+<li>En funciones avanzadas, la interfaz puede mostrar progreso, estado o
+pasos intermedios.</li>
+</ul></li>
+</ul>
+<h2 id="modelos-disponibles">Modelos disponibles</h2>
+<ul>
+<li><strong>Modelo base para todos los usuarios:</strong>
+<ul>
+<li>Todos los planes tienen acceso a modelos recientes de la familia GPT
+actual.</li>
+</ul></li>
+<li><strong>Versión gratuita:</strong>
+<ul>
+<li>En la experiencia actual, la versión gratuita <strong>no permite
+elegir manualmente el modelo</strong> desde un selector clásico.</li>
+<li>El sistema utiliza selección automática y, cuando se alcanzan
+ciertos límites, puede pasar a una variante <strong>mini</strong>.</li>
+</ul></li>
+<li><strong>ChatGPT Plus:</strong>
+<ul>
+<li>En <strong>Plus</strong> sí existe <strong>selector de
+modelo</strong> en la experiencia actual.</li>
+<li>Esto permite elegir manualmente entre variantes de respuesta más
+rápidas o de razonamiento más profundo, cuando estén disponibles.</li>
+</ul></li>
+<li><strong>Capacidad y límites:</strong>
+<ul>
+<li>Además del modelo, cambia la <strong>cantidad de uso
+disponible</strong>, por lo que la diferencia entre gratis y Plus no es
+solo “calidad”, sino también <strong>continuidad de uso</strong>,
+<strong>prioridad</strong> y acceso a modelos de razonamiento.</li>
+</ul></li>
+</ul>
+<h2 id="barra-lateral-e-historial-de-conversaciones">Barra lateral e
+historial de conversaciones</h2>
+<ul>
+<li><strong>Barra lateral izquierda:</strong>
+<ul>
+<li>Muestra el historial reciente y accesos a otros espacios de
+trabajo.</li>
+</ul></li>
+<li><strong>Búsqueda en el historial:</strong>
+<ul>
+<li>Permite localizar conversaciones anteriores con más rapidez.</li>
+</ul></li>
+<li><strong>Opciones por conversación:</strong>
+<ul>
+<li>Puedes <strong>renombrar</strong>, <strong>archivar</strong>,
+<strong>eliminar</strong> o <strong>compartir</strong> chats.</li>
+</ul></li>
+<li><strong>Biblioteca de imágenes:</strong>
+<ul>
+<li>Las imágenes generadas pueden quedar reunidas en un espacio como
+<strong>My images</strong>, lo que facilita revisarlas y reutilizarlas
+sin tener que volver al chat original.</li>
+</ul></li>
+<li><strong>Chats temporales:</strong>
+<ul>
+<li>Se inician aparte del historial normal y están pensados para usos
+más sensibles o puntuales.</li>
+</ul></li>
+</ul>
+<h2 id="gpts-projects-y-espacios-de-trabajo">GPTs, Projects y espacios
+de trabajo</h2>
+<ul>
+<li><strong>GPTs personalizados:</strong>
+<ul>
+<li>Permiten usar asistentes especializados para tareas concretas.</li>
+</ul></li>
+<li><strong>Projects:</strong>
+<ul>
+<li>Reúnen varios chats, archivos e instrucciones en un mismo
+espacio.</li>
+<li>Están disponibles para <strong>usuarios gratuitos y de
+pago</strong>.</li>
+<li>La diferencia importante está en la <strong>capacidad</strong>:
+<ul>
+<li><strong>Gratis:</strong> hasta <strong>5 archivos por
+proyecto</strong>.</li>
+<li><strong>Plus:</strong> hasta <strong>25 archivos por
+proyecto</strong>.</li>
+</ul></li>
+</ul></li>
+<li><strong>Proyectos compartidos:</strong>
+<ul>
+<li>Compartir proyectos ya está disponible para usuarios
+<strong>Free</strong>, <strong>Plus</strong>, <strong>Go</strong> y
+<strong>Pro</strong>.</li>
+</ul></li>
+<li><strong>Apps dentro de Projects:</strong>
+<ul>
+<li>Los proyectos también pueden usar apps compatibles, según plan.</li>
+</ul></li>
+</ul>
+<h2 id="canvas-voz-imagen-y-multimodalidad">Canvas, voz, imagen y
+multimodalidad</h2>
+<ul>
+<li><strong>Canvas:</strong>
+<ul>
+<li>Es una interfaz aparte para trabajar mejor sobre texto y
+código.</li>
+<li>Está disponible en <strong>web</strong>, <strong>Windows</strong> y
+<strong>macOS</strong>.</li>
+</ul></li>
+<li><strong>Modo voz:</strong>
+<ul>
+<li>La voz ya forma parte de la experiencia de uso habitual en clientes
+compatibles.</li>
+</ul></li>
+<li><strong>Entrada multimodal:</strong>
+<ul>
+<li>ChatGPT puede interpretar texto, imágenes, capturas, diagramas,
+documentos y tablas.</li>
+</ul></li>
+<li><strong>Experiencia de imágenes:</strong>
+<ul>
+<li>La experiencia actual de imágenes está disponible en
+<strong>web</strong> y en <strong>iOS/Android</strong>.</li>
+<li>La experiencia específica de imágenes <strong>no está disponible en
+la app de escritorio</strong>.</li>
+</ul></li>
+</ul>
+<h2 id="formularios-y-acciones-web">Formularios y acciones web</h2>
+<ul>
+<li><strong>Rellenar formularios:</strong>
+<ul>
+<li>En experiencias avanzadas de <strong>agent mode</strong>, ChatGPT
+puede <strong>navegar por webs</strong>, <strong>hacer clic</strong>,
+<strong>rellenar formularios</strong> y <strong>editar hojas de
+cálculo</strong>, manteniendo a la persona usuaria en control.</li>
+</ul></li>
+<li><strong>Importancia práctica:</strong>
+<ul>
+<li>Esta capacidad amplía mucho la utilidad de ChatGPT en tareas
+operativas reales, no solo de conversación.</li>
+</ul></li>
+<li><strong>Disponibilidad:</strong>
+<ul>
+<li>No forma parte del uso estándar de la versión gratuita.</li>
+<li>Se asocia a planes de pago y a herramientas avanzadas.</li>
+</ul></li>
+</ul>
+<h2 id="tabla-resumen-de-interfaz">Tabla resumen de interfaz</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Elemento de interfaz</th>
+<th>Qué aporta</th>
+<th>Gratis</th>
+<th>Plus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Caja de chat unificada</td>
+<td>Punto central para escribir, adjuntar y activar herramientas</td>
+<td><strong>Sí</strong></td>
+<td><strong>Sí</strong></td>
+</tr>
+<tr>
+<td>Adjuntar archivos</td>
+<td>Analizar documentos, imágenes y tablas</td>
+<td><strong>Sí</strong>, con límites más bajos</td>
+<td><strong>Sí</strong>, con uso ampliado</td>
+</tr>
+<tr>
+<td>Tablas y gráficos interactivos</td>
+<td>Explorar datos y hojas de cálculo</td>
+<td><strong>Sí</strong>, con límites más estrictos</td>
+<td><strong>Sí</strong>, con más capacidad</td>
+</tr>
+<tr>
+<td>Búsqueda web</td>
+<td>Consultar información actualizada desde el chat</td>
+<td><strong>Sí</strong></td>
+<td><strong>Sí</strong>, con uso más amplio</td>
+</tr>
+<tr>
+<td>Canvas</td>
+<td>Redactar, revisar o programar en un espacio aparte</td>
+<td><strong>Sí</strong></td>
+<td><strong>Sí</strong></td>
+</tr>
+<tr>
+<td>Historial y búsqueda</td>
+<td>Recuperar conversaciones previas</td>
+<td><strong>Sí</strong></td>
+<td><strong>Sí</strong></td>
+</tr>
+<tr>
+<td>Chats temporales</td>
+<td>Conversaciones no integradas en historial ni memoria</td>
+<td><strong>Sí</strong></td>
+<td><strong>Sí</strong></td>
+</tr>
+<tr>
+<td>Projects</td>
+<td>Agrupar chats, archivos e instrucciones</td>
+<td><strong>Sí</strong>, hasta <strong>5 archivos</strong> por
+proyecto</td>
+<td><strong>Sí</strong>, hasta <strong>25 archivos</strong> por
+proyecto</td>
+</tr>
+<tr>
+<td>GPTs personalizados</td>
+<td>Usar y crear asistentes especializados</td>
+<td>Puede <strong>usar algunos</strong>, pero <strong>no
+crear</strong></td>
+<td><strong>Sí</strong>, crear y usar</td>
+</tr>
+<tr>
+<td>Apps</td>
+<td>Integrar fuentes y experiencias externas</td>
+<td><strong>Sí</strong>, de forma parcial según app</td>
+<td><strong>Sí</strong>, con soporte más amplio</td>
+</tr>
+<tr>
+<td>Formularios y acciones web</td>
+<td>Automatizar navegación y operaciones en sitios web</td>
+<td><strong>No</strong></td>
+<td><strong>Sí</strong>, mediante herramientas avanzadas</td>
+</tr>
+</tbody>
+</table>
+<h1 id="funciones">Funciones</h1>
+<h2 id="generación-y-edición-de-imágenes">Generación y edición de
+imágenes</h2>
+<ul>
+<li>ChatGPT permite <strong>generar imágenes</strong> a partir de
+instrucciones en lenguaje natural.</li>
+<li>También puede <strong>editar imágenes</strong> ya existentes
+mediante indicaciones como cambiar el fondo, añadir elementos o
+modificar el estilo.</li>
+<li>Las imágenes generadas pueden quedar guardadas en <strong>My
+images</strong> para revisarlas después.</li>
+<li>Esta función está disponible tanto en <strong>gratis</strong> como
+en <strong>Plus</strong>, aunque <strong>Plus</strong> dispone de
+límites más amplios.</li>
+</ul>
+<p>“Quiero que generes una imagen de un oso panda en estilo cartoon
+montando una motocicleta atravesando un bosque.”</p>
+<h2 id="canvas">Canvas</h2>
+<ul>
+<li><strong>Canvas</strong> está pensado para trabajar mejor sobre texto
+y código en un espacio estructurado.</li>
+<li>Facilita la <strong>redacción</strong>,
+<strong>reescritura</strong>, <strong>revisión</strong>,
+<strong>organización</strong> e <strong>iteración</strong> sobre
+contenidos largos.</li>
+<li>Puede resultar útil para:
+<ul>
+<li>redactar documentos,</li>
+<li>refinar borradores,</li>
+<li>revisar código,</li>
+<li>transformar un esquema en un texto más elaborado.</li>
+</ul></li>
+<li>Además, incorpora funciones como:
+<ul>
+<li><strong>historial de versiones</strong>,</li>
+<li><strong>mostrar cambios</strong>,</li>
+<li><strong>comentarios o sugerencias en línea</strong>,</li>
+<li><strong>exportación</strong> a formatos como <strong>PDF</strong>,
+<strong>Markdown</strong> o <strong>Word</strong>,</li>
+<li>y, en canvas de Python, <strong>ejecución de código</strong>.</li>
+</ul></li>
+<li>Está disponible en <strong>web</strong>, <strong>Windows</strong> y
+<strong>macOS</strong>.</li>
+</ul>
+<h2 id="búsqueda-web-integrada">Búsqueda web integrada</h2>
+<ul>
+<li>ChatGPT puede <strong>buscar en Internet</strong> y apoyarse en
+fuentes externas para responder preguntas actuales.</li>
+<li>Esta función es especialmente útil para:
+<ul>
+<li>noticias,</li>
+<li>normativa,</li>
+<li>productos,</li>
+<li>documentación reciente,</li>
+<li>comparativas,</li>
+<li>verificación de datos.</li>
+</ul></li>
+<li>En experiencias compatibles, también puede activarse desde el icono
+de búsqueda o con atajos como <strong>/Search</strong>.</li>
+<li>La versión gratuita ya dispone de búsqueda web, pero
+<strong>Plus</strong> ofrece más margen de uso y mejor combinación con
+funciones avanzadas.</li>
+</ul>
+<p>“¿Puedes recomendarme destinos turísticos para Sevilla en un día
+lluvioso?”</p>
+<h2 id="análisis-de-archivos-y-datos">Análisis de archivos y datos</h2>
+<ul>
+<li>Puedes subir archivos para que ChatGPT:
+<ul>
+<li>los resuma,</li>
+<li>compare documentos,</li>
+<li>extraiga información,</li>
+<li>identifique patrones,</li>
+<li>interprete tablas o gráficos,</li>
+<li>ayude con hojas de cálculo.</li>
+</ul></li>
+<li>Al trabajar con datos, ChatGPT puede crear:
+<ul>
+<li><strong>tablas interactivas</strong>,</li>
+<li><strong>gráficos estáticos o interactivos</strong>,</li>
+<li>y explicaciones sobre los hallazgos.</li>
+</ul></li>
+<li>También puede trabajar con archivos subidos desde servicios como:
+<ul>
+<li><strong>Google Drive</strong>,</li>
+<li><strong>OneDrive personal</strong>,</li>
+<li><strong>OneDrive con SharePoint</strong>.</li>
+</ul></li>
+<li>En la versión gratuita existe, pero con <strong>restricciones de uso
+más severas</strong> que en <strong>Plus</strong>.</li>
+</ul>
+<h2 id="gpts-personalizados">GPTs personalizados</h2>
+<ul>
+<li>Los <strong>GPTs personalizados</strong> son versiones configuradas
+para tareas, dominios o flujos concretos.</li>
+<li>Pueden combinar:
+<ul>
+<li>instrucciones,</li>
+<li>conocimiento cargado,</li>
+<li>capacidades,</li>
+<li>comportamiento especializado.</li>
+</ul></li>
+<li>La <strong>creación</strong> de GPTs personalizados corresponde a
+<strong>planes de pago</strong>.</li>
+<li>La versión gratuita puede <strong>usar GPTs del catálogo</strong>,
+pero con límites y sin capacidad de creación.</li>
+</ul>
+<h2 id="projects">Projects</h2>
+<ul>
+<li><strong>Projects</strong> permiten agrupar varios chats, archivos de
+referencia e instrucciones dentro de un mismo espacio de trabajo.</li>
+<li>Son especialmente útiles para:
+<ul>
+<li>proyectos formativos,</li>
+<li>investigación,</li>
+<li>documentación,</li>
+<li>redacción prolongada,</li>
+<li>planificación recurrente.</li>
+</ul></li>
+<li>También están disponibles en la <strong>versión
+gratuita</strong>.</li>
+<li>La diferencia principal frente a <strong>Plus</strong> está en la
+capacidad:
+<ul>
+<li><strong>Gratis:</strong> hasta <strong>5 archivos por
+proyecto</strong>.</li>
+<li><strong>Plus:</strong> hasta <strong>25 archivos por
+proyecto</strong>.</li>
+</ul></li>
+</ul>
+<h2 id="tasks">Tasks</h2>
+<ul>
+<li><strong>Tasks</strong> permiten programar acciones automáticas o
+recordatorios.</li>
+<li>Por ejemplo, pueden servir para:
+<ul>
+<li>recibir un resumen diario,</li>
+<li>programar una práctica recurrente,</li>
+<li>recordar una fecha,</li>
+<li>lanzar una tarea periódica.</li>
+</ul></li>
+<li>Son compatibles con <strong>web</strong>, <strong>iOS</strong>,
+<strong>Android</strong> y <strong>macOS</strong>.</li>
+<li>No debe presentarse ya como una función de la interfaz “solo de
+conversación”: forma parte del ecosistema actual de automatización.</li>
+<li>A efectos prácticos, está asociada a <strong>planes de pago</strong>
+y a los límites del plan.</li>
+</ul>
+<h2 id="investigación-profunda">Investigación profunda</h2>
+<ul>
+<li>La función de <strong>deep research</strong> o <strong>investigación
+profunda</strong> permite abordar preguntas complejas mediante búsqueda,
+análisis y síntesis en un informe documentado.</li>
+<li>Puede trabajar con:
+<ul>
+<li>web pública,</li>
+<li>sitios concretos,</li>
+<li>archivos subidos,</li>
+<li>apps habilitadas.</li>
+</ul></li>
+<li>Es una característica <strong>de pago</strong>, disponible en
+<strong>Plus</strong> y planes superiores.</li>
+</ul>
+<h2 id="agent-mode">Agent mode</h2>
+<ul>
+<li>El <strong>modo agente</strong> amplía la capacidad de ChatGPT para
+ejecutar tareas complejas con varias herramientas.</li>
+<li>Puede combinar:
+<ul>
+<li>razonamiento,</li>
+<li>navegación web,</li>
+<li>uso de archivos,</li>
+<li>acceso a fuentes conectadas,</li>
+<li>acciones sobre sitios web.</li>
+</ul></li>
+<li>Entre sus capacidades prácticas están:
+<ul>
+<li><strong>rellenar formularios</strong>,</li>
+<li><strong>navegar por páginas</strong>,</li>
+<li><strong>editar hojas de cálculo</strong>,</li>
+<li>y operar con varias etapas manteniendo a la persona usuaria en
+control.</li>
+</ul></li>
+<li>Es una función avanzada propia de <strong>planes de
+pago</strong>.</li>
+</ul>
+<h2 id="apps-en-chatgpt">Apps en ChatGPT</h2>
+<ul>
+<li>Las <strong>apps</strong> amplían ChatGPT con datos y servicios
+externos.</li>
+<li>Pueden ofrecer:
+<ul>
+<li>búsqueda,</li>
+<li>referencia de contenido,</li>
+<li>sincronización,</li>
+<li>escritura,</li>
+<li>experiencias interactivas dentro del chat.</li>
+</ul></li>
+<li>Algunas apps muestran tarjetas, mapas, listas u otros elementos
+ricos dentro de la conversación.</li>
+<li>En <strong>gratis</strong> hay acceso parcial.</li>
+<li>En <strong>Plus</strong> la compatibilidad y el alcance suelen ser
+mayores.</li>
+</ul>
+<h2 id="voz-avanzada">Voz avanzada</h2>
+<ul>
+<li>El modo de voz permite una interacción más natural y continua.</li>
+<li>La experiencia actual soporta conversación hablada para usuarios
+conectados.</li>
+<li>La voz existe tanto en <strong>gratis</strong> como en
+<strong>Plus</strong>, pero los límites y algunas capacidades avanzadas
+dependen del plan.</li>
+</ul>
+<h2 id="personalización-con-instrucciones-y-memoria">Personalización con
+instrucciones y memoria</h2>
+<ul>
+<li>ChatGPT puede adaptarse al contexto de uso mediante:
+<ul>
+<li><strong>instrucciones personalizadas</strong>,</li>
+<li><strong>memoria</strong>,</li>
+<li><strong>preferencias de estilo</strong>,</li>
+<li><strong>ajustes de personalidad</strong>.</li>
+</ul></li>
+<li>Esto resulta muy útil en docencia, trabajo técnico, redacción
+recurrente o estudio guiado.</li>
+</ul>
+<h2 id="ejemplo-practicar-idiomas">Ejemplo: practicar idiomas</h2>
+<p>“Eres un tutor de francés. Corrige mis errores y explícamelos en
+español antes de continuar.”</p>
+<ul>
+<li>Una instrucción de este tipo permite convertir ChatGPT en un apoyo
+más coherente para el aprendizaje.</li>
+<li>Si además se combina con memoria y continuidad, la experiencia puede
+ser más consistente.</li>
+</ul>
+<h2 id="limitaciones-y-precauciones">Limitaciones y precauciones</h2>
+<ul>
+<li>ChatGPT puede <strong>equivocarse</strong>, simplificar en exceso o
+dar respuestas plausibles pero inexactas.</li>
+<li>Aunque cada vez integra mejor archivos, web, imágenes, apps y voz,
+sigue siendo necesario:
+<ul>
+<li><strong>verificar datos importantes</strong>,</li>
+<li>revisar fuentes,</li>
+<li>confirmar normativa o cifras,</li>
+<li>comprobar resultados en tareas críticas.</li>
+</ul></li>
+<li>No todas las funciones están disponibles igual en todas las
+plataformas, países o planes.</li>
+<li>Muchas capacidades están sujetas a <strong>límites de uso</strong>
+que pueden cambiar con el tiempo.</li>
+</ul>
+<h2 id="razonamiento-antes-de-responder">Razonamiento antes de
+responder</h2>
+<ul>
+<li>Los modelos actuales incorporan modos de <strong>razonamiento más
+profundo</strong> para problemas complejos.</li>
+<li>En la experiencia reciente, ChatGPT puede:
+<ul>
+<li>responder de forma rápida en tareas sencillas,</li>
+<li>o aplicar más razonamiento cuando la consulta lo requiere.</li>
+</ul></li>
+<li>En <strong>Plus</strong>, este razonamiento avanzado está disponible
+con <strong>más capacidad</strong>, mejores límites y acceso manual
+desde el selector de modelos.</li>
+<li>Esto es especialmente útil en:
+<ul>
+<li>resolución de problemas,</li>
+<li>programación,</li>
+<li>planificación,</li>
+<li>análisis de varias etapas,</li>
+<li>elaboración de respuestas más sólidas.</li>
+</ul></li>
+</ul>
+<h2 id="tabla-resumen-de-funciones">Tabla resumen de funciones</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Función</th>
+<th>Qué hace</th>
+<th>Gratis</th>
+<th>Plus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Generación de imágenes</td>
+<td>Crear imágenes desde texto</td>
+<td><strong>Sí</strong>, con límites</td>
+<td><strong>Sí</strong>, con uso ampliado</td>
+</tr>
+<tr>
+<td>Edición de imágenes</td>
+<td>Modificar imágenes con lenguaje natural</td>
+<td><strong>Sí</strong>, con límites</td>
+<td><strong>Sí</strong>, con uso ampliado</td>
+</tr>
+<tr>
+<td>Búsqueda web</td>
+<td>Consultar información actualizada</td>
+<td><strong>Sí</strong></td>
+<td><strong>Sí</strong>, con uso más amplio</td>
+</tr>
+<tr>
+<td>Análisis de archivos y datos</td>
+<td>Resumir, comparar, extraer y analizar documentos</td>
+<td><strong>Sí</strong>, con límites más estrictos</td>
+<td><strong>Sí</strong>, con uso ampliado</td>
+</tr>
+<tr>
+<td>Tablas y gráficos interactivos</td>
+<td>Explorar datos subidos</td>
+<td><strong>Sí</strong>, con restricciones mayores</td>
+<td><strong>Sí</strong>, con más capacidad</td>
+</tr>
+<tr>
+<td>Canvas</td>
+<td>Trabajar mejor sobre texto y código</td>
+<td><strong>Sí</strong></td>
+<td><strong>Sí</strong></td>
+</tr>
+<tr>
+<td>Memoria</td>
+<td>Recordar información útil entre conversaciones</td>
+<td><strong>Sí</strong>, principalmente con memorias guardadas</td>
+<td><strong>Sí</strong>, con memoria más amplia</td>
+</tr>
+<tr>
+<td>GPTs personalizados</td>
+<td>Crear asistentes a medida</td>
+<td><strong>No crear</strong></td>
+<td><strong>Sí</strong></td>
+</tr>
+<tr>
+<td>Uso de GPTs del catálogo</td>
+<td>Ejecutar asistentes creados por otros</td>
+<td><strong>Sí</strong>, con límites</td>
+<td><strong>Sí</strong></td>
+</tr>
+<tr>
+<td>Projects</td>
+<td>Organizar trabajo por espacios con contexto</td>
+<td><strong>Sí</strong>, con menos capacidad</td>
+<td><strong>Sí</strong>, con más capacidad</td>
+</tr>
+<tr>
+<td>Tasks</td>
+<td>Programar acciones o recordatorios</td>
+<td><strong>No</strong></td>
+<td><strong>Sí</strong></td>
+</tr>
+<tr>
+<td>Deep research</td>
+<td>Investigar y sintetizar con informe documentado</td>
+<td><strong>No</strong></td>
+<td><strong>Sí</strong></td>
+</tr>
+<tr>
+<td>Agent mode</td>
+<td>Ejecutar flujos complejos con herramientas</td>
+<td><strong>No</strong></td>
+<td><strong>Sí</strong></td>
+</tr>
+<tr>
+<td>Formularios web</td>
+<td>Navegar y rellenar formularios</td>
+<td><strong>No</strong></td>
+<td><strong>Sí</strong>, mediante agent mode</td>
+</tr>
+<tr>
+<td>Apps</td>
+<td>Integrar fuentes y herramientas externas</td>
+<td><strong>Sí</strong>, parcialmente</td>
+<td><strong>Sí</strong>, con más amplitud</td>
+</tr>
+</tbody>
+</table>
+<h1 id="chatgpt-gratuito-vs-chatgpt-plus">ChatGPT gratuito VS ChatGPT
+Plus</h1>
+<p>La diferencia principal entre la versión gratuita y <strong>ChatGPT
+Plus</strong> no está solo en “responder mejor”, sino en la
+<strong>cantidad de uso disponible</strong>, el <strong>selector de
+modelos</strong>, la <strong>profundidad del trabajo</strong> que puede
+realizarse dentro de la interfaz y el acceso a herramientas de nivel más
+avanzado.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>ChatGPT gratuito</th>
+<th>ChatGPT Plus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Precio</td>
+<td><strong>0 €</strong></td>
+<td><strong>20 USD/mes</strong></td>
+</tr>
+<tr>
+<td>Acceso a modelos</td>
+<td>Uso general con selección automática</td>
+<td>Acceso ampliado y <strong>selector manual de modelo</strong></td>
+</tr>
+<tr>
+<td>Selector de modelo</td>
+<td><strong>No</strong></td>
+<td><strong>Sí</strong></td>
+</tr>
+<tr>
+<td>Continuidad de uso</td>
+<td>Límites más bajos</td>
+<td>Límites superiores y prioridad mayor</td>
+</tr>
+<tr>
+<td>Velocidad y prioridad</td>
+<td>Menor prioridad en horas de alta demanda</td>
+<td><strong>Mayor prioridad</strong> y experiencia más fluida</td>
+</tr>
+<tr>
+<td>Búsqueda web</td>
+<td><strong>Sí</strong></td>
+<td><strong>Sí</strong>, con uso más amplio</td>
+</tr>
+<tr>
+<td>Subida de archivos</td>
+<td><strong>Sí</strong>, con límites más estrictos</td>
+<td><strong>Sí</strong>, con más capacidad</td>
+</tr>
+<tr>
+<td>Análisis de datos</td>
+<td><strong>Sí</strong>, con límites más severos</td>
+<td><strong>Sí</strong>, con uso ampliado</td>
+</tr>
+<tr>
+<td>Imágenes</td>
+<td><strong>Sí</strong>, con cupos más reducidos</td>
+<td><strong>Sí</strong>, con mayor volumen</td>
+</tr>
+<tr>
+<td>Canvas</td>
+<td><strong>Sí</strong></td>
+<td><strong>Sí</strong></td>
+</tr>
+<tr>
+<td>Voz</td>
+<td><strong>Sí</strong>, con límites</td>
+<td><strong>Sí</strong>, con acceso ampliado</td>
+</tr>
+<tr>
+<td>Memoria</td>
+<td><strong>Memorias guardadas</strong>, con experiencia más
+limitada</td>
+<td><strong>Memorias guardadas</strong> + <strong>referencia al
+historial</strong></td>
+</tr>
+<tr>
+<td>GPTs personalizados</td>
+<td>Puede usar algunos GPTs, pero <strong>no crearlos</strong></td>
+<td><strong>Puede crear y usar GPTs personalizados</strong></td>
+</tr>
+<tr>
+<td>Projects</td>
+<td><strong>Sí</strong>, hasta <strong>5 archivos por
+proyecto</strong></td>
+<td><strong>Sí</strong>, hasta <strong>25 archivos por
+proyecto</strong></td>
+</tr>
+<tr>
+<td>Tasks</td>
+<td><strong>No</strong></td>
+<td><strong>Sí</strong></td>
+</tr>
+<tr>
+<td>Deep research</td>
+<td><strong>No</strong></td>
+<td><strong>Sí</strong></td>
+</tr>
+<tr>
+<td>Agent mode</td>
+<td><strong>No</strong></td>
+<td><strong>Sí</strong></td>
+</tr>
+<tr>
+<td>Formularios web y acciones operativas</td>
+<td><strong>No</strong></td>
+<td><strong>Sí</strong>, mediante agent mode</td>
+</tr>
+<tr>
+<td>Apps</td>
+<td><strong>Sí</strong>, pero con disponibilidad más parcial</td>
+<td><strong>Sí</strong>, con mayor compatibilidad</td>
+</tr>
+<tr>
+<td>Publicidad</td>
+<td>Puede aparecer en determinadas pruebas o países</td>
+<td><strong>Sin anuncios</strong></td>
+</tr>
+<tr>
+<td>Acceso temprano a novedades</td>
+<td>No habitual</td>
+<td><strong>Sí</strong>, con más frecuencia</td>
+</tr>
+</tbody>
+</table>
+<p>En términos prácticos, la versión gratuita es suficiente para
+<strong>consultas generales</strong>, <strong>redacción básica</strong>,
+<strong>apoyo al estudio</strong>, <strong>resúmenes</strong>,
+<strong>búsqueda web</strong> y un uso ocasional de herramientas. La
+versión <strong>Plus</strong> resulta más adecuada cuando se necesita
+trabajar de forma continuada con <strong>archivos</strong>,
+<strong>análisis</strong>, <strong>Projects</strong> con más capacidad,
+<strong>GPTs personalizados</strong>, <strong>deep research</strong>,
+<strong>agent mode</strong>, <strong>formularios web</strong>,
+<strong>automatización</strong> y <strong>flujos multimodales</strong>
+más avanzados.</p>
+<h2 id="nota-final">Nota final</h2>
+<p>Aunque esta comparativa está revisada y actualizada, OpenAI cambia
+con frecuencia los <strong>límites</strong>, <strong>nombres de
+modelos</strong>, <strong>planes</strong> y
+<strong>despliegues</strong>. Por eso, para usos críticos conviene
+contrastar siempre la ayuda oficial más reciente.</p>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</body>
+</html>

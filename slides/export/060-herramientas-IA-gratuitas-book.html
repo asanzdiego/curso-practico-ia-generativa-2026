@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="description" content="Herramientas de IA gratuitas (o al
+menos, en parte)">
+  <meta name="author" content="Adolfo Sanz De Diego" />
+  <title>Herramientas de IA gratuitas (o al menos, en parte)</title>
+  <style type="text/css">
+    pre, code {
+      background-color: #ddd;
+      white-space: pre;
+    }
+    aside.notes{
+      background-color: yellow;
+    }
+    img.center {
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body class="container">
+<header id="title-block-header">
+<h1 class="title">Herramientas de IA gratuitas (o al menos, en
+parte)</h1>
+<p class="author">Adolfo Sanz De Diego</p>
+<p class="date">Marzo 2026</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#introducción" id="toc-introducción">Introducción</a></li>
+<li><a href="#asistentes-generalistas"
+id="toc-asistentes-generalistas">Asistentes generalistas</a>
+<ul>
+<li><a href="#chatgpt" id="toc-chatgpt">ChatGPT</a></li>
+<li><a href="#gemini" id="toc-gemini">Gemini</a></li>
+<li><a href="#copilot" id="toc-copilot">Copilot</a></li>
+<li><a href="#grok" id="toc-grok">Grok</a></li>
+<li><a href="#claude" id="toc-claude">Claude</a></li>
+<li><a href="#perplexity" id="toc-perplexity">Perplexity</a></li>
+<li><a href="#llama-meta-ai" id="toc-llama-meta-ai">Llama (Meta
+AI)</a></li>
+<li><a href="#mistral" id="toc-mistral">Mistral</a></li>
+<li><a href="#deepseek" id="toc-deepseek">DeepSeek</a></li>
+<li><a href="#qwen" id="toc-qwen">Qwen</a></li>
+</ul></li>
+<li><a href="#generación-y-edición-de-imágenes"
+id="toc-generación-y-edición-de-imágenes">Generación y edición de
+imágenes</a>
+<ul>
+<li><a href="#chatgpt-images" id="toc-chatgpt-images">ChatGPT
+Images</a></li>
+<li><a href="#leonardo" id="toc-leonardo">Leonardo</a></li>
+<li><a href="#ideogram" id="toc-ideogram">Ideogram</a></li>
+<li><a href="#recraft" id="toc-recraft">Recraft</a></li>
+<li><a href="#freepik" id="toc-freepik">Freepik</a></li>
+<li><a href="#canva" id="toc-canva">Canva</a></li>
+</ul></li>
+<li><a href="#generación-y-edición-de-vídeos"
+id="toc-generación-y-edición-de-vídeos">Generación y edición de
+vídeos</a>
+<ul>
+<li><a href="#invideo-ai" id="toc-invideo-ai">Invideo AI</a></li>
+<li><a href="#kling-ai" id="toc-kling-ai">Kling AI</a></li>
+<li><a href="#runway" id="toc-runway">Runway</a></li>
+<li><a href="#pika" id="toc-pika">Pika</a></li>
+<li><a href="#descript" id="toc-descript">Descript</a></li>
+<li><a href="#capcut" id="toc-capcut">CapCut</a></li>
+</ul></li>
+<li><a href="#generación-y-edición-de-audios"
+id="toc-generación-y-edición-de-audios">Generación y edición de
+audios</a>
+<ul>
+<li><a href="#elevenlabs" id="toc-elevenlabs">ElevenLabs</a></li>
+<li><a href="#ttsmaker" id="toc-ttsmaker">TTSMaker</a></li>
+<li><a href="#turboscribe" id="toc-turboscribe">TurboScribe</a></li>
+<li><a href="#notta" id="toc-notta">Notta</a></li>
+<li><a href="#fireflies" id="toc-fireflies">Fireflies</a></li>
+<li><a href="#otter" id="toc-otter">Otter</a></li>
+<li><a href="#auphonic" id="toc-auphonic">Auphonic</a></li>
+<li><a href="#adobe-podcast" id="toc-adobe-podcast">Adobe
+Podcast</a></li>
+<li><a href="#suno" id="toc-suno">Suno</a></li>
+<li><a href="#udio" id="toc-udio">Udio</a></li>
+</ul></li>
+<li><a href="#idiomas-escritura-e-investigación"
+id="toc-idiomas-escritura-e-investigación">Idiomas, escritura e
+investigación</a>
+<ul>
+<li><a href="#deepl-translator" id="toc-deepl-translator">DeepL
+Translator</a></li>
+<li><a href="#language-tools" id="toc-language-tools">Language
+Tools</a></li>
+<li><a href="#grammarly" id="toc-grammarly">Grammarly</a></li>
+<li><a href="#pronounce" id="toc-pronounce">Pronounce</a></li>
+<li><a href="#elicit" id="toc-elicit">Elicit</a></li>
+<li><a href="#consensus" id="toc-consensus">Consensus</a></li>
+<li><a href="#notebooklm" id="toc-notebooklm">NotebookLM</a></li>
+<li><a href="#hugging-face-spaces" id="toc-hugging-face-spaces">Hugging
+Face Spaces</a></li>
+</ul></li>
+<li><a href="#presentaciones-y-visualización"
+id="toc-presentaciones-y-visualización">Presentaciones y
+visualización</a>
+<ul>
+<li><a href="#slidesgo" id="toc-slidesgo">Slidesgo</a></li>
+<li><a href="#gamma" id="toc-gamma">Gamma</a></li>
+<li><a href="#napkin" id="toc-napkin">Napkin</a></li>
+<li><a href="#markdown-slides-creator"
+id="toc-markdown-slides-creator">Markdown Slides Creator</a></li>
+<li><a href="#mindmapai" id="toc-mindmapai">Mindmapai</a></li>
+<li><a href="#aigraphmaker" id="toc-aigraphmaker">Aigraphmaker</a></li>
+</ul></li>
+<li><a href="#análisis-de-datos" id="toc-análisis-de-datos">Análisis de
+datos</a>
+<ul>
+<li><a href="#datalab" id="toc-datalab">DataLab</a></li>
+<li><a href="#rows" id="toc-rows">Rows</a></li>
+<li><a href="#chartpixel" id="toc-chartpixel">ChartPixel</a></li>
+<li><a href="#julius-ai" id="toc-julius-ai">Julius AI</a></li>
+<li><a href="#quadratic" id="toc-quadratic">Quadratic</a></li>
+<li><a href="#sourcetable" id="toc-sourcetable">Sourcetable</a></li>
+<li><a href="#formula-bot" id="toc-formula-bot">Formula Bot</a></li>
+<li><a href="#bricks" id="toc-bricks">Bricks</a></li>
+<li><a href="#powerdrill" id="toc-powerdrill">Powerdrill</a></li>
+<li><a href="#infogram" id="toc-infogram">Infogram</a></li>
+<li><a href="#graphy" id="toc-graphy">Graphy</a></li>
+<li><a href="#ajelix" id="toc-ajelix">Ajelix</a></li>
+</ul></li>
+<li><a href="#programación" id="toc-programación">Programación</a>
+<ul>
+<li><a href="#github-copilot" id="toc-github-copilot">GitHub
+Copilot</a></li>
+<li><a href="#cursor" id="toc-cursor">Cursor</a></li>
+<li><a href="#lovable" id="toc-lovable">Lovable</a></li>
+<li><a href="#google-antigravity" id="toc-google-antigravity">Google
+Antigravity</a></li>
+<li><a href="#windsurf" id="toc-windsurf">Windsurf</a></li>
+<li><a href="#google-ai-studio" id="toc-google-ai-studio">Google AI
+Studio</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="introducción">Introducción</h1>
+<p>Este documento recoge una <strong>selección práctica de herramientas
+de IA con acceso gratuito, freemium o de prueba</strong>. No todas son
+“gratis” en sentido estricto: algunas ofrecen <strong>planes gratuitos
+permanentes</strong>, otras funcionan con <strong>límites diarios o
+mensuales</strong>, y otras solo permiten un <strong>uso inicial
+limitado</strong> antes de pasar a un plan de pago.</p>
+<p>La situación de precios, cuotas, licencias y límites cambia con
+frecuencia, así que conviene tomar esta guía como una <strong>base útil
+para orientarse</strong>, no como una promesa cerrada de disponibilidad
+infinita.</p>
+<p><strong>Advertencias útiles antes de adoptar una herramienta
+“gratuita”</strong></p>
+<ul>
+<li><strong>El límite real no siempre está en el número de
+usos</strong>, sino en la duración, la resolución, la prioridad de cola,
+la marca de agua o la exportación.</li>
+<li><strong>“Gratis” no siempre significa uso comercial
+permitido</strong>. En música generativa, por ejemplo, esto cambia mucho
+según el plan.</li>
+<li><strong>Los límites gratuitos cambian con frecuencia</strong>. Lo
+que hoy permite muchas pruebas mañana puede reducirse.</li>
+<li><strong>Las funciones más atractivas suelen reservarse al plan de
+pago</strong>: privacidad, exportaciones de alta calidad, trabajo en
+equipo, API, automatización o mayor contexto.</li>
+<li><strong>La política de datos importa</strong>. Si vas a subir
+material sensible, conviene revisar tratamiento de datos, entrenamiento
+de modelos, retención y permisos.</li>
+<li><strong>No todas las herramientas “free” son igual de
+interesantes</strong>: a veces compensa más una herramienta con menos
+glamour pero con un plan gratuito más usable.</li>
+<li><strong>Mira bien la propiedad de lo que generas</strong>. En
+algunos planes gratuitos, como ocurre en ciertos casos de diseño
+generativo, el contenido puede ser <strong>público</strong>, quedar
+sujeto a <strong>licencias limitadas</strong> o no ser adecuado para
+<strong>uso comercial</strong>.</li>
+</ul>
+<h1 id="asistentes-generalistas">Asistentes generalistas</h1>
+<h2 id="chatgpt">ChatGPT</h2>
+<p><a href="https://chatgpt.com/">ChatGPT</a> - Sigue siendo una de las
+puertas de entrada más completas a la IA generalista. El <strong>plan
+gratuito</strong> permite chatear, subir ciertos archivos, usar algunos
+GPTs con límites y <strong>crear imágenes en ChatGPT</strong>. Es
+especialmente útil para redacción, explicación, lluvia de ideas,
+aprendizaje, apoyo documental y creación visual conversacional. Conviene
+recordar que el acceso gratuito está sujeto a límites de uso y que
+algunas capacidades más avanzadas dependen de planes superiores.</p>
+<ul>
+<li>Consulta también: <a href="https://openai.com/pricing">planes de
+precios</a></li>
+</ul>
+<h2 id="gemini">Gemini</h2>
+<p><a href="https://gemini.google.com/">Gemini</a> - El modo
+<strong>Basic (sin Google AI plan)</strong> es hoy una de las opciones
+gratuitas más generosas para usuarios particulares. Resulta interesante
+para <strong>chat, imágenes, investigación rápida, presentaciones y
+trabajo multimodal</strong>. Sus límites cambian con frecuencia, pero
+Google documenta de forma bastante clara que el acceso gratuito existe y
+que incluye capacidades reales, no solo una demo testimonial.</p>
+<ul>
+<li>Consulta también: <a
+href="https://support.google.com/gemini/answer/16275805?hl=es">planes de
+precios</a></li>
+</ul>
+<h2 id="copilot">Copilot</h2>
+<p><a href="https://copilot.microsoft.com/">Copilot</a> - Hoy merece
+estar también entre los asistentes generalistas. La <strong>aplicación
+gratuita de Microsoft 365 Copilot</strong> está disponible en web,
+escritorio y móvil, y la experiencia base resulta útil para
+<strong>chat, redacción, aprendizaje, resumen y generación de
+imágenes</strong>. Su valor crece mucho si ya trabajas en el ecosistema
+Microsoft. Conviene distinguir entre <strong>Copilot como asistente
+conversacional</strong> y las integraciones más profundas en
+<strong>Word, Excel, PowerPoint u Outlook</strong>, que pertenecen a
+planes de Microsoft 365 con más uso y más funciones. <strong>No hay que
+confundirlo con GitHub Copilot</strong>, que aparece más abajo en la
+sección de programación.</p>
+<ul>
+<li>Consulta también: <a
+href="https://www.microsoft.com/en-us/microsoft-365-copilot/pricing/individuals">planes
+de precios</a></li>
+</ul>
+<h2 id="grok">Grok</h2>
+<p><a href="https://grok.com/">Grok</a> - Merece entrar en una guía
+actualizada porque combina <strong>chat, búsqueda en tiempo real,
+generación de imágenes y trabajo general</strong> desde web y app. No es
+la opción que más recomendaría para todo, pero sí es interesante si
+priorizas <strong>actualidad inmediata</strong>, seguimiento de
+tendencias y respuestas rápidas sobre lo que está pasando “ahora”. xAI
+indica que, según la ubicación, existe <strong>acceso gratuito
+limitado</strong> y que las funciones ampliadas dependen de
+<strong>SuperGrok</strong>.</p>
+<ul>
+<li>Consulta también: <a href="https://grok.com/plans">planes de
+precios</a></li>
+</ul>
+<h2 id="claude">Claude</h2>
+<p><a href="https://claude.ai/">Claude</a> - Muy recomendable para
+<strong>escritura, análisis de documentos, síntesis y trabajo con
+contexto largo</strong>. El <strong>plan gratuito</strong> sigue
+existiendo y es una buena opción para quien prioriza una experiencia
+limpia, enfocada y muy fuerte en lenguaje natural. Los planes de pago
+elevan el uso, añaden más funciones y acceso ampliado a modelos, pero la
+entrada gratuita sigue siendo perfectamente válida para muchas tareas
+cotidianas.</p>
+<ul>
+<li>Consulta también: <a href="https://claude.com/pricing">planes de
+precios</a></li>
+</ul>
+<h2 id="perplexity">Perplexity</h2>
+<p><a href="https://www.perplexity.ai/">Perplexity</a> - Muy útil cuando
+lo que quieres no es tanto “charlar” como <strong>buscar, contrastar y
+obtener respuestas con referencias web</strong>. El plan <strong>gratis
+(Standard)</strong> sigue siendo muy válido para investigación rápida,
+noticias, comparativas y búsquedas cotidianas. Su gran fortaleza es el
+enfoque de <strong>motor de respuestas</strong> más que de simple
+chatbot.</p>
+<ul>
+<li>Consulta también: <a
+href="https://www.perplexity.ai/enterprise/pricing">planes de
+precios</a>, <a
+href="https://www.perplexity.ai/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you">qué
+incluye el plan gratis</a></li>
+</ul>
+<h2 id="llama-meta-ai">Llama (Meta AI)</h2>
+<p><a href="https://www.llama.com/">Llama</a> - Aquí conviene hacer una
+precisión útil: <strong>Llama es sobre todo una familia de modelos open
+weight de Meta</strong>, no una única app de consumo cerrada como
+ChatGPT o Claude. Aun así, merece entrar en esta sección porque la
+puerta práctica para usuarios generales es <strong>Meta AI</strong>,
+construido sobre Llama, con capacidades de <strong>chat, ayuda general e
+imágenes</strong>. Para perfiles técnicos, además, Llama tiene mucho
+valor por su posibilidad de <strong>descarga, despliegue y
+experimentación en entornos propios</strong>. Es una opción muy
+interesante cuando quieres combinar <strong>uso generalista</strong> y
+<strong>ecosistema abierto</strong>.</p>
+<ul>
+<li>Consulta también: <a
+href="https://www.llama.com/docs/overview/">documentación de
+Llama</a></li>
+</ul>
+<h2 id="mistral">Mistral</h2>
+<p><a href="https://chat.mistral.ai/">Mistral</a> - Una de las
+alternativas gratuitas más interesantes para quien busca <strong>IA
+generalista europea</strong>, con buen equilibrio entre velocidad,
+búsqueda, generación de imágenes y trabajo diario. La propia página de
+precios sigue destacando una <strong>modalidad gratis</strong> bastante
+competitiva. Es una opción especialmente atractiva para quien quiera
+salir del duopolio más conocido sin renunciar a un producto maduro.</p>
+<ul>
+<li>Consulta también: <a href="https://mistral.ai/pricing">planes de
+precios</a></li>
+</ul>
+<h2 id="deepseek">DeepSeek</h2>
+<p><a href="https://chat.deepseek.com/">DeepSeek</a> - Se ha consolidado
+como una de las alternativas gratuitas más atractivas para <strong>chat,
+razonamiento, programación, lectura de archivos y contexto
+largo</strong>. La web oficial destaca <strong>acceso gratuito</strong>
+y la app oficial se lanzó con un mensaje muy claro de uso sin coste. Es
+especialmente interesante para quien quiere una experiencia potente
+desde el primer día, aunque conviene tener presente que la
+disponibilidad, los límites prácticos y el rendimiento pueden variar
+según saturación o región.</p>
+<ul>
+<li>Consulta también: <a
+href="https://api-docs.deepseek.com/quick_start/pricing">planes de
+precios</a></li>
+</ul>
+<h2 id="qwen">Qwen</h2>
+<p><a href="https://chat.qwen.ai/">Qwen</a> - Qwen Chat ya merece sitio
+propio en una guía generalista seria. La propia web lo presenta como un
+asistente <strong>gratuito y abierto a todos</strong>, con
+funcionalidades que van más allá del chat: <strong>comprensión de
+imágenes y vídeo, generación de imágenes, tratamiento de documentos,
+búsqueda web y uso desde app</strong>. Es una opción especialmente
+interesante si quieres experimentar con un ecosistema cada vez más
+<strong>multimodal</strong> y, además, muy conectado con modelos
+abiertos y despliegues técnicos.</p>
+<ul>
+<li>Consulta también: <a href="https://qwen.ai/qwenchat">Qwen Chat
+overview</a></li>
+</ul>
+<h1 id="generación-y-edición-de-imágenes">Generación y edición de
+imágenes</h1>
+<h2 id="chatgpt-images">ChatGPT Images</h2>
+<p><a
+href="https://openai.com/index/new-chatgpt-images-is-here/">ChatGPT
+Images</a> - Más que una app independiente, conviene entenderlo como la
+<strong>experiencia actual de generación y edición de imágenes dentro de
+ChatGPT</strong>. Sigue siendo una referencia muy fuerte para
+<strong>ilustración conceptual, edición guiada por texto, refinado
+iterativo y composición visual conversacional</strong>. El acceso
+gratuito existe dentro de ChatGPT, mientras que el uso por API es de
+pago.</p>
+<ul>
+<li>Consulta también: <a
+href="https://help.openai.com/en/articles/8932459-creating-images-in-chatgpt">crear
+imágenes en ChatGPT</a>, <a
+href="https://help.openai.com/en/articles/9055440-editing-your-images-with-chatgpt-images">editar
+imágenes con ChatGPT Images</a></li>
+</ul>
+<h2 id="leonardo">Leonardo</h2>
+<p><a href="https://app.leonardo.ai/">Leonardo</a> - Plataforma muy
+popular para crear imágenes, assets y recursos visuales con una
+orientación clara a <strong>marketing, gaming, concept art y contenidos
+de marca</strong>. Su punto fuerte sigue siendo la combinación de
+<strong>modelos, estilos, edición y generación por lotes</strong>.
+Mantiene un enfoque claramente <strong>freemium</strong> con
+<strong>cuota diaria de tokens</strong> en el plan gratuito, suficiente
+para experimentar y prototipar.</p>
+<ul>
+<li>Consulta también: <a href="https://leonardo.ai/pricing">planes de
+precios</a></li>
+</ul>
+<h2 id="ideogram">Ideogram</h2>
+<p><a href="https://ideogram.ai/">Ideogram</a> - Muy conocida por su
+buen rendimiento en <strong>texto dentro de la imagen</strong>,
+carteles, rótulos, miniaturas y composiciones tipográficas. Es una de
+las opciones más interesantes cuando necesitas que el texto generado sea
+más legible que en otros modelos. Mantiene un <strong>plan
+gratuito</strong> y sigue siendo especialmente útil para diseño visual
+rápido y branding conceptual.</p>
+<ul>
+<li>Consulta también: <a href="https://ideogram.ai/pricing">planes de
+precios</a></li>
+</ul>
+<h2 id="recraft">Recraft</h2>
+<p><a href="https://www.recraft.ai/">Recraft</a> - Muy recomendable para
+quien necesite algo más que “imágenes bonitas”. Su gran diferencial es
+la <strong>generación de vectores, iconos, mockups y recursos de diseño
+con bastante control</strong>. El <strong>plan gratuito</strong> da
+<strong>30 créditos diarios</strong> y permite probar bien la
+herramienta, pero conviene recordar una limitación importante: las
+creaciones del plan gratuito son <strong>públicas</strong> y <strong>no
+están pensadas para uso comercial pleno</strong>. Es una opción
+excelente para <strong>prototipos, brainstorming visual y materiales
+internos</strong>, pero no la elegiría para branding confidencial.</p>
+<ul>
+<li>Consulta también: <a href="https://www.recraft.ai/pricing">planes de
+precios</a></li>
+</ul>
+<h2 id="freepik">Freepik</h2>
+<p><a href="https://www.freepik.com/ai/image-generator">Freepik</a> - Ha
+evolucionado de biblioteca de recursos gráficos a una <strong>suite
+creativa con IA</strong> bastante completa. Es útil si buscas un entorno
+donde convivir con <strong>generación de imágenes, edición, stock,
+vídeo, audio y recursos de diseño</strong>. El acceso gratuito existe,
+pero conviene revisar bien créditos, licencias y diferencias entre
+contenido free y premium.</p>
+<ul>
+<li>Consulta también: <a href="https://www.freepik.com/pricing">planes
+de precios</a></li>
+</ul>
+<h2 id="canva">Canva</h2>
+<p><a href="https://www.canva.com/">Canva</a> - Es una herramienta útil
+porque combina <strong>diseño, presentaciones, vídeo y múltiples
+funciones de IA</strong> en una misma interfaz. <strong>Canva
+Free</strong> sigue existiendo y Canva indica que sus funciones de IA
+están disponibles con <strong>acceso limitado</strong> en cuentas
+gratuitas. Es muy recomendable para educación, comunicación, redes
+sociales y materiales rápidos con buen acabado visual.</p>
+<ul>
+<li>Consulta también: <a
+href="https://www.canva.com/es_es/precios/">planes de precios</a></li>
+</ul>
+<h1 id="generación-y-edición-de-vídeos">Generación y edición de
+vídeos</h1>
+<h2 id="invideo-ai">Invideo AI</h2>
+<p><a href="https://invideo.io/">Invideo AI</a> - Muy interesante para
+quien no quiere generar solo clips, sino <strong>vídeos completos a
+partir de un prompt</strong>: guión, estructura, voz en off, metraje y
+montaje inicial. Es especialmente útil para <strong>vídeos explicativos,
+piezas para redes, presentaciones narradas y prototipos
+audiovisuales</strong>. El plan gratuito existe y permite empezar sin
+tarjeta, aunque el resultado exportado lleva <strong>marca de
+agua</strong> y la cuota semanal es reducida.</p>
+<ul>
+<li>Consulta también: <a href="https://invideo.io/pricing/">planes de
+precios</a></li>
+</ul>
+<h2 id="kling-ai">Kling AI</h2>
+<p><a
+href="https://app.klingai.com/global/explore/kling_ai_pricing">Kling
+AI</a> - Herramienta muy orientada a <strong>texto a vídeo</strong> e
+<strong>imagen a vídeo</strong>, con resultados visualmente ambiciosos y
+bastante popular en la generación de clips cortos. Suele funcionar
+mediante <strong>planes y créditos</strong>, y el acceso gratuito suele
+ser más útil para pruebas que para producción continuada.</p>
+<ul>
+<li>Consulta también: <a
+href="https://app.klingai.com/global/explore/kling_ai_pricing">planes de
+precios</a></li>
+</ul>
+<h2 id="runway">Runway</h2>
+<p><a href="https://runwayml.com/">Runway</a> - Una de las suites
+creativas más consolidadas para vídeo con IA. Destaca por combinar
+<strong>generación, edición, efectos, composición y herramientas de
+postproducción</strong> en un mismo entorno. Mantiene un <strong>plan
+gratuito</strong> para empezar, aunque el uso relevante suele girar
+enseguida alrededor de créditos.</p>
+<ul>
+<li>Consulta también: <a href="https://runwayml.com/pricing">planes de
+precios</a></li>
+</ul>
+<h2 id="pika">Pika</h2>
+<p><a href="https://pika.art/">Pika</a> - Muy enfocada a creación de
+vídeo con un flujo rápido, creativo y relativamente accesible para
+usuarios no técnicos. Puede ser buena opción para <strong>pruebas
+rápidas</strong>, redes sociales y experimentación audiovisual sin
+montar un pipeline complejo.</p>
+<ul>
+<li>Consulta también: <a href="https://pika.art/pricing">planes de
+precios</a></li>
+</ul>
+<h2 id="descript">Descript</h2>
+<p><a href="https://www.descript.com/">Descript</a> - Herramienta muy
+interesante para quien prioriza la <strong>edición inteligente</strong>
+y la <strong>creación asistida por IA</strong> frente a la línea de
+tiempo clásica. Permite <strong>editar vídeo editando el texto
+transcrito</strong>, generar guiones y escenas con IA, añadir subtítulos
+automáticamente, eliminar muletillas y silencios, mejorar el audio y
+apoyarse en su asistente <strong>Underlord</strong> para acelerar el
+montaje. Resulta especialmente útil para <strong>tutoriales,
+entrevistas, vídeos educativos, clips para redes y reutilización de
+contenido largo</strong>. Mantiene un <strong>plan gratuito</strong> con
+<strong>1 hora de media al mes</strong>, <strong>100 créditos de
+IA</strong>, <strong>exportación a 720p sin marca de agua</strong> y uso
+limitado de varias funciones de IA.</p>
+<ul>
+<li>Consulta también: <a href="https://www.descript.com/pricing">planes
+de precios</a></li>
+</ul>
+<h2 id="capcut">CapCut</h2>
+<p><a href="https://www.capcut.com/">CapCut</a> - Más que un generador
+puro, es un <strong>editor creativo con muchas funciones de IA</strong>,
+muy útil para vídeo corto, subtitulado, edición social, plantillas y
+automatizaciones rápidas. Tiene acceso gratuito a parte de sus
+funciones, aunque algunas capacidades avanzadas de IA o exportación
+requieren plan superior.</p>
+<ul>
+<li>Consulta también: <a
+href="https://www.capcut.com/tools/ai-video-generator">AI video
+generator</a></li>
+</ul>
+<h1 id="generación-y-edición-de-audios">Generación y edición de
+audios</h1>
+<h2 id="elevenlabs">ElevenLabs</h2>
+<p><a href="https://elevenlabs.io/">ElevenLabs</a> - Probablemente una
+de las herramientas más conocidas para <strong>Text To Speech (TTS)
+natural</strong>, doblaje, voz sintética, clonación y audio para vídeo.
+Mantiene un <strong>plan gratuito</strong> con <strong>créditos
+mensuales</strong>, muy útil para demos, prototipos y piezas
+pequeñas.</p>
+<ul>
+<li>Consulta también: <a href="https://elevenlabs.io/pricing">planes de
+precios</a></li>
+</ul>
+<h2 id="ttsmaker">TTSMaker</h2>
+<p><a href="https://ttsmaker.com/">TTSMaker</a> - Alternativa práctica
+para generar voz desde texto con muchos idiomas y voces. Su principal
+atractivo es la <strong>baja fricción de uso</strong> y el mantenimiento
+de un modelo gratuito con <strong>límites de caracteres</strong>.</p>
+<ul>
+<li>Consulta también: <a href="https://pro.ttsmaker.com/pricing">planes
+de precios</a></li>
+</ul>
+<h2 id="turboscribe">TurboScribe</h2>
+<p><a href="https://turboscribe.ai/">TurboScribe</a> - Herramienta muy
+orientada a <strong>transcripción rápida</strong> de audio y vídeo, con
+una propuesta simple y eficaz. Su plan gratuito sigue siendo
+especialmente interesante para uso ocasional, y la documentación oficial
+sigue destacando el esquema de <strong>3 transcripciones
+diarias</strong>.</p>
+<ul>
+<li>Consulta también: <a href="https://turboscribe.ai/pricing">planes de
+precios</a></li>
+</ul>
+<h2 id="notta">Notta</h2>
+<p><a href="https://www.notta.ai/en">Notta</a> - Opción muy práctica
+para <strong>transcripción, notas automáticas, resúmenes y trabajo con
+reuniones o audios subidos</strong>. Mantiene un enfoque claramente
+<strong>freemium</strong>, con plan gratuito y límites mensuales, por lo
+que resulta especialmente útil para <strong>uso ocasional, entrevistas,
+clases o reuniones</strong>.</p>
+<ul>
+<li>Consulta también: <a href="https://www.notta.ai/en/pricing">planes
+de precios</a></li>
+</ul>
+<h2 id="fireflies">Fireflies</h2>
+<p><a href="https://fireflies.ai/">Fireflies.ai</a> - Asistente de
+reuniones que transcribe, resume y organiza conversaciones en
+plataformas como Zoom, Meet o Teams. Aporta mucho valor cuando necesitas
+<strong>buscar reuniones pasadas, extraer tareas y compartir
+notas</strong>. El <strong>plan gratuito</strong> sigue siendo útil para
+empezar.</p>
+<ul>
+<li>Consulta también: <a href="https://fireflies.ai/pricing">planes de
+precios</a></li>
+</ul>
+<h2 id="otter">Otter</h2>
+<p><a href="https://otter.ai/">Otter.ai</a> - Una de las referencias
+clásicas en transcripción y resúmenes de reuniones. Resulta
+especialmente útil si priorizas una experiencia muy directa para
+<strong>reuniones, notas automáticas y consulta posterior</strong>. Su
+plan <strong>Basic</strong> sigue siendo gratuito.</p>
+<ul>
+<li>Consulta también: <a href="https://otter.ai/pricing">planes de
+precios</a></li>
+</ul>
+<h2 id="auphonic">Auphonic</h2>
+<p><a href="https://auphonic.com/">Auphonic</a> - Muy útil para
+<strong>postproducción automática</strong>: nivelación de volumen,
+reducción de ruido y reverberación, normalización y mejora general de
+voz. Sigue ofreciendo una modalidad gratuita de <strong>hasta 2 horas de
+audio al mes</strong>.</p>
+<ul>
+<li>Consulta también: <a href="https://auphonic.com/pricing">planes de
+precios</a></li>
+</ul>
+<h2 id="adobe-podcast">Adobe Podcast</h2>
+<p><a href="https://podcast.adobe.com/">Adobe Podcast</a> - Suite web
+centrada en mejorar voz y audio con especial protagonismo de
+<strong>Enhance Speech</strong>. Resulta muy cómoda para limpiar
+grabaciones de voz sin conocimientos de edición de sonido. Mantiene
+funciones gratuitas aprovechables.</p>
+<ul>
+<li>Consulta también: <a
+href="https://podcast.adobe.com/en/plans">planes de precios</a></li>
+</ul>
+<h2 id="suno">Suno</h2>
+<p><a href="https://suno.com/">Suno</a> - Muy popular para generar
+canciones completas a partir de texto. Su plan gratuito sigue
+funcionando con <strong>créditos diarios</strong>, pero conviene revisar
+bien las condiciones de uso comercial.</p>
+<ul>
+<li>Consulta también: <a href="https://suno.com/pricing">planes de
+precios</a></li>
+</ul>
+<h2 id="udio">Udio</h2>
+<p><a href="https://udio.com/">Udio</a> - Otra herramienta potente para
+creación musical, con buenos resultados en estilos variados y un flujo
+bastante creativo. En free permite experimentar de verdad, aunque con
+límites visibles en créditos y duración.</p>
+<ul>
+<li>Consulta también: <a href="https://www.udio.com/pricing">planes de
+precios</a></li>
+</ul>
+<h1 id="idiomas-escritura-e-investigación">Idiomas, escritura e
+investigación</h1>
+<h2 id="deepl-translator">DeepL Translator</h2>
+<p><a href="https://www.deepl.com/">DeepL</a> - Sigue siendo una de las
+herramientas más sólidas para <strong>traducción de alta
+calidad</strong> y un referente claro cuando importa la naturalidad del
+resultado. Destaca especialmente en <strong>traducción de
+documentos</strong> y <strong>glosarios</strong>.</p>
+<ul>
+<li>Consulta también: <a href="https://www.deepl.com/es/pro">planes de
+precios</a></li>
+</ul>
+<h2 id="language-tools">Language Tools</h2>
+<p><a href="https://language-tools.ec.europa.eu/">Language Tools</a> -
+Bajo este nombre conviven varias iniciativas multilingües de la
+<strong>Comisión Europea</strong>, útiles cuando interesa traducción
+automatizada y contexto institucional.</p>
+<ul>
+<li>Consulta también: <a
+href="https://translation.ec.europa.eu/tools-and-resources/ai-translation-and-language-tools_en">free
+and secure AI language tools</a></li>
+</ul>
+<h2 id="grammarly">Grammarly</h2>
+<p><a href="https://www.grammarly.com/">Grammarly</a> - Muy útil para
+revisar <strong>gramática, claridad, tono y reformulación</strong> en
+inglés. Su plan gratuito sigue siendo suficiente para corrección básica
+y parte de la ayuda asistida.</p>
+<ul>
+<li>Consulta también: <a href="https://www.grammarly.com/plans">planes
+de precios</a></li>
+</ul>
+<h2 id="pronounce">Pronounce</h2>
+<p><a href="https://www.getpronounce.com/">Pronounce</a> - Herramienta
+centrada en <strong>pronunciación, claridad oral y feedback de
+speaking</strong>, especialmente en inglés. Mantiene un <strong>plan
+gratuito con acceso limitado</strong>, suficiente para explorar su
+enfoque.</p>
+<ul>
+<li>Consulta también: <a
+href="https://www.getpronounce.com/pronounce-pricing">planes de
+precios</a></li>
+</ul>
+<h2 id="elicit">Elicit</h2>
+<p><a href="https://elicit.com/">Elicit</a> - Muy buena opción para
+investigación científica, especialmente en <strong>búsqueda
+semántica</strong>, screening, extracción de datos y generación de
+informes con citas. Muy recomendable para acelerar revisiones de
+literatura.</p>
+<ul>
+<li>Consulta también: <a href="https://elicit.com/pricing">planes de
+precios</a></li>
+</ul>
+<h2 id="consensus">Consensus</h2>
+<p><a href="https://consensus.app/search/">Consensus</a> - Buscador
+académico orientado a literatura <strong>revisada por pares</strong>,
+muy útil para localizar evidencia científica y obtener una síntesis
+inicial sin empezar desde cero. Sigue siendo <strong>gratuito para
+empezar</strong>.</p>
+<ul>
+<li>Consulta también: <a href="https://consensus.app/pricing/">planes de
+precios</a></li>
+</ul>
+<h2 id="notebooklm">NotebookLM</h2>
+<p><a href="https://notebooklm.google/">NotebookLM</a> - Herramienta muy
+interesante para estudiar, investigar y trabajar sobre <strong>fuentes
+propias</strong>: PDFs, webs, documentos, vídeos, audio y más. Su mayor
+fortaleza es que responde <strong>anclada en las fuentes
+aportadas</strong> y muestra <strong>citas en línea</strong>.
+Actualmente el acceso estándar gratuito sigue siendo muy aprovechable,
+con límites concretos suficientemente amplios para docencia, estudio y
+análisis documental.</p>
+<ul>
+<li>Consulta también: <a
+href="https://support.google.com/notebooklm/answer/16213268?hl=es">cambiar
+a plan superior y límites</a></li>
+</ul>
+<h2 id="hugging-face-spaces">Hugging Face Spaces</h2>
+<p><a href="https://huggingface.co/spaces">Hugging Face Spaces</a> - Más
+que una herramienta concreta, es un <strong>ecosistema de demos y
+miniaplicaciones de IA</strong>. Sirve para descubrir, probar y
+compartir herramientas hechas con Gradio, Streamlit o Docker
+directamente en el navegador. Sigue siendo una de las mejores vías para
+<strong>explorar prototipos open source</strong> sin instalar nada.</p>
+<ul>
+<li>Consulta también: <a
+href="https://huggingface.co/docs/hub/spaces-overview">overview</a></li>
+</ul>
+<h1 id="presentaciones-y-visualización">Presentaciones y
+visualización</h1>
+<h2 id="slidesgo">Slidesgo</h2>
+<p><a href="https://slidesgo.com/ai/presentation-maker">Slidesgo</a> -
+Herramienta práctica para generar presentaciones de forma rápida y luego
+seguir editándolas en <strong>Google Slides o PowerPoint</strong>. Muy
+útil en educación, comunicación interna y formación.</p>
+<ul>
+<li>Consulta también: <a href="https://slidesgo.com/pricing">planes de
+precios</a></li>
+</ul>
+<h2 id="gamma">Gamma</h2>
+<p><a href="https://gamma.app">Gamma</a> - Muy orientada a crear
+<strong>presentaciones, documentos y páginas visuales</strong> con ayuda
+de IA. Mantiene un <strong>plan gratuito</strong> con <strong>starter
+credits</strong>, adecuado para pruebas serias y proyectos
+puntuales.</p>
+<ul>
+<li>Consulta también: <a href="https://gamma.app/pricing">planes de
+precios</a></li>
+</ul>
+<h2 id="napkin">Napkin</h2>
+<p><a href="https://www.napkin.ai/">Napkin</a> - Muy útil para
+transformar <strong>texto en visuales</strong>: diagramas, esquemas,
+explicaciones visuales y piezas listas para presentación o documento. Su
+<strong>plan gratuito</strong> resulta bastante usable para docencia,
+formación y comunicación interna: incluye <strong>500 créditos
+semanales</strong>, edición ilimitada, importación de archivos y
+exportación a <strong>PNG y PDF</strong>, aunque con marca de Napkin en
+los visuales del plan free. Es especialmente recomendable cuando quieres
+convertir apuntes o ideas en recursos visuales sin diseñar desde
+cero.</p>
+<ul>
+<li>Consulta también: <a href="https://www.napkin.ai/pricing/">planes de
+precios</a></li>
+</ul>
+<h2 id="markdown-slides-creator">Markdown Slides Creator</h2>
+<p><a
+href="https://chatgpt.com/g/g-2xZbSAE1V-markdown-slides-creator">Markdown
+Slides Creator</a> - Opción útil si tu flujo de trabajo parte de
+<strong>Markdown</strong> y quieres convertir contenido textual en
+estructura de presentación de manera rápida. Es interesante para
+documentación técnica, apuntes, materiales docentes y esquemas que luego
+puedan evolucionar a diapositivas. Su utilidad depende del contexto de
+acceso a GPTs y del ecosistema en el que trabajes.</p>
+<ul>
+<li>Fuente adicional: <a
+href="https://github.com/asanzdiego/markdownslides">Markdown
+Slides</a></li>
+</ul>
+<h2 id="mindmapai">Mindmapai</h2>
+<p><a href="https://mindmapai.app/">Mindmapai</a> - Pensada para generar
+<strong>mapas mentales</strong> desde texto, PDFs y otros materiales.
+Muy útil para resumen visual, estudio, brainstorming, diseño de cursos o
+estructuración rápida de ideas.</p>
+<ul>
+<li>Consulta también: <a href="https://mindmapai.app/pricing">planes de
+precios</a></li>
+</ul>
+<h2 id="aigraphmaker">Aigraphmaker</h2>
+<p><a href="https://aigraphmaker.net/">Aigraphmaker</a> - Generador de
+gráficos y diagramas con enfoque <strong>no code</strong>, útil para
+quien quiere pasar de datos o una idea a una visualización sin pelearse
+con herramientas complejas. Puede servir para gráficos simples, mind
+maps, diagramas de flujo y algunas visualizaciones rápidas para clase,
+informes o web. Es una opción interesante cuando prima la
+<strong>rapidez</strong> sobre el control fino.</p>
+<ul>
+<li>Consulta también: <a href="https://aigraphmaker.net/pricing">planes
+de precios</a></li>
+</ul>
+<h1 id="análisis-de-datos">Análisis de datos</h1>
+<h2 id="datalab">DataLab</h2>
+<p><a href="https://www.datacamp.com/datalab">DataLab</a> - Gran
+incorporación si trabajas con <strong>datos, notebooks y análisis
+asistido en navegador</strong>. Tiene una propuesta muy práctica: abrir
+datos, consultar con IA, generar código, crear visualizaciones y
+compartir resultados sin pelearte con el entorno local. El plan gratuito
+permite <strong>hasta 3 workbooks</strong> y <strong>15 usos del
+asistente de IA</strong>, suficiente para aprender, hacer pruebas y
+preparar pequeños análisis. Es una opción especialmente buena para
+perfiles de formación, analítica y ciencia de datos.</p>
+<ul>
+<li>Consulta también: <a
+href="https://www.datacamp.com/datalab/pricing">planes de
+precios</a></li>
+</ul>
+<h2 id="rows">Rows</h2>
+<p><a href="https://rows.com/">Rows</a> - Hoja de cálculo moderna con
+una capa potente de integraciones y funciones de IA. Resulta
+especialmente interesante cuando quieres combinar <strong>datos de APIs,
+PDFs, bases de datos o conectores</strong> con análisis y automatización
+en formato spreadsheet. Mantiene un <strong>plan Free</strong>
+permanente.</p>
+<ul>
+<li>Consulta también: <a href="https://rows.com/pricing">planes de
+precios</a></li>
+</ul>
+<h2 id="chartpixel">ChartPixel</h2>
+<p><a href="https://www.chartpixel.com/">ChartPixel</a> - Herramienta
+pensada para convertir datos en <strong>gráficos, insights y
+explicaciones</strong> con una experiencia bastante amigable. Es útil
+para personas que quieren resultados visuales rápidos sin dominar
+visualización avanzada.</p>
+<ul>
+<li>Consulta también: <a
+href="https://www.chartpixel.com/pricing">planes de precios</a></li>
+</ul>
+<h2 id="julius-ai">Julius AI</h2>
+<p><a href="https://julius.ai/">Julius AI</a> - Una de las opciones más
+interesantes para <strong>“hablar con tus datos”</strong> sin necesidad
+de montar un entorno técnico. Permite subir archivos, hacer preguntas en
+lenguaje natural, generar análisis, gráficos y notebooks, y resulta
+especialmente cómodo para exploración rápida, enseñanza y prototipos
+analíticos. Su <strong>plan gratuito</strong> sigue siendo real y útil
+para empezar: la propia página de precios indica <strong>300 créditos al
+mes</strong>, acceso a <strong>Notebooks</strong>, conector con
+<strong>Google Drive</strong> y <strong>2 GB de RAM</strong>.</p>
+<ul>
+<li>Consulta también: <a href="https://julius.ai/pricing">planes de
+precios</a></li>
+</ul>
+<h2 id="quadratic">Quadratic</h2>
+<p><a href="https://www.quadratichq.com/">Quadratic</a> - Muy
+recomendable para quien quiera una <strong>hoja de cálculo con
+IA</strong> más moderna, orientada a combinar <strong>análisis,
+gráficos, Python, SQL, JavaScript y fórmulas</strong> en un mismo
+espacio. Me parece especialmente interesante para usuarios intermedios
+que ya piensan en tablas, pero quieren dar el salto a flujos más
+potentes sin salir del navegador. Mantiene un plan <strong>Personal
+gratuito</strong>, aunque con <strong>uso limitado de IA</strong>,
+compartición, archivos y conexiones.</p>
+<ul>
+<li>Consulta también: <a
+href="https://www.quadratichq.com/pricing">planes de precios</a></li>
+</ul>
+<h2 id="sourcetable">Sourcetable</h2>
+<p><a href="https://sourcetable.com/">Sourcetable</a> - Alternativa muy
+atractiva si te interesa una experiencia de <strong>spreadsheet +
+analista de datos + asistente IA</strong>. La propia herramienta la
+presenta como una hoja de cálculo con IA pensada para trabajar con datos
+de forma conversacional. Su punto fuerte es que la <strong>hoja de
+cálculo es gratuita</strong>, mientras que las funciones de IA operan
+con <strong>límites de uso</strong> en el acceso free. Puede encajar muy
+bien en docencia, operaciones y pequeños análisis repetitivos.</p>
+<ul>
+<li>Consulta también: <a href="https://sourcetable.com/pricing">planes
+de precios</a></li>
+</ul>
+<h2 id="formula-bot">Formula Bot</h2>
+<p><a href="https://www.formulabot.com/">Formula Bot</a> - Muy útil si
+trabajas mucho con <strong>Excel, Google Sheets y análisis
+tabular</strong> y quieres acelerar fórmulas, limpieza, consultas y
+visualizaciones sin depender de conocimientos avanzados. La herramienta
+ofrece un enfoque bastante práctico: subes archivos, haces preguntas,
+generas fórmulas y obtienes gráficos o respuestas sobre tus datos. Su
+documentación comercial destaca un <strong>plan free forever</strong> y
+una capa gratuita suficiente para probar el flujo real.</p>
+<ul>
+<li>Consulta también: <a
+href="https://www.formulabot.com/docs/billing/pricing-plans">planes de
+precios</a></li>
+</ul>
+<h2 id="bricks">Bricks</h2>
+<p><a href="https://www.thebricks.com/">Bricks</a> - Interesante para
+quien quiere convertir <strong>CSV y Excel en dashboards, informes y
+bloques visuales</strong> con el mínimo esfuerzo. Se mueve entre la hoja
+de cálculo inteligente y la herramienta de reporting asistido. Su
+propuesta es especialmente útil en reporting interno, business reviews,
+seguimiento comercial y cuadros de mando rápidos. La página oficial de
+precios indica que <strong>Bricks es gratis de usar</strong>, aunque las
+funciones ampliadas y el soporte avanzado quedan para planes
+superiores.</p>
+<ul>
+<li>Consulta también: <a href="https://www.thebricks.com/pricing">planes
+de precios</a></li>
+</ul>
+<h2 id="powerdrill">Powerdrill</h2>
+<p><a href="https://powerdrill.ai/">Powerdrill</a> - Muy orientada a
+<strong>análisis conversacional de datos</strong>, exploración rápida,
+generación de gráficos y creación de informes a partir de archivos o
+bases de datos. Puede ser especialmente interesante para usuarios que
+quieren pasar de <strong>Excel/CSV/PDF a insights y
+visualizaciones</strong> con muy poca fricción. Su página oficial
+mantiene un <strong>plan gratuito</strong> con límites claros: capacidad
+reducida del workspace y un número acotado de trabajos de análisis,
+suficiente para evaluar bien la herramienta antes de pagar.</p>
+<ul>
+<li>Consulta también: <a
+href="https://chat.powerdrill.ai/pricing">planes de precios</a></li>
+</ul>
+<h2 id="infogram">Infogram</h2>
+<p><a href="https://infogram.com/">Infogram</a> - Sigue siendo una de
+las referencias cuando lo que importa no es solo analizar, sino
+<strong>presentar visualmente</strong> los datos con buen acabado. Hoy
+además integra funciones de IA para <strong>crear visuales, sugerir
+gráficos, ajustar contenido y convertir imágenes en datos</strong>. Su
+plan <strong>Basic gratuito</strong> sigue siendo bastante razonable
+para muchos usos: <strong>1 usuario</strong>, <strong>35+ tipos de
+gráficos interactivos</strong>, hasta <strong>10 proyectos</strong>,
+importación de datos y publicación online. Muy recomendable para
+educación, comunicación y divulgación.</p>
+<ul>
+<li>Consulta también: <a href="https://infogram.com/pricing">planes de
+precios</a></li>
+</ul>
+<h2 id="graphy">Graphy</h2>
+<p><a href="https://graphy.app/">Graphy</a> - Buena opción cuando
+quieres pasar de una tabla a una visualización rápida sin pelearte con
+herramientas más complejas. Se presenta directamente como <strong>AI
+Graph Maker</strong> y está muy enfocada a crear <strong>gráficos
+compartibles</strong> con poco esfuerzo. Su plan gratuito permite
+empezar de verdad: la página de precios indica <strong>5
+gráficos</strong> y <strong>uso limitado de IA</strong>, mientras que
+los planes de pago amplían charts, IA y opciones de marca.</p>
+<ul>
+<li>Consulta también: <a href="https://graphy.app/pricing">planes de
+precios</a></li>
+</ul>
+<h2 id="ajelix">Ajelix</h2>
+<p><a href="https://ajelix.com/">Ajelix</a> - Más que una sola app, es
+un conjunto de utilidades de IA muy útil para personas que trabajan a
+diario con <strong>Excel y Google Sheets</strong>. Destaca por reunir
+<strong>AI Excel Assistant</strong>, <strong>AI Spreadsheet
+Generator</strong>, <strong>AI Data Analyst</strong> y <strong>AI Graph
+Generator</strong>. No la pondría por delante de Julius o Quadratic para
+análisis más amplios, pero sí me parece interesante como caja de
+herramientas práctica para tareas muy concretas de hoja de cálculo. La
+propia web sigue ofreciendo <strong>inicio gratuito</strong> y una
+colección de herramientas free para empezar.</p>
+<ul>
+<li>Consulta también: <a href="https://ajelix.com/pricing/">planes de
+precios</a></li>
+</ul>
+<h1 id="programación">Programación</h1>
+<h2 id="github-copilot">GitHub Copilot</h2>
+<p><a href="https://github.com/features/copilot">GitHub Copilot</a> -
+Sigue siendo una de las referencias en asistencia a programación:
+sugerencias inline, chat, explicación de código y apoyo para depurar. La
+modalidad <strong>Copilot Free</strong> sigue siendo interesante para
+individuos, y además existen opciones gratuitas para
+<strong>estudiantes</strong>, <strong>docentes</strong> y algunos
+perfiles open source.</p>
+<ul>
+<li>Consulta también: <a
+href="https://docs.github.com/en/copilot/get-started/plans">planes de
+precios</a></li>
+</ul>
+<h2 id="cursor">Cursor</h2>
+<p><a href="https://cursor.com/">Cursor</a> - Sigue siendo una de las
+referencias más visibles en el mundo del <strong>IDE con IA</strong>. Su
+plan <strong>Hobby</strong> permite empezar gratis y resulta muy
+interesante para quien quiere probar flujos de trabajo con
+<strong>agentes, edición contextual y refactorización asistida</strong>
+antes de pasar a un plan de pago. Lo veo especialmente útil para
+desarrolladores que quieren una experiencia más “todo en uno” que la de
+un simple autocompletado.</p>
+<ul>
+<li>Consulta también: <a href="https://cursor.com/pricing">planes de
+precios</a></li>
+</ul>
+<h2 id="lovable">Lovable</h2>
+<p><a href="https://lovable.dev/">Lovable</a> - Plataforma de desarrollo
+<strong>full-stack con IA</strong> para crear, iterar y desplegar
+<strong>aplicaciones web</strong> usando lenguaje natural. Genera una
+aplicación funcional con <strong>frontend, backend, base de datos,
+autenticación e integraciones</strong>, todo ello con <strong>código
+editable</strong>. Además, permite <strong>sincronizar el proyecto con
+GitHub</strong>, lo que la hace especialmente interesante para
+<strong>prototipos, MVPs, herramientas internas, webs y pequeñas
+aplicaciones</strong>.</p>
+<ul>
+<li>Consulta también: <a href="https://lovable.dev/pricing">planes de
+precios</a></li>
+</ul>
+<h2 id="google-antigravity">Google Antigravity</h2>
+<p><a href="https://antigravity.google/">Google Antigravity</a> - Una de
+las incorporaciones más llamativas de esta tercera revisión. Es un
+entorno de desarrollo <strong>agentic</strong> pensado para crear
+software con ayuda de agentes que planifican, escriben, instalan
+dependencias y prueban flujos. Google muestra un <strong>plan individual
+a 0 dólares al mes</strong>, así que hoy merece seguimiento real y no
+solo curiosidad. Puede ser especialmente atractivo para personas que
+quieran explorar el paradigma de <strong>desarrollo asistido por
+agentes</strong> desde una herramienta nacida con ese enfoque.</p>
+<ul>
+<li>Consulta también: <a
+href="https://antigravity.google/pricing">planes de precios</a></li>
+</ul>
+<h2 id="windsurf">Windsurf</h2>
+<p><a href="https://windsurf.com/">Windsurf</a> - Hoy es una de las
+herramientas más interesantes para quien busca un entorno de
+programación asistida con enfoque <strong>agente + IDE +
+autocompletado</strong>. Mantiene un <strong>plan gratuito</strong> y ha
+simplificado recientemente su modelo de uso. Muy recomendable para
+experimentar con flujos modernos de desarrollo asistido.</p>
+<ul>
+<li>Consulta también: <a href="https://windsurf.com/pricing">planes de
+precios</a></li>
+</ul>
+<h2 id="google-ai-studio">Google AI Studio</h2>
+<p><a href="https://aistudio.google.com/">Google AI Studio</a> - Más
+orientado a desarrolladores que a usuarios casuales, pero muy valioso
+porque permite <strong>probar Gemini, crear prompts, usar API keys y
+construir prototipos</strong> con una <strong>capa gratuita
+real</strong>. Es una de las mejores puertas de entrada para
+experimentar con la API de Gemini sin empezar pagando.</p>
+<ul>
+<li>Consulta también: <a
+href="https://ai.google.dev/gemini-api/docs/pricing">pricing de Gemini
+API</a></li>
+</ul>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</body>
+</html>

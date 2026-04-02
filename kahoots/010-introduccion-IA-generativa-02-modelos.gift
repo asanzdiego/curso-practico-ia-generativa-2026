@@ -1,0 +1,111 @@
+¿Qué hacen las Redes Generativas Adversarias (GANs)?
+{
+~Utilizan transformadores para generar texto de alta calidad.
+=Consisten en un generador y un discriminador que compiten para mejorar datos generados.
+~Utilizan cadenas de Markov para revertir ruido y generar contenido.
+~Corrompen datos originales añadiendo ruido gaussiano.
+}
+
+¿Cuál es el objetivo de los Modelos de Difusión?
+{
+~Procesar secuencias de texto utilizando mecanismos de atención.
+=Transformar datos en ruido y revertir el proceso para generar contenido.
+~Convertir datos en vectores para tareas de búsqueda semántica.
+~Detectar contenido falso en bases de datos de entrenamiento.
+}
+
+¿Qué introdujeron los transformadores en el campo de la IA Generativa?
+{
+~La capacidad de competir entre un generador y un discriminador.
+~La idea de cadenas de Markov aplicadas al ruido.
+=Los mecanismos de atención para procesar y generar secuencias.
+~La creación de representaciones matemáticas llamadas embeddings.
+}
+
+¿Cuál son las fases habituales por las que suelen pasar los modelos autoregresivos?
+{
+=Preentrenamiento con grandes corpus, ajuste fino a tareas concretas y alineamiento.
+~Preentrenamiento con pequeños corpus, eliminación del ajuste fino y traducción final.
+~Clasificación inicial de datos, compresión del modelo y generación de imágenes.
+~Tokenización manual, entrenamiento supervisado único y despliegue sin alineamiento.
+}
+
+¿Qué caracteriza a los modelos multimodales?
+{
+=Pueden recibir y combinar texto, imágenes, audio, vídeo o documentos.
+~Solo procesan texto plano.
+~Únicamente sirven para clasificar tablas numéricas.
+~Funcionan sin ningún tipo de entrada.
+}
+
+¿Cuál es una característica principal de los modelos Mixture of Experts (MoE)?
+{
+=Activan solo parte de sus componentes internos en cada paso.
+~Activan siempre todos sus parámetros sin excepción.
+~Se basan exclusivamente en redes GAN.
+~No mejoran la eficiencia computacional.
+}
+
+¿Qué son los tokens en el contexto de la IA Generativa?
+{
+~Representaciones matemáticas en forma de vectores multidimensionales.
+=Unidades básicas procesadas como palabras, subpalabras o símbolos.
+~El proceso de transformar datos en ruido para revertirlos luego.
+~Un mecanismo de atención en redes neuronales.
+}
+
+¿Cuál es el propósito de los embeddings en IA?
+{
+~Añadir ruido gaussiano a los datos originales.
+=Representar datos complejos en vectores para capturar similitudes.
+~Procesar texto de alta calidad usando transformadores.
+~Limitar la cantidad de tokens que un modelo puede procesar.
+}
+
+¿Qué permite una ventana de contexto mayor?
+{
+=Trabajar mejor con documentos largos y conversaciones extensas.
+~Eliminar por completo los errores del modelo.
+~Reducir a cero el número de tokens procesados.
+~Garantizar automáticamente respuestas verdaderas.
+}
+
+¿Qué es un prompt en el contexto de los modelos de IA Generativa?
+{
+=Es la instrucción o entrada que damos al modelo para indicar qué queremos que haga.
+~Es el conjunto de datos utilizados para entrenar el modelo de Inteligencia Artificial.
+~Es el proceso mediante el cual el modelo aprende durante el preentrenamiento.
+~Es el resultado final generado por el modelo tras procesar la información.
+}
+
+¿Qué hace la técnica RAG antes de responder?
+{
+=Busca fragmentos relevantes en documentos, bases de datos o webs autorizadas.
+~Reentrena completamente el modelo en tiempo real.
+~Borra el contexto previo para evitar sesgos.
+~Convierte cualquier respuesta en una imagen.
+}
+
+¿Qué describe mejor el fine-tuning?
+{
+=La adaptación de un modelo a un dominio, tarea o estilo concretos.
+~La eliminación total de los datos de entrenamiento previos.
+~La compresión visual de documentos largos.
+~El uso obligatorio de un modelo sin personalización.
+}
+
+¿Qué implica que los modelos actuales puedan usar herramientas externas?
+{
+=Amplía mucho su utilidad práctica, pero también introduce retos.
+~Hace que solo sirvan para generar texto de forma más rápida.
+~Elimina por completo los problemas de seguridad y control.
+~Impide que los modelos puedan automatizar pasos o rellenar formularios.
+}
+
+¿Qué es un agente en el contexto de la IA Generativa?
+{
+=Un sistema que combina un modelo con memoria, herramientas y capacidad de ejecutar acciones.
+~Un simple listado estático de prompts.
+~Un modelo que solo resume textos sin usar recursos externos.
+~Una base de datos vectorial sin capacidad de razonamiento.
+}

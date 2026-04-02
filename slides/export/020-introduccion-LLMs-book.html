@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="description" content="Introducción a los Grandes Modelos
+de Lenguaje (LLM)">
+  <meta name="author" content="Adolfo Sanz De Diego" />
+  <title>Introducción a los Grandes Modelos de Lenguaje (LLM)</title>
+  <style type="text/css">
+    pre, code {
+      background-color: #ddd;
+      white-space: pre;
+    }
+    aside.notes{
+      background-color: yellow;
+    }
+    img.center {
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body class="container">
+<header id="title-block-header">
+<h1 class="title">Introducción a los Grandes Modelos de Lenguaje
+(LLM)</h1>
+<p class="author">Adolfo Sanz De Diego</p>
+<p class="date">Marzo 2026</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#introducción" id="toc-introducción">Introducción</a>
+<ul>
+<li><a href="#qué-es-un-gran-modelo-de-lenguaje-llm"
+id="toc-qué-es-un-gran-modelo-de-lenguaje-llm">¿Qué es un Gran Modelo de
+Lenguaje (LLM)?</a></li>
+<li><a
+href="#cómo-funciona-un-gran-modelo-de-lenguaje-llm-de-forma-general"
+id="toc-cómo-funciona-un-gran-modelo-de-lenguaje-llm-de-forma-general">¿Cómo
+funciona un Gran Modelo de Lenguaje (LLM) de forma general?</a></li>
+<li><a
+href="#cómo-se-entrena-un-gran-modelo-de-lenguaje-llm-de-forma-general"
+id="toc-cómo-se-entrena-un-gran-modelo-de-lenguaje-llm-de-forma-general">¿Cómo
+se entrena un Gran Modelo de Lenguaje (LLM) de forma general?</a></li>
+</ul></li>
+<li><a href="#capacidades-de-los-grandes-modelos-de-lenguaje-llm"
+id="toc-capacidades-de-los-grandes-modelos-de-lenguaje-llm">Capacidades
+de los Grandes Modelos de Lenguaje (LLM)</a>
+<ul>
+<li><a href="#generación-de-lenguaje"
+id="toc-generación-de-lenguaje">Generación de lenguaje</a></li>
+<li><a href="#comprensión-y-transformación-del-texto"
+id="toc-comprensión-y-transformación-del-texto">Comprensión y
+transformación del texto</a></li>
+<li><a href="#razonamiento-guiado-y-resolución-de-tareas"
+id="toc-razonamiento-guiado-y-resolución-de-tareas">Razonamiento guiado
+y resolución de tareas</a></li>
+<li><a href="#programación-y-trabajo-técnico"
+id="toc-programación-y-trabajo-técnico">Programación y trabajo
+técnico</a></li>
+<li><a href="#uso-de-herramientas-y-agentes"
+id="toc-uso-de-herramientas-y-agentes">Uso de herramientas y
+agentes</a></li>
+<li><a href="#multimodalidad"
+id="toc-multimodalidad">Multimodalidad</a></li>
+</ul></li>
+<li><a href="#limitaciones-de-los-grandes-modelos-de-lenguaje-llm"
+id="toc-limitaciones-de-los-grandes-modelos-de-lenguaje-llm">Limitaciones
+de los Grandes Modelos de Lenguaje (LLM)</a>
+<ul>
+<li><a href="#inconsistencia-en-las-respuestas"
+id="toc-inconsistencia-en-las-respuestas">Inconsistencia en las
+respuestas</a></li>
+<li><a href="#alucinaciones"
+id="toc-alucinaciones">Alucinaciones</a></li>
+<li><a href="#capacidad-limitada-de-memoria"
+id="toc-capacidad-limitada-de-memoria">Capacidad limitada de
+memoria</a></li>
+<li><a href="#sensibilidad-a-las-instrucciones"
+id="toc-sensibilidad-a-las-instrucciones">Sensibilidad a las
+instrucciones</a></li>
+<li><a href="#dependencia-de-los-datos-de-entrenamiento"
+id="toc-dependencia-de-los-datos-de-entrenamiento">Dependencia de los
+datos de entrenamiento</a></li>
+<li><a href="#falta-de-acceso-nativo-a-la-verdad"
+id="toc-falta-de-acceso-nativo-a-la-verdad">Falta de acceso nativo a la
+verdad</a></li>
+<li><a href="#riesgos-de-seguridad-y-privacidad"
+id="toc-riesgos-de-seguridad-y-privacidad">Riesgos de seguridad y
+privacidad</a></li>
+<li><a href="#coste-latencia-y-sostenibilidad"
+id="toc-coste-latencia-y-sostenibilidad">Coste, latencia y
+sostenibilidad</a></li>
+</ul></li>
+<li><a
+href="#principales-aplicaciones-de-los-grandes-modelos-de-lenguaje-llm"
+id="toc-principales-aplicaciones-de-los-grandes-modelos-de-lenguaje-llm">Principales
+aplicaciones de los Grandes Modelos de Lenguaje (LLM)</a>
+<ul>
+<li><a href="#recuperación-de-información"
+id="toc-recuperación-de-información">Recuperación de
+información</a></li>
+<li><a href="#procesamiento-de-textos"
+id="toc-procesamiento-de-textos">Procesamiento de textos</a></li>
+<li><a href="#educación-y-formación"
+id="toc-educación-y-formación">Educación y formación</a></li>
+<li><a href="#empresa-y-productividad"
+id="toc-empresa-y-productividad">Empresa y productividad</a></li>
+<li><a href="#desarrollo-de-software"
+id="toc-desarrollo-de-software">Desarrollo de software</a></li>
+<li><a href="#agentes-y-automatización"
+id="toc-agentes-y-automatización">Agentes y automatización</a></li>
+</ul></li>
+<li><a
+href="#buenas-prácticas-de-uso-de-los-grandes-modelos-de-lenguaje-llm"
+id="toc-buenas-prácticas-de-uso-de-los-grandes-modelos-de-lenguaje-llm">Buenas
+prácticas de uso de los Grandes Modelos de Lenguaje (LLM)</a>
+<ul>
+<li><a href="#verificar-la-información"
+id="toc-verificar-la-información">Verificar la información</a></li>
+<li><a href="#proporcionar-contexto-de-calidad"
+id="toc-proporcionar-contexto-de-calidad">Proporcionar contexto de
+calidad</a></li>
+<li><a href="#diseñar-flujos-con-supervisión-humana"
+id="toc-diseñar-flujos-con-supervisión-humana">Diseñar flujos con
+supervisión humana</a></li>
+<li><a href="#proteger-datos-y-sistemas"
+id="toc-proteger-datos-y-sistemas">Proteger datos y sistemas</a></li>
+<li><a href="#reducir-el-riesgo-de-alucinaciones"
+id="toc-reducir-el-riesgo-de-alucinaciones">Reducir el riesgo de
+alucinaciones</a></li>
+<li><a href="#documentar-el-uso-del-sistema"
+id="toc-documentar-el-uso-del-sistema">Documentar el uso del
+sistema</a></li>
+<li><a href="#formar-a-las-personas-usuarias"
+id="toc-formar-a-las-personas-usuarias">Formar a las personas
+usuarias</a></li>
+<li><a href="#mantener-expectativas-realistas"
+id="toc-mantener-expectativas-realistas">Mantener expectativas
+realistas</a></li>
+</ul></li>
+<li><a
+href="#tendencias-actuales-en-los-grandes-modelos-de-lenguaje-llm"
+id="toc-tendencias-actuales-en-los-grandes-modelos-de-lenguaje-llm">Tendencias
+actuales en los Grandes Modelos de Lenguaje (LLM)</a>
+<ul>
+<li><a href="#modelos-multimodales"
+id="toc-modelos-multimodales">Modelos multimodales</a></li>
+<li><a href="#más-capacidad-de-contexto"
+id="toc-más-capacidad-de-contexto">Más capacidad de contexto</a></li>
+<li><a href="#especialización-y-modelos-más-eficientes"
+id="toc-especialización-y-modelos-más-eficientes">Especialización y
+modelos más eficientes</a></li>
+<li><a href="#herramientas-agentes-y-automatización-segura"
+id="toc-herramientas-agentes-y-automatización-segura">Herramientas,
+agentes y automatización segura</a></li>
+<li><a href="#regulación-y-gobernanza"
+id="toc-regulación-y-gobernanza">Regulación y gobernanza</a></li>
+<li><a href="#razonamiento-más-avanzado-e-inferencia-adaptativa"
+id="toc-razonamiento-más-avanzado-e-inferencia-adaptativa">Razonamiento
+más avanzado e inferencia adaptativa</a></li>
+</ul></li>
+<li><a
+href="#retos-éticos-legales-y-sociales-de-los-grandes-modelos-de-lenguaje-llms"
+id="toc-retos-éticos-legales-y-sociales-de-los-grandes-modelos-de-lenguaje-llms">Retos
+éticos, legales y sociales de los Grandes Modelos de Lenguaje (LLM)s</a>
+<ul>
+<li><a href="#sesgos-y-equidad" id="toc-sesgos-y-equidad">Sesgos y
+equidad</a></li>
+<li><a href="#privacidad-y-protección-de-datos"
+id="toc-privacidad-y-protección-de-datos">Privacidad y protección de
+datos</a></li>
+<li><a href="#transparencia-trazabilidad-y-explicabilidad"
+id="toc-transparencia-trazabilidad-y-explicabilidad">Transparencia,
+trazabilidad y explicabilidad</a></li>
+<li><a href="#propiedad-intelectual"
+id="toc-propiedad-intelectual">Propiedad intelectual</a></li>
+<li><a href="#seguridad-y-uso-conectado-a-herramientas"
+id="toc-seguridad-y-uso-conectado-a-herramientas">Seguridad y uso
+conectado a herramientas</a></li>
+<li><a href="#responsabilidad-sobre-la-información-generada-y-su-uso"
+id="toc-responsabilidad-sobre-la-información-generada-y-su-uso">Responsabilidad
+sobre la información generada y su uso</a></li>
+<li><a href="#impacto-laboral-y-educativo"
+id="toc-impacto-laboral-y-educativo">Impacto laboral y
+educativo</a></li>
+<li><a href="#gobernanza-y-uso-responsable"
+id="toc-gobernanza-y-uso-responsable">Gobernanza y uso
+responsable</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="introducción">Introducción</h1>
+<h2 id="qué-es-un-gran-modelo-de-lenguaje-llm">¿Qué es un Gran Modelo de
+Lenguaje (LLM)?</h2>
+<p>Los <strong>Grandes Modelos de Lenguaje</strong> o
+<strong>LLM</strong> (<em>Large Language Models</em>) son sistemas
+avanzados de <strong>Inteligencia Artificial Generativa</strong>
+diseñados para <strong>comprender, interpretar, transformar y generar
+lenguaje humano</strong>. Han sido entrenados con cantidades masivas de
+información, principalmente <strong>texto</strong>, pero también con
+frecuencia <strong>código</strong>, <strong>documentos
+estructurados</strong>, imágenes asociadas a texto y otros tipos de
+datos, dependiendo de la arquitectura y del sistema en el que se
+integren.</p>
+<p>Su objetivo no es “entender” el lenguaje exactamente como lo hace una
+persona, sino <strong>modelar patrones lingüísticos complejos</strong>
+para producir respuestas útiles, coherentes y adaptadas al contexto.</p>
+<p>Aunque inicialmente estos modelos estaban centrados casi
+exclusivamente en el <strong>texto</strong>, la evolución reciente ha
+llevado a sistemas mucho más amplios, capaces de trabajar también con
+<strong>imágenes</strong>, <strong>audio</strong>,
+<strong>vídeo</strong>, <strong>documentos complejos</strong> y
+<strong>herramientas externas</strong>. Por eso, en la práctica actual,
+muchos LLM no se presentan como un simple “modelo de lenguaje”, sino
+como el <strong>núcleo lingüístico e inferencial</strong> de
+<strong>asistentes inteligentes</strong>, <strong>copilotos</strong>,
+<strong>chatbots avanzados</strong> y <strong>agentes
+conversacionales</strong>.</p>
+<p>En otras palabras, el LLM suele ser el componente central que
+interpreta instrucciones y genera respuestas, pero normalmente está
+integrado dentro de una aplicación más grande que añade capacidades
+adicionales, como búsqueda en la web, consulta de archivos, uso de bases
+de datos, ejecución de herramientas o interacción con otros
+sistemas.</p>
+<h2
+id="cómo-funciona-un-gran-modelo-de-lenguaje-llm-de-forma-general">¿Cómo
+funciona un Gran Modelo de Lenguaje (LLM) de forma general?</h2>
+<p>De forma general, un LLM funciona a partir de técnicas de
+<strong>aprendizaje profundo</strong> (<em>deep learning</em>),
+especialmente mediante arquitecturas de tipo
+<strong>transformer</strong>, que han demostrado una gran eficacia para
+procesar secuencias largas de texto y captar relaciones complejas entre
+palabras, frases, párrafos e incluso documentos completos.</p>
+<p>La idea básica puede explicarse de manera sencilla: un LLM
+<strong>genera contenido token a token</strong>. Un
+<strong>token</strong> es una unidad mínima de procesamiento que puede
+corresponder a una palabra completa, a una parte de una palabra o
+incluso a signos de puntuación. Cuando recibe una instrucción, una
+pregunta o un contexto, el modelo calcula qué continuación es más
+probable en función de los patrones aprendidos durante su
+entrenamiento.</p>
+<p>Sin embargo, este proceso no consiste simplemente en “adivinar la
+siguiente palabra” de forma trivial. Lo que hace realmente el modelo es
+construir, paso a paso, una salida basada en:</p>
+<ul>
+<li>la <strong>instrucción recibida</strong></li>
+<li>el <strong>contexto previo</strong></li>
+<li>los <strong>patrones estadísticos</strong> aprendidos durante el
+entrenamiento</li>
+<li>las <strong>relaciones semánticas</strong> entre los elementos del
+texto</li>
+<li>y, en algunos sistemas, la información recuperada desde
+<strong>herramientas externas</strong> o <strong>fuentes
+documentales</strong></li>
+</ul>
+<p>Gracias a ello, puede producir respuestas que aparentan comprensión
+profunda, mantener el hilo de una conversación, adaptar el tono, resumir
+grandes cantidades de información o seguir formatos concretos.</p>
+<p><strong>El papel de la arquitectura transformer</strong></p>
+<p>La arquitectura <strong>transformer</strong> fue un cambio decisivo
+en la evolución de la IA del lenguaje. Su importancia radica, entre
+otras cosas, en que permite que el modelo valore qué partes del contexto
+son más relevantes en cada momento. Este mecanismo, conocido de forma
+general como <strong>atención</strong>, hace posible que el sistema
+relacione palabras o ideas separadas dentro del texto y mantenga cierta
+coherencia a lo largo de respuestas extensas.</p>
+<p>Gracias a esta arquitectura, los LLM pueden:</p>
+<ul>
+<li>manejar contextos relativamente amplios</li>
+<li>detectar dependencias entre fragmentos alejados del texto</li>
+<li>generar respuestas más coherentes</li>
+<li>adaptarse a tareas muy distintas sin cambiar por completo su
+estructura base</li>
+</ul>
+<p><strong>Comprender no equivale a pensar como una persona</strong></p>
+<p>Aunque un LLM puede producir respuestas muy convincentes, es
+importante recordar que su funcionamiento no equivale al razonamiento
+humano. El modelo no “sabe” las cosas del mismo modo que una persona, ni
+tiene conciencia, intención o comprensión en sentido fuerte. Lo que hace
+es <strong>procesar patrones</strong>, <strong>inferir continuaciones
+plausibles</strong> y <strong>construir salidas útiles</strong> a partir
+de los datos y ejemplos con los que fue entrenado y del contexto que
+recibe en cada interacción.</p>
+<p>Por eso, un modelo puede ser brillante en unas tareas y fallar en
+otras, especialmente cuando:</p>
+<ul>
+<li>falta contexto relevante</li>
+<li>la instrucción es ambigua</li>
+<li>la información requerida es muy específica o reciente</li>
+<li>se necesita precisión absoluta</li>
+<li>o la tarea exige verificación externa</li>
+</ul>
+<h2
+id="cómo-se-entrena-un-gran-modelo-de-lenguaje-llm-de-forma-general">¿Cómo
+se entrena un Gran Modelo de Lenguaje (LLM) de forma general?</h2>
+<p>La construcción de un LLM es un proceso largo, costoso y técnicamente
+complejo. Aunque existen muchas variantes, de forma simplificada suele
+hablarse de varias <strong>fases principales</strong>:</p>
+<p><strong>1. Preentrenamiento</strong></p>
+<p>En la fase de <strong>preentrenamiento</strong>, el modelo aprende
+patrones generales del lenguaje a partir de enormes volúmenes de datos.
+Durante este proceso, se expone a grandes corpus de texto, código y,
+según el caso, otros contenidos. El objetivo es que aprenda
+regularidades sobre cómo se organiza el lenguaje, cómo se relacionan las
+ideas y cómo suelen aparecer determinados conceptos en distintos
+contextos.</p>
+<p>En esta etapa el modelo no aprende “verdades” garantizadas, sino
+<strong>patrones de uso</strong>, <strong>estructuras
+lingüísticas</strong>, <strong>asociaciones frecuentes</strong> y muchas
+formas de organización de la información. Gracias a ello adquiere
+capacidades generales como:</p>
+<ul>
+<li>completar texto</li>
+<li>resumir</li>
+<li>parafrasear</li>
+<li>responder preguntas de conocimiento general</li>
+<li>escribir con distintos estilos</li>
+<li>o generar código básico</li>
+</ul>
+<p><strong>2. Ajuste fino o adaptación</strong></p>
+<p>Una vez preentrenado, el modelo puede pasar por procesos de
+<strong>ajuste fino</strong> (<em>fine-tuning</em>) o adaptación. En
+esta fase se le orienta hacia tareas concretas, dominios especializados
+o estilos determinados.</p>
+<p>Por ejemplo, un modelo puede adaptarse para rendir mejor en:</p>
+<ul>
+<li>atención al cliente</li>
+<li>redacción jurídica o administrativa</li>
+<li>soporte educativo</li>
+<li>programación</li>
+<li>análisis documental</li>
+<li>medicina, ciencia o empresa, con las cautelas necesarias</li>
+</ul>
+<p>Este ajuste permite que el sistema responda de manera más específica,
+más consistente con un objetivo concreto y más útil para un contexto
+real de uso.</p>
+<p><strong>3. Alineamiento</strong></p>
+<p>Después del ajuste, muchos modelos pasan por procesos de
+<strong>alineamiento</strong>, cuyo propósito es hacer que el sistema
+sea más útil, más seguro y más capaz de seguir instrucciones humanas de
+forma adecuada.</p>
+<p>En esta fase se busca mejorar aspectos como:</p>
+<ul>
+<li>la capacidad de obedecer instrucciones</li>
+<li>la claridad de las respuestas</li>
+<li>la reducción de contenido dañino o inapropiado</li>
+<li>la moderación de comportamientos no deseados</li>
+<li>la utilidad práctica en entornos conversacionales</li>
+</ul>
+<p>El alineamiento no elimina todos los errores ni garantiza una
+respuesta perfecta, pero sí ayuda a que el modelo sea más usable en
+escenarios reales.</p>
+<p><strong>4. Integración en aplicaciones y sistemas</strong></p>
+<p>En la práctica, un LLM rara vez se utiliza de forma aislada. Lo
+habitual es que se integre dentro de una <strong>aplicación
+completa</strong>, junto con otros componentes que amplían sus
+capacidades. Por ejemplo, un sistema basado en LLM puede incorporar:</p>
+<ul>
+<li><strong>herramientas externas</strong></li>
+<li><strong>buscadores</strong></li>
+<li><strong>bases documentales</strong></li>
+<li><strong>memoria conversacional</strong></li>
+<li><strong>sistemas RAG</strong> (<em>Retrieval-Augmented
+Generation</em>)</li>
+<li><strong>bases de conocimiento</strong></li>
+<li><strong>filtros de seguridad</strong></li>
+<li><strong>interfaces web o asistentes de voz</strong></li>
+<li><strong>automatizaciones y flujos de trabajo</strong></li>
+</ul>
+<p>Esto significa que, cuando una persona interactúa con un chatbot o
+asistente moderno, muchas veces no está hablando solo con “el modelo
+puro”, sino con una <strong>solución compuesta</strong> en la que el LLM
+actúa como motor principal de lenguaje, pero apoyado por otros
+módulos.</p>
+<h1 id="capacidades-de-los-grandes-modelos-de-lenguaje-llm">Capacidades
+de los Grandes Modelos de Lenguaje (LLM)</h1>
+<h2 id="generación-de-lenguaje">Generación de lenguaje</h2>
+<p>La <strong>generación de lenguaje</strong> consiste en la
+<strong>creación automática de contenido textual</strong> a partir de
+<strong>instrucciones</strong>, <strong>ejemplos</strong>,
+<strong>preguntas</strong> o <strong>contexto</strong> proporcionado por
+la persona usuaria.</p>
+<p>Por ejemplo, un Gran Modelo de Lenguaje (LLM) puede:</p>
+<ul>
+<li><strong>Escribir</strong> artículos, <strong>informes</strong> o
+<strong>resúmenes</strong>.</li>
+<li><strong>Generar explicaciones</strong> adaptadas a distintos
+<strong>niveles</strong>.</li>
+<li><strong>Redactar correos</strong>, <strong>documentos</strong> o
+<strong>propuestas</strong>.</li>
+<li><strong>Crear historias</strong>, <strong>guiones</strong> o
+<strong>textos creativos</strong>.</li>
+<li><strong>Reformular contenidos</strong> con otro
+<strong>tono</strong>, <strong>longitud</strong> o
+<strong>estilo</strong>.</li>
+</ul>
+<p>La calidad de esta generación depende de varios factores, entre
+ellos:</p>
+<ul>
+<li>La claridad del <strong>prompt</strong>.</li>
+<li>La <strong>cantidad</strong> y <strong>calidad</strong> del
+<strong>contexto disponible</strong>.</li>
+<li>El <strong>tipo de tarea</strong> solicitada.</li>
+<li>La <strong>especialización del modelo</strong>.</li>
+<li>El uso o no de <strong>fuentes externas verificables</strong>.</li>
+</ul>
+<p>Una limitación frecuente es la <strong>alucinación</strong>, es
+decir, la generación de <strong>información incorrecta, imprecisa o no
+verificada</strong> que parece plausible.</p>
+<h2 id="comprensión-y-transformación-del-texto">Comprensión y
+transformación del texto</h2>
+<p>Además de generar contenido, los Grandes Modelos de Lenguaje (LLM)
+destacan en tareas de <strong>procesamiento del lenguaje
+natural</strong> que implican <strong>transformar información</strong>
+ya existente. Entre ellas:</p>
+<ul>
+<li><strong>Resumir documentos extensos</strong>.</li>
+<li><strong>Extraer ideas principales</strong>.</li>
+<li><strong>Clasificar textos</strong> por
+<strong>categorías</strong>.</li>
+<li><strong>Detectar entidades</strong>, <strong>temas</strong> o
+<strong>relaciones</strong>.</li>
+<li><strong>Simplificar textos complejos</strong>.</li>
+<li><strong>Corregir estilo</strong>, <strong>gramática</strong> y
+<strong>cohesión</strong>.</li>
+<li><strong>Convertir información</strong> en <strong>tablas</strong>,
+<strong>listas</strong> o <strong>esquemas</strong>.</li>
+</ul>
+<p>Esta capacidad los hace especialmente útiles en entornos
+<strong>educativos</strong>, <strong>administrativos</strong>,
+<strong>jurídicos</strong>, <strong>empresariales</strong> y
+<strong>técnicos</strong>.</p>
+<h2 id="razonamiento-guiado-y-resolución-de-tareas">Razonamiento guiado
+y resolución de tareas</h2>
+<p>Aunque un Gran Modelo de Lenguaje (LLM) no “razona” como una persona
+en sentido estricto, los modelos actuales pueden resolver muchas
+<strong>tareas complejas</strong> cuando reciben <strong>instrucciones
+adecuadas</strong> y suficiente <strong>contexto</strong>. Por
+ejemplo:</p>
+<ul>
+<li><strong>Comparar opciones</strong>.</li>
+<li><strong>Seguir pasos lógicos</strong>.</li>
+<li><strong>Analizar casos</strong>.</li>
+<li><strong>Proponer borradores de solución</strong>.</li>
+<li><strong>Explicar procedimientos</strong>.</li>
+<li>Ayudar en <strong>toma de decisiones asistida</strong>.</li>
+</ul>
+<p>Aun así, conviene distinguir entre <strong>apariencia de
+razonamiento</strong> y <strong>fiabilidad garantizada</strong>. En
+tareas críticas, siempre es necesaria la revisión humana y, cuando
+proceda, la verificación con fuentes fiables.</p>
+<h2 id="programación-y-trabajo-técnico">Programación y trabajo
+técnico</h2>
+<p>Una de las aplicaciones más extendidas de los Grandes Modelos de
+Lenguaje (LLM) es la <strong>asistencia en programación</strong>.
+Pueden:</p>
+<ul>
+<li>Generar fragmentos de código.</li>
+<li>Explicar funciones y algoritmos.</li>
+<li>Detectar errores frecuentes.</li>
+<li>Proponer pruebas o casos de uso.</li>
+<li>Traducir código entre lenguajes.</li>
+<li>Ayudar a crear documentación técnica.</li>
+</ul>
+<p>Su utilidad es alta como apoyo, pero no sustituyen la revisión de una
+persona desarrolladora, ya que también pueden introducir errores
+lógicos, de seguridad o de rendimiento.</p>
+<h2 id="uso-de-herramientas-y-agentes">Uso de herramientas y
+agentes</h2>
+<p>Los modelos actuales ya no solo generan texto. En muchas plataformas
+pueden <strong>usar herramientas</strong> como:</p>
+<ul>
+<li><strong>Búsqueda web</strong>.</li>
+<li><strong>Ejecución de código</strong>.</li>
+<li><strong>Consulta de documentos</strong>.</li>
+<li><strong>Llamadas a APIs</strong>.</li>
+<li><strong>Relleno de formularios</strong> o <strong>automatización de
+pasos</strong>.</li>
+</ul>
+<p>Esto amplía enormemente su <strong>utilidad práctica</strong>, pero
+también introduce nuevos desafíos de <strong>seguridad, permisos,
+auditoría y trazabilidad</strong>. Por eso cada vez es más importante
+diferenciar entre un <strong>LLM</strong> y un <strong>sistema agente
+basado en LLM</strong>.</p>
+<h2 id="multimodalidad">Multimodalidad</h2>
+<p>Muchos sistemas modernos combinan el lenguaje con otros formatos.
+Aunque estrictamente no todos los modelos multimodales son solo LLM, en
+la práctica actual es común hablar de ecosistemas de modelos capaces de
+trabajar con:</p>
+<ul>
+<li><strong>Texto</strong>.</li>
+<li><strong>Imágenes</strong>.</li>
+<li><strong>Documentos</strong>.</li>
+<li><strong>Audio</strong>.</li>
+<li><strong>Vídeo</strong>, en algunos entornos.</li>
+</ul>
+<p>Esto permite <strong>casos de uso más naturales</strong>, como
+preguntar por el contenido de una <strong>imagen</strong>, analizar un
+<strong>PDF</strong>, resumir una <strong>reunión grabada</strong> o
+generar respuestas basadas en distintos <strong>tipos de
+entrada</strong>.</p>
+<h1
+id="limitaciones-de-los-grandes-modelos-de-lenguaje-llm">Limitaciones de
+los Grandes Modelos de Lenguaje (LLM)</h1>
+<h2 id="inconsistencia-en-las-respuestas">Inconsistencia en las
+respuestas</h2>
+<p>Los LLM pueden mostrar <strong>inconsistencias</strong>, produciendo
+<strong>respuestas distintas</strong> ante la misma pregunta o ante
+<strong>reformulaciones muy parecidas</strong>.</p>
+<p>Por ejemplo:</p>
+<ul>
+<li>Una misma consulta puede recibir <strong>interpretaciones
+diferentes</strong>.</li>
+<li>El grado de detalle puede variar de una ejecución a otra.</li>
+<li>La salida puede cambiar según el tono o la estructura del
+prompt.</li>
+</ul>
+<p>Esto ocurre porque trabajan de forma probabilística y porque el
+contexto influye mucho en la generación.</p>
+<h2 id="alucinaciones">Alucinaciones</h2>
+<p>Las <strong>alucinaciones</strong> ocurren cuando el modelo genera
+<strong>información incorrecta, inventada o no suficientemente
+fundamentada</strong>, pero presentada de manera convincente.</p>
+<p>Esto sucede, entre otras razones, porque:</p>
+<ul>
+<li>No siempre consulta <strong>fuentes verificadas</strong> en tiempo
+real.</li>
+<li>Se basa en <strong>patrones aprendidos durante el
+entrenamiento</strong>.</li>
+<li>Puede completar huecos de información con continuaciones
+plausibles.</li>
+<li>Puede interpretar de forma errónea una instrucción ambigua.</li>
+</ul>
+<p>Por este motivo es esencial <strong>verificar la información
+generada</strong>, especialmente en ámbitos como <strong>salud</strong>,
+<strong>educación</strong>, <strong>derecho</strong>,
+<strong>finanzas</strong>, <strong>ciberseguridad</strong> o
+<strong>administración pública</strong>.</p>
+<h2 id="capacidad-limitada-de-memoria">Capacidad limitada de
+memoria</h2>
+<p>Los modelos tienen una <strong>ventana de contexto limitada</strong>,
+aunque hoy suele ser mucho mayor que en <strong>generaciones
+anteriores</strong>.</p>
+<p>Esto significa que solo pueden considerar una cierta cantidad de
+información dentro de una interacción concreta. Como consecuencia:</p>
+<ul>
+<li>Pueden <strong>olvidar información anterior</strong> en
+<strong>conversaciones largas</strong>.</li>
+<li>Les cuesta mantener <strong>coherencia</strong> perfecta en
+<strong>textos muy extensos</strong>.</li>
+<li>Pueden <strong>perder detalles</strong> si el
+<strong>contexto</strong> es demasiado grande o está mal
+estructurado.</li>
+</ul>
+<p>Para superar parcialmente esta limitación se utilizan técnicas
+como:</p>
+<ul>
+<li><strong>División de documentos</strong> en
+<strong>fragmentos</strong>.</li>
+<li><strong>Recuperación documental</strong> mediante
+<strong>RAG</strong>.</li>
+<li><strong>Memorias conversacionales</strong> controladas.</li>
+<li><strong>Resúmenes intermedios</strong> del
+<strong>contexto</strong>.</li>
+</ul>
+<h2 id="sensibilidad-a-las-instrucciones">Sensibilidad a las
+instrucciones</h2>
+<p>Los resultados pueden variar mucho dependiendo de <strong>cómo se
+formule la instrucción o prompt</strong>.</p>
+<p>Pequeños cambios pueden producir:</p>
+<ul>
+<li><strong>Respuestas</strong> más claras o más vagas.</li>
+<li>Mejor o peor <strong>calidad</strong> en la
+<strong>generación</strong>.</li>
+<li>Diferencias en <strong>formato</strong>, <strong>tono</strong> o
+<strong>profundidad</strong>.</li>
+<li>Mayor o menor tendencia a <strong>cometer errores</strong>.</li>
+</ul>
+<p>Por ello ha cobrado relevancia la <strong>ingeniería de
+prompts</strong>, aunque hoy se complementa con otras prácticas más
+robustas, como el diseño de contexto, el uso de ejemplos, la evaluación
+sistemática y la integración con herramientas.</p>
+<h2 id="dependencia-de-los-datos-de-entrenamiento">Dependencia de los
+datos de entrenamiento</h2>
+<p>Los LLM dependen en gran medida de los <strong>datos utilizados
+durante su entrenamiento</strong> y de cómo ha sido realizado su
+<strong>ajuste posterior</strong>.</p>
+<p>Esto implica que:</p>
+<ul>
+<li>Pueden reflejar <strong>sesgos</strong> presentes en los
+<strong>datos</strong>.</li>
+<li>Pueden mostrar <strong>desequilibrios culturales o
+lingüísticos</strong>.</li>
+<li>Pueden carecer de información <strong>actualizada</strong>.</li>
+<li>Pueden rendir peor en <strong>dominios especializados</strong> o
+poco representados.</li>
+</ul>
+<h2 id="falta-de-acceso-nativo-a-la-verdad">Falta de acceso nativo a la
+verdad</h2>
+<p>Un LLM no posee por sí mismo un <strong>mecanismo interno</strong>
+que garantice que sus <strong>respuestas sean verdaderas</strong>. Su
+objetivo básico es generar una continuación lingüística útil y
+plausible, no certificar hechos.</p>
+<p>Por tanto:</p>
+<ul>
+<li>Puede mezclar <strong>datos correctos</strong> con otros
+<strong>incorrectos</strong>.</li>
+<li>Puede citar <strong>normas</strong>, <strong>nombres</strong> o
+<strong>referencias inexistentes</strong>.</li>
+<li>Puede sonar <strong>convincente</strong> incluso cuando
+<strong>falla</strong>.</li>
+</ul>
+<p>Esta es una de las razones por las que cada vez se combinan más con
+buscadores, bases documentales, validadores y evaluaciones
+automáticas.</p>
+<h2 id="riesgos-de-seguridad-y-privacidad">Riesgos de seguridad y
+privacidad</h2>
+<p>Cuando un Gran Modelo de Lenguaje (LLM) se integra en aplicaciones
+reales surgen riesgos adicionales:</p>
+<ul>
+<li><strong>Filtración de datos sensibles</strong> incluidos en
+<strong>prompts</strong> o <strong>documentos</strong>.</li>
+<li><strong>Prompt injection</strong> en sistemas conectados a
+<strong>herramientas</strong> o <strong>fuentes externas</strong>.</li>
+<li><strong>Exposición de secretos</strong> como
+<strong>credenciales</strong>, <strong>claves</strong> o
+<strong>configuraciones</strong>.</li>
+<li><strong>Generación de código inseguro</strong> o
+<strong>configuraciones vulnerables</strong>.</li>
+<li><strong>Automatización excesiva</strong> sin <strong>supervisión
+humana</strong>.</li>
+</ul>
+<p>Por ello, en entornos profesionales conviene aplicar principios de
+<strong>mínimo privilegio</strong>, <strong>aislamiento de
+herramientas</strong>, <strong>revisión humana</strong> y
+<strong>auditoría del sistema</strong>.</p>
+<h2 id="coste-latencia-y-sostenibilidad">Coste, latencia y
+sostenibilidad</h2>
+<p>El uso de LLM también presenta limitaciones prácticas:</p>
+<ul>
+<li><strong>Coste computacional</strong> elevado en <strong>modelos
+grandes</strong>.</li>
+<li><strong>Latencia</strong> superior en <strong>tareas
+complejas</strong>.</li>
+<li>Necesidad de <strong>infraestructura especializada</strong> en
+algunos casos.</li>
+<li><strong>Impacto energético</strong> y de
+<strong>sostenibilidad</strong> a gran escala.</li>
+</ul>
+<p>Esto explica el interés creciente por modelos más pequeños,
+especializados o híbridos, capaces de ofrecer una buena relación entre
+coste, velocidad y calidad.</p>
+<h1
+id="principales-aplicaciones-de-los-grandes-modelos-de-lenguaje-llm">Principales
+aplicaciones de los Grandes Modelos de Lenguaje (LLM)</h1>
+<h2 id="recuperación-de-información">Recuperación de información</h2>
+<p>Los LLM pueden ayudar a <strong>buscar, organizar y sintetizar
+información</strong> procedente de <strong>múltiples
+fuentes</strong>.</p>
+<p>En combinación con técnicas como <strong>RAG (Retrieval-Augmented
+Generation)</strong> pueden:</p>
+<ul>
+<li><strong>Consultar documentos externos</strong>.</li>
+<li><strong>Recuperar fragmentos relevantes</strong>.</li>
+<li><strong>Generar respuestas</strong> apoyadas en el <strong>contenido
+recuperado</strong>.</li>
+<li><strong>Reducir parcialmente</strong> las
+<strong>alucinaciones</strong>.</li>
+<li>Trabajar con <strong>conocimiento más actualizado o
+específico</strong>.</li>
+</ul>
+<p>RAG se ha convertido en una de las <strong>arquitecturas más
+comunes</strong> para construir <strong>asistentes
+documentales</strong>, <strong>buscadores avanzados</strong>,
+<strong>chatbots corporativos</strong> y <strong>sistemas de apoyo al
+estudio</strong>.</p>
+<h2 id="procesamiento-de-textos">Procesamiento de textos</h2>
+<p>Entre las aplicaciones más comunes se encuentran:</p>
+<ul>
+<li><strong>Clasificación de textos</strong>.</li>
+<li><strong>Análisis de sentimientos</strong>.</li>
+<li><strong>Extracción de información</strong>.</li>
+<li><strong>Corrección gramatical y de estilo</strong>.</li>
+<li><strong>Simplificación de textos</strong>.</li>
+<li><strong>Detección de temas</strong>.</li>
+<li><strong>Generación de esquemas, tablas y preguntas</strong>.</li>
+</ul>
+<p>En educación, por ejemplo, pueden utilizarse para adaptar materiales,
+generar actividades, proponer ejemplos, resumir textos o crear preguntas
+de evaluación a partir de un documento base.</p>
+<h2 id="educación-y-formación">Educación y formación</h2>
+<p>Uno de los campos con más potencial es la <strong>educación</strong>.
+Los LLM pueden apoyar:</p>
+<ul>
+<li>La <strong>explicación de conceptos</strong> con distintos
+<strong>niveles de dificultad</strong>.</li>
+<li>La <strong>creación de actividades</strong>,
+<strong>rúbricas</strong> o <strong>cuestionarios</strong>.</li>
+<li>La <strong>personalización del aprendizaje</strong>.</li>
+<li>La <strong>revisión lingüística</strong> de trabajos.</li>
+<li>La <strong>generación de ejemplos</strong> y
+<strong>analogías</strong>.</li>
+<li>La <strong>accesibilidad</strong>, mediante
+<strong>simplificación</strong> o <strong>reformulación</strong>.</li>
+</ul>
+<p>Sin embargo, su <strong>uso educativo</strong> exige cuidado para
+evitar <strong>dependencia excesiva</strong>, <strong>errores no
+detectados</strong> y problemas de <strong>integridad
+académica</strong>.</p>
+<h2 id="empresa-y-productividad">Empresa y productividad</h2>
+<p>En el ámbito profesional, los Grandes Modelos de Lenguaje (LLM) se
+usan cada vez más como <strong>copilotos de productividad</strong>
+para:</p>
+<ul>
+<li><strong>Redactar informes</strong>, <strong>correos</strong> y
+<strong>actas</strong>.</li>
+<li><strong>Analizar documentación interna</strong>.</li>
+<li><strong>Buscar información</strong> en <strong>repositorios
+corporativos</strong>.</li>
+<li><strong>Proponer respuestas iniciales</strong> al
+<strong>cliente</strong>.</li>
+<li><strong>Automatizar tareas de oficina</strong> basadas en
+<strong>lenguaje</strong>.</li>
+<li><strong>Asistir en flujos de trabajo complejos</strong>.</li>
+</ul>
+<p>Su valor no radica solo en “escribir texto”, sino en <strong>acelerar
+procesos cognitivos repetitivos</strong> y facilitar el acceso al
+<strong>conocimiento organizativo</strong>.</p>
+<h2 id="desarrollo-de-software">Desarrollo de software</h2>
+<p>En ingeniería de software, los Grandes Modelos de Lenguaje (LLM) se
+emplean para:</p>
+<ul>
+<li><strong>Generar código base</strong>.</li>
+<li><strong>Explicar repositorios existentes</strong>.</li>
+<li><strong>Redactar documentación técnica</strong>.</li>
+<li><strong>Crear pruebas automáticas</strong>.</li>
+<li><strong>Migrar</strong> o <strong>refactorizar código</strong>.</li>
+<li><strong>Resolver dudas</strong> sobre <strong>APIs</strong> y
+<strong>librerías</strong>.</li>
+</ul>
+<p>La productividad puede aumentar mucho, pero solo cuando existe una
+<strong>validación técnica adecuada</strong> y una <strong>cultura de
+revisión responsable</strong>.</p>
+<h2 id="agentes-y-automatización">Agentes y automatización</h2>
+<p>Una de las líneas más activas es la construcción de
+<strong>agentes</strong>: sistemas que combinan un
+<strong>modelo</strong> con <strong>herramientas</strong>,
+<strong>memoria</strong>, <strong>planificación</strong> y
+<strong>ejecución de acciones</strong>.</p>
+<p>Estos agentes pueden:</p>
+<ul>
+<li><strong>Consultar varias fuentes</strong> antes de responder.</li>
+<li><strong>Ejecutar pasos encadenados</strong>.</li>
+<li><strong>Rellenar formularios</strong>.</li>
+<li><strong>Interactuar con software</strong>.</li>
+<li><strong>Supervisar tareas definidas</strong>.</li>
+</ul>
+<p>Aun así, cuanto mayor es la <strong>capacidad de actuar</strong>,
+mayor es la necesidad de establecer <strong>límites de seguridad,
+permisos y supervisión humana</strong>.</p>
+<h1
+id="buenas-prácticas-de-uso-de-los-grandes-modelos-de-lenguaje-llm">Buenas
+prácticas de uso de los Grandes Modelos de Lenguaje (LLM)</h1>
+<h2 id="verificar-la-información">Verificar la información</h2>
+<p>Nunca debe asumirse que una <strong>respuesta</strong> es correcta
+solo porque esté <strong>bien escrita</strong>, sea
+<strong>convincente</strong> o parezca <strong>coherente</strong>. Los
+LLM pueden generar textos muy fluidos incluso cuando contienen
+<strong>errores</strong>, <strong>omisiones</strong>, <strong>datos
+inventados</strong> o interpretaciones imprecisas.</p>
+<p>Por ello, es recomendable:</p>
+<ul>
+<li><strong>Contrastar datos relevantes</strong> con fuentes
+fiables.</li>
+<li><strong>Revisar citas</strong>, <strong>fechas</strong> y
+<strong>nombres propios</strong>.</li>
+<li><strong>Confirmar normativa</strong>, <strong>cifras</strong> o
+<strong>referencias críticas</strong>.</li>
+<li><strong>Usar fuentes primarias</strong> cuando sea posible.</li>
+<li><strong>Comprobar que los enlaces, documentos o referencias citadas
+existen realmente</strong>.</li>
+<li><strong>Distinguir entre hechos verificados, inferencias y opiniones
+generadas por el modelo</strong>.</li>
+</ul>
+<p>Esta verificación es especialmente importante cuando el contenido se
+va a usar en contextos de <strong>decisión</strong>,
+<strong>publicación</strong>, <strong>evaluación</strong>,
+<strong>asesoramiento</strong> o <strong>impacto
+institucional</strong>.</p>
+<h2 id="proporcionar-contexto-de-calidad">Proporcionar contexto de
+calidad</h2>
+<p>Un mejor <strong>contexto</strong> suele producir mejores
+<strong>resultados</strong>. Los LLM funcionan mejor cuando reciben
+instrucciones claras, completas y bien delimitadas. Cuanto más precisa
+sea la entrada, mayor probabilidad habrá de obtener una salida útil,
+pertinente y ajustada a la necesidad real.</p>
+<p>Para ello conviene:</p>
+<ul>
+<li><strong>Explicar con claridad</strong> el
+<strong>objetivo</strong>.</li>
+<li><strong>Delimitar</strong> el <strong>público
+destinatario</strong>.</li>
+<li><strong>Indicar</strong> el <strong>formato de salida</strong>
+esperado.</li>
+<li><strong>Añadir ejemplos</strong> cuando ayuden.</li>
+<li><strong>Incorporar documentos relevantes</strong> si la tarea lo
+necesita.</li>
+<li><strong>Especificar el tono</strong>, el <strong>nivel de
+profundidad</strong> y la <strong>extensión deseada</strong>.</li>
+<li><strong>Aclarar restricciones</strong>, como qué no debe incluirse o
+qué fuentes deben priorizarse.</li>
+</ul>
+<p>Por ejemplo, no es lo mismo pedir <em>“resume este texto”</em> que
+solicitar <em>“resume este documento en lenguaje claro, para alumnado de
+bachillerato, en formato esquemático y destacando fechas y conceptos
+clave”</em>. En el segundo caso, el modelo dispone de instrucciones
+mucho más útiles para orientar su respuesta.</p>
+<h2 id="diseñar-flujos-con-supervisión-humana">Diseñar flujos con
+supervisión humana</h2>
+<p>En tareas de <strong>impacto real</strong>, la mejor práctica no es
+delegar completamente en el modelo, sino diseñar procesos de
+<strong>asistencia con revisión humana</strong>. Los LLM pueden acelerar
+el trabajo, proponer borradores, resumir información o detectar
+patrones, pero no deben sustituir sin control el criterio
+profesional.</p>
+<p>Esto resulta especialmente importante en ámbitos como:</p>
+<ul>
+<li><strong>Educación</strong>.</li>
+<li><strong>Administración</strong>.</li>
+<li><strong>Salud</strong>.</li>
+<li><strong>Derecho</strong>.</li>
+<li><strong>Finanzas</strong>.</li>
+<li><strong>Ciberseguridad</strong>.</li>
+</ul>
+<p>En estos contextos, conviene que el modelo actúe como
+<strong>apoyo</strong>, no como <strong>autoridad final</strong>. La
+persona responsable debe:</p>
+<ul>
+<li><strong>Revisar la salida generada</strong>.</li>
+<li><strong>Validar su corrección</strong>.</li>
+<li><strong>Comprobar su adecuación ética, legal y
+técnica</strong>.</li>
+<li><strong>Decidir si puede usarse, modificarse o
+descartarse</strong>.</li>
+</ul>
+<p>Un buen flujo de trabajo con LLM suele incluir varias fases:
+<strong>instrucción</strong>, <strong>generación</strong>,
+<strong>revisión</strong>, <strong>corrección</strong> y
+<strong>validación final</strong>.</p>
+<h2 id="proteger-datos-y-sistemas">Proteger datos y sistemas</h2>
+<p>Antes de integrar un Gran Modelo de Lenguaje (LLM) en una
+<strong>organización</strong> conviene establecer medidas claras de
+<strong>gobernanza</strong>, <strong>seguridad</strong> y
+<strong>cumplimiento</strong>. No basta con que la herramienta sea útil:
+también debe ser segura, trazable y compatible con las obligaciones de
+la entidad.</p>
+<p>Por ello, conviene definir:</p>
+<ul>
+<li><strong>Políticas claras de uso</strong>.</li>
+<li><strong>Gestión de datos sensibles</strong>.</li>
+<li><strong>Control de accesos</strong> y
+<strong>permisos</strong>.</li>
+<li><strong>Auditoría de acciones</strong>.</li>
+<li><strong>Revisión de riesgos legales</strong> y de
+<strong>cumplimiento</strong>.</li>
+<li><strong>Criterios sobre qué información puede o no introducirse en
+el sistema</strong>.</li>
+<li><strong>Procedimientos de revisión ante incidentes o usos
+indebidos</strong>.</li>
+</ul>
+<p>También es importante valorar aspectos como:</p>
+<ul>
+<li>Dónde se <strong>procesan</strong> y <strong>almacenan</strong> los
+datos.</li>
+<li>Si existe <strong>aislamiento</strong> entre organizaciones o
+usuarios.</li>
+<li>Qué nivel de <strong>trazabilidad</strong> ofrece la
+herramienta.</li>
+<li>Si permite aplicar medidas de <strong>retención</strong>,
+<strong>borrado</strong> o <strong>minimización de datos</strong>.</li>
+<li>Qué garantías ofrece respecto a <strong>privacidad</strong>,
+<strong>seguridad</strong> y <strong>cumplimiento
+normativo</strong>.</li>
+</ul>
+<h2 id="reducir-el-riesgo-de-alucinaciones">Reducir el riesgo de
+alucinaciones</h2>
+<p>Una de las limitaciones más conocidas de los Grandes Modelos de
+Lenguaje (LLM) es la <strong>alucinación</strong>, es decir, la
+generación de contenido incorrecto, inventado o no respaldado por
+fuentes reales. Para reducir este riesgo, es conveniente:</p>
+<ul>
+<li><strong>Pedir respuestas fundamentadas</strong>.</li>
+<li><strong>Solicitar indicación de incertidumbre</strong> cuando el
+modelo no esté seguro.</li>
+<li><strong>Incorporar documentos de referencia</strong>.</li>
+<li><strong>Usar sistemas de recuperación de información</strong> cuando
+sea necesario.</li>
+<li><strong>Separar claramente hechos, hipótesis y
+recomendaciones</strong>.</li>
+<li><strong>Evitar formular preguntas ambiguas o excesivamente
+abiertas</strong> en tareas de alta precisión.</li>
+</ul>
+<p>Cuanto más importante sea la exactitud, menos debe confiarse en una
+respuesta generada sin verificación externa.</p>
+<h2 id="documentar-el-uso-del-sistema">Documentar el uso del
+sistema</h2>
+<p>Una buena práctica organizativa consiste en
+<strong>documentar</strong> cómo se está usando el LLM. Esto mejora la
+<strong>transparencia</strong>, facilita la <strong>gobernanza</strong>
+y permite evaluar mejor riesgos, errores y mejoras.</p>
+<p>Es útil documentar:</p>
+<ul>
+<li><strong>Qué modelo</strong> se utiliza.</li>
+<li><strong>Para qué tareas</strong> se emplea.</li>
+<li><strong>Qué datos</strong> puede tratar.</li>
+<li><strong>Qué supervisión humana</strong> existe.</li>
+<li><strong>Qué limitaciones conocidas</strong> tiene.</li>
+<li><strong>Qué controles de seguridad y cumplimiento</strong> se
+aplican.</li>
+<li><strong>Qué procedimiento debe seguirse</strong> en caso de error o
+incidente.</li>
+</ul>
+<p>Esta documentación resulta especialmente valiosa en entornos
+institucionales, educativos, empresariales o regulados.</p>
+<h2 id="formar-a-las-personas-usuarias">Formar a las personas
+usuarias</h2>
+<p>El valor de un Gran Modelo de Lenguaje (LLM) no depende solo del
+modelo, sino también de la capacidad de las personas para utilizarlo de
+forma adecuada. Por ello, conviene formar a quienes vayan a emplearlo en
+aspectos como:</p>
+<ul>
+<li><strong>Diseño de prompts</strong>.</li>
+<li><strong>Evaluación crítica de respuestas</strong>.</li>
+<li><strong>Verificación de información</strong>.</li>
+<li><strong>Protección de datos</strong>.</li>
+<li><strong>Uso responsable y ético</strong>.</li>
+<li><strong>Comprensión de límites y riesgos</strong>.</li>
+</ul>
+<p>No se trata solo de aprender a “pedir cosas”, sino de desarrollar
+criterio para saber <strong>cuándo usarlo</strong>, <strong>cómo
+usarlo</strong> y <strong>cómo revisar lo que produce</strong>.</p>
+<h2 id="mantener-expectativas-realistas">Mantener expectativas
+realistas</h2>
+<p>Un LLM puede ser muy útil, pero no es infalible ni comprende el mundo
+como una persona. No tiene criterio propio, experiencia profesional real
+ni garantía automática de verdad. Su utilidad depende del
+<strong>contexto</strong>, del <strong>prompt</strong>, de los
+<strong>datos disponibles</strong>, de la <strong>integración
+técnica</strong> y de la <strong>supervisión humana</strong>.</p>
+<p>Por eso, una buena práctica esencial es evitar dos extremos:</p>
+<ul>
+<li><strong>Sobreconfiar</strong> en sus respuestas.</li>
+<li><strong>Descartarlo</strong> por completo por sus limitaciones.</li>
+</ul>
+<p>La mejor aproximación suele ser práctica y equilibrada: usarlo como
+una herramienta potente de apoyo, entendiendo bien tanto sus
+<strong>capacidades</strong> como sus <strong>límites</strong>.</p>
+<h1
+id="tendencias-actuales-en-los-grandes-modelos-de-lenguaje-llm">Tendencias
+actuales en los Grandes Modelos de Lenguaje (LLM)</h1>
+<h2 id="modelos-multimodales">Modelos multimodales</h2>
+<p>La evolución reciente de los Grandes Modelos de Lenguaje (LLM) apunta
+hacia sistemas cada vez más <strong>multimodales</strong>, capaces de
+trabajar no solo con <strong>texto</strong>, sino también con
+<strong>imágenes</strong>, <strong>audio</strong>,
+<strong>vídeo</strong>, <strong>documentos</strong> y
+<strong>herramientas externas</strong>.</p>
+<p>Esto hace que la frontera entre <strong>LLM</strong>, <strong>modelo
+multimodal</strong> y <strong>agente</strong> sea cada vez más difusa.
+En la práctica, muchos sistemas actuales no solo generan lenguaje, sino
+que también:</p>
+<ul>
+<li><strong>interpretan imágenes</strong> y capturas de pantalla</li>
+<li><strong>leen documentos complejos</strong> como PDF o
+presentaciones</li>
+<li><strong>procesan audio</strong> y transcripciones</li>
+<li><strong>combinan varias modalidades</strong> en una misma tarea</li>
+<li><strong>usan herramientas</strong> para completar acciones o
+recuperar información</li>
+</ul>
+<p>Como consecuencia, el valor de estos sistemas ya no está únicamente
+en “responder bien”, sino en <strong>integrar distintas fuentes de
+información</strong> dentro de un flujo de trabajo útil.</p>
+<h2 id="más-capacidad-de-contexto">Más capacidad de contexto</h2>
+<p>Otra tendencia importante es el crecimiento de las <strong>ventanas
+de contexto</strong>, es decir, la cantidad de información que el modelo
+puede procesar en una misma interacción.</p>
+<p>Esto permite trabajar con:</p>
+<ul>
+<li>documentos largos</li>
+<li>conversaciones extensas</li>
+<li>múltiples fragmentos de información</li>
+<li>bases documentales más amplias</li>
+<li>tareas de análisis más complejas</li>
+</ul>
+<p>Sin embargo, el reto ya no es solo “meter más texto” en el prompt,
+sino <strong>seleccionar mejor el contexto relevante</strong>. Un
+contexto grande no garantiza por sí solo una mejor respuesta si la
+información incluida no está bien escogida o está desordenada.</p>
+<p>Por eso están ganando importancia los enfoques de:</p>
+<ul>
+<li><strong>RAG (Retrieval-Augmented Generation)</strong></li>
+<li><strong>selección contextual</strong></li>
+<li><strong>reordenación de resultados</strong></li>
+<li><strong>compresión del contexto</strong></li>
+<li><strong>citas y trazabilidad documental</strong></li>
+</ul>
+<h2 id="especialización-y-modelos-más-eficientes">Especialización y
+modelos más eficientes</h2>
+<p>Otra línea de evolución es la búsqueda de modelos más
+<strong>eficientes</strong>, <strong>rápidos</strong> y
+<strong>adaptados a casos de uso concretos</strong>.</p>
+<p>Cada vez está más claro que <strong>no todas las tareas necesitan el
+modelo más grande</strong>. En muchos entornos reales importa más
+encontrar un equilibrio entre:</p>
+<ul>
+<li><strong>calidad</strong></li>
+<li><strong>coste</strong></li>
+<li><strong>latencia</strong></li>
+<li><strong>privacidad</strong></li>
+<li><strong>facilidad de despliegue</strong></li>
+</ul>
+<p>Por ello crece el interés por:</p>
+<ul>
+<li><strong>modelos pequeños y rápidos</strong></li>
+<li><strong>modelos especializados</strong></li>
+<li><strong>soluciones open-weight</strong></li>
+<li><strong>despliegues locales</strong></li>
+<li><strong>arquitecturas híbridas</strong></li>
+</ul>
+<p>Esta tendencia es especialmente relevante en organizaciones que
+necesitan controlar mejor sus datos o reducir dependencia de servicios
+externos.</p>
+<h2 id="herramientas-agentes-y-automatización-segura">Herramientas,
+agentes y automatización segura</h2>
+<p>Una tendencia cada vez más importante es el <strong>tool
+use</strong>, es decir, la capacidad del modelo para utilizar
+herramientas externas.</p>
+<p>Esto incluye acciones como:</p>
+<ul>
+<li>consultar la web</li>
+<li>ejecutar código</li>
+<li>buscar en archivos</li>
+<li>llamar funciones o APIs</li>
+<li>interactuar con software o interfaces</li>
+</ul>
+<p>Gracias a ello, los Grandes Modelos de Lenguaje (LLM) están
+evolucionando hacia sistemas más <strong>agentivos</strong>, capaces de
+encadenar varios pasos para completar tareas más complejas.</p>
+<p>Por ejemplo, un sistema puede:</p>
+<ul>
+<li>buscar información</li>
+<li>contrastarla</li>
+<li>procesarla</li>
+<li>ejecutar una acción intermedia</li>
+<li>generar una respuesta final más útil</li>
+</ul>
+<p>Pero esta capacidad también introduce nuevos riesgos, porque el
+sistema deja de ser un simple generador de texto y pasa a tener más
+impacto operativo.</p>
+<p>Estos riesgos asociados son:</p>
+<ul>
+<li>gestión de permisos</li>
+<li>validación de entradas y salidas</li>
+<li>supervisión humana</li>
+<li>seguridad en el uso de herramientas</li>
+<li>trazabilidad de las acciones realizadas</li>
+</ul>
+<h2 id="regulación-y-gobernanza">Regulación y gobernanza</h2>
+<p>El desarrollo de los Grandes Modelos de Lenguaje (LLM) ya no puede
+separarse de la <strong>regulación</strong>, la
+<strong>gobernanza</strong> y el <strong>cumplimiento
+normativo</strong>.</p>
+<p>A medida que estos sistemas se incorporan a procesos reales, crece la
+necesidad de establecer:</p>
+<ul>
+<li>políticas de uso</li>
+<li>controles organizativos</li>
+<li>evaluación de riesgos</li>
+<li>documentación del sistema</li>
+<li>evidencias de cumplimiento</li>
+</ul>
+<p>En Europa, esta cuestión es especialmente relevante por la
+consolidación de marcos regulatorios aplicables a la Inteligencia
+Artificial.</p>
+<p>Esto afecta especialmente a organizaciones:</p>
+<ul>
+<li><strong>públicas</strong></li>
+<li><strong>educativas</strong></li>
+<li><strong>sanitarias</strong></li>
+<li><strong>empresariales</strong></li>
+<li><strong>reguladas</strong></li>
+</ul>
+<p>La adopción de LLM no depende ya solo de la capacidad técnica del
+modelo, sino también de la capacidad de la organización para
+<strong>gobernarlo correctamente</strong>.</p>
+<p>Aquí tienes un <strong>punto adicional</strong> que encaja bien al
+final del documento:</p>
+<h2 id="razonamiento-más-avanzado-e-inferencia-adaptativa">Razonamiento
+más avanzado e inferencia adaptativa</h2>
+<p>Otra tendencia cada vez más visible es la aparición de modelos con
+<strong>capacidades de razonamiento más avanzadas</strong> y con
+<strong>modos de inferencia adaptativa</strong>, es decir, sistemas que
+pueden dedicar más o menos esfuerzo computacional según la dificultad de
+la tarea. Esta línea se está reflejando tanto en modelos comerciales
+como en sus herramientas para desarrolladores. OpenAI destaca niveles de
+razonamiento configurables en sus modelos, Anthropic ha incorporado
+modos como <strong>extended/adaptive thinking</strong>, y Google
+DeepMind describe sus modelos recientes como <strong>nativamente
+multimodales y orientados al razonamiento</strong>.</p>
+<p>Esto resulta especialmente útil en tareas como:</p>
+<ul>
+<li><strong>resolución de problemas complejos</strong></li>
+<li><strong>programación</strong></li>
+<li><strong>análisis multietapa</strong></li>
+<li><strong>planificación</strong></li>
+<li><strong>verificación de resultados</strong></li>
+<li><strong>uso combinado de herramientas y razonamiento</strong></li>
+</ul>
+<p>La tendencia relevante no es solo que el modelo “sepa más”, sino que
+pueda <strong>ajustar mejor su proceso de resolución</strong> según el
+problema, combinando <strong>calidad</strong>, <strong>coste</strong> y
+<strong>tiempo de respuesta</strong>. En la práctica, esto acerca los
+Grandes Modelos de Lenguaje (LLM) a flujos en los que no basta con
+generar texto fluido, sino que hace falta <strong>deliberar</strong>,
+<strong>comprobar pasos</strong> y <strong>decidir cuándo usar
+herramientas externas</strong>.</p>
+<h1
+id="retos-éticos-legales-y-sociales-de-los-grandes-modelos-de-lenguaje-llms">Retos
+éticos, legales y sociales de los Grandes Modelos de Lenguaje
+(LLM)s</h1>
+<h2 id="sesgos-y-equidad">Sesgos y equidad</h2>
+<p>Los modelos pueden reproducir <strong>sesgos culturales,
+lingüísticos, sociales, económicos o ideológicos</strong> presentes en
+los <strong>datos de entrenamiento</strong>, en los <strong>criterios de
+etiquetado</strong> o incluso en las <strong>decisiones de
+diseño</strong> del propio sistema. Esto puede afectar a la
+<strong>calidad</strong>, <strong>neutralidad</strong> y
+<strong>justicia</strong> de las respuestas generadas.</p>
+<p>Por ejemplo, un modelo puede:</p>
+<ul>
+<li>Reforzar <strong>estereotipos</strong> sobre determinados
+grupos.</li>
+<li>Ofrecer respuestas menos precisas para <strong>lenguas</strong>,
+<strong>dialectos</strong> o <strong>contextos</strong> menos
+representados.</li>
+<li>Priorizar visiones dominantes y dejar fuera perspectivas
+<strong>minoritarias</strong> o <strong>locales</strong>.</li>
+<li>Reproducir desigualdades históricas presentes en los datos.</li>
+</ul>
+<p>Por ello, no basta con que el sistema funcione bien en términos
+generales: también es importante evaluar su comportamiento en términos
+de <strong>equidad</strong>, <strong>representación</strong> y
+<strong>no discriminación</strong>.</p>
+<h2 id="privacidad-y-protección-de-datos">Privacidad y protección de
+datos</h2>
+<p>El uso de LLM puede plantear riesgos importantes en materia de
+<strong>privacidad</strong> y <strong>protección de datos</strong>,
+especialmente cuando se introducen en el sistema datos
+<strong>personales</strong>, <strong>confidenciales</strong> o
+<strong>sensibles</strong>.</p>
+<p>Entre los principales riesgos se encuentran:</p>
+<ul>
+<li>La exposición de información personal en prompts o documentos.</li>
+<li>El tratamiento inadecuado de datos de alumnado, clientes, pacientes
+o empleados.</li>
+<li>La reutilización de datos introducidos por las personas usuarias,
+según la política del proveedor.</li>
+<li>La transferencia de información a infraestructuras externas o a
+terceros.</li>
+</ul>
+<p>Por ello, antes de usar estos sistemas en contextos reales, conviene
+definir con claridad:</p>
+<ul>
+<li>Qué datos se pueden introducir y cuáles no.</li>
+<li>Qué medidas de <strong>anonimización</strong> o
+<strong>seudonimización</strong> deben aplicarse.</li>
+<li>Qué garantías ofrece la herramienta en materia de
+<strong>cumplimiento normativo</strong>.</li>
+<li>Cómo se protege la información durante el almacenamiento,
+procesamiento y acceso.</li>
+</ul>
+<p>La protección de datos no es solo una cuestión técnica, sino también
+<strong>legal</strong>, <strong>organizativa</strong> y
+<strong>ética</strong>.</p>
+<h2 id="transparencia-trazabilidad-y-explicabilidad">Transparencia,
+trazabilidad y explicabilidad</h2>
+<p>En muchos casos no resulta sencillo explicar por qué el modelo ha
+producido exactamente una <strong>salida concreta</strong>. Los LLM no
+razonan de forma transparente para la persona usuaria, lo que dificulta
+comprender con precisión el origen de una respuesta o detectar por qué
+se ha producido un error.</p>
+<p>Por eso es importante trabajar la <strong>transparencia</strong>, la
+<strong>trazabilidad</strong> y la <strong>explicabilidad</strong> del
+sistema. Esto implica, entre otras cosas:</p>
+<ul>
+<li><strong>Documentar el sistema</strong>, su finalidad, alcance y
+limitaciones.</li>
+<li>Identificar las <strong>fuentes</strong> utilizadas cuando sea
+posible.</li>
+<li>Registrar versiones de modelo, configuraciones y cambios
+relevantes.</li>
+<li>Conservar evidencias sobre qué instrucciones, documentos o
+herramientas han intervenido en una respuesta.</li>
+<li>Facilitar revisiones y auditorías cuando el sistema se use en
+contextos sensibles.</li>
+</ul>
+<p>La trazabilidad es especialmente importante cuando los modelos se
+conectan a <strong>bases de datos</strong>, <strong>buscadores</strong>,
+<strong>documentos corporativos</strong> o <strong>herramientas
+externas</strong>, ya que permite entender mejor de dónde procede la
+información y cómo se ha generado el resultado.</p>
+<h2 id="propiedad-intelectual">Propiedad intelectual</h2>
+<p>El uso de <strong>datos protegidos por derechos de autor</strong> en
+<strong>entrenamiento</strong>, <strong>generación</strong>,
+<strong>transformación</strong> o <strong>recuperación</strong> sigue
+siendo un tema relevante desde el punto de vista <strong>legal</strong>,
+<strong>técnico</strong> y <strong>organizativo</strong>.</p>
+<p>Algunos de los principales retos son:</p>
+<ul>
+<li>El uso de contenidos de terceros durante el entrenamiento de
+modelos.</li>
+<li>La generación de textos, imágenes o código que puedan parecerse
+demasiado a obras existentes.</li>
+<li>La reutilización de materiales sin una licencia adecuada.</li>
+<li>La dificultad para determinar la autoría, originalidad o titularidad
+de ciertos resultados generados con IA.</li>
+</ul>
+<p>En la práctica, conviene prestar atención a:</p>
+<ul>
+<li>Las <strong>licencias</strong> de los contenidos utilizados.</li>
+<li>Las condiciones de uso de los modelos y plataformas.</li>
+<li>La necesidad de <strong>citar</strong>, <strong>atribuir</strong> o
+verificar permisos.</li>
+<li>La conveniencia de revisar jurídicamente los materiales generados
+antes de publicarlos o comercializarlos.</li>
+</ul>
+<p>La propiedad intelectual no afecta solo al entrenamiento del modelo,
+sino también al modo en que se usan sus resultados en entornos
+educativos, profesionales, editoriales o empresariales.</p>
+<h2 id="seguridad-y-uso-conectado-a-herramientas">Seguridad y uso
+conectado a herramientas</h2>
+<p>Los riesgos de <strong>seguridad</strong> aumentan cuando los Grandes
+Modelos de Lenguaje (LLM) dejan de ser sistemas aislados y pasan a
+conectarse con <strong>herramientas</strong>, <strong>APIs</strong>,
+<strong>archivos</strong>, <strong>bases de datos</strong>,
+<strong>navegadores</strong>, <strong>formularios</strong> o
+<strong>sistemas reales</strong>.</p>
+<p>En estos casos, el modelo no solo genera texto: también puede
+intervenir en acciones con consecuencias prácticas. Esto introduce
+nuevos retos, como por ejemplo:</p>
+<ul>
+<li>Accesos indebidos a información o servicios.</li>
+<li>Ejecución de acciones no deseadas por instrucciones mal
+interpretadas.</li>
+<li>Manipulación mediante prompts maliciosos o ataques de <strong>prompt
+injection</strong>.</li>
+<li>Exposición de credenciales, documentos o datos internos.</li>
+<li>Automatización de errores a gran escala.</li>
+</ul>
+<p>Por ello, es fundamental aplicar medidas como:</p>
+<ul>
+<li>Control de <strong>permisos</strong> y principio de <strong>mínimo
+privilegio</strong>.</li>
+<li>Supervisión humana en tareas críticas.</li>
+<li>Validación previa de acciones sensibles.</li>
+<li>Registro de actividad y auditoría.</li>
+<li>Separación entre entornos de prueba y entornos reales.</li>
+<li>Políticas claras de seguridad, uso aceptable y respuesta ante
+incidentes.</li>
+</ul>
+<p>Cuanto mayor es la capacidad de acción del sistema, mayor debe ser
+también el nivel de control y protección.</p>
+<h2
+id="responsabilidad-sobre-la-información-generada-y-su-uso">Responsabilidad
+sobre la información generada y su uso</h2>
+<p>Los modelos pueden producir respuestas incorrectas, inventadas,
+desactualizadas, sesgadas o fuera de contexto. Por ello, la
+responsabilidad no desaparece por el hecho de haber utilizado una
+herramienta de IA.</p>
+<p>Es importante distinguir entre:</p>
+<ul>
+<li>La responsabilidad del proveedor del modelo o la plataforma.</li>
+<li>La responsabilidad de la organización que lo integra en sus
+procesos.</li>
+<li>La responsabilidad de la persona que utiliza, valida o difunde el
+resultado.</li>
+</ul>
+<p>En contextos educativos, administrativos, jurídicos, sanitarios o
+empresariales, no debería asumirse que una respuesta es válida solo
+porque está bien redactada o parece convincente. Siempre debe existir
+una revisión proporcionada al nivel de riesgo de la tarea.</p>
+<p>Esto implica:</p>
+<ul>
+<li><strong>Verificar resultados</strong> antes de utilizarlos.</li>
+<li>Revisar hechos, fuentes, cálculos y referencias.</li>
+<li>No delegar completamente decisiones críticas en la IA.</li>
+<li>Definir quién responde ante errores, daños o usos inadecuados.</li>
+<li>Establecer protocolos de validación y escalado.</li>
+</ul>
+<p>La IA puede asistir, acelerar y ampliar capacidades, pero la
+<strong>responsabilidad final</strong> sobre las decisiones y
+consecuencias sigue siendo humana y organizativa.</p>
+<h2 id="impacto-laboral-y-educativo">Impacto laboral y educativo</h2>
+<p>Los LLM no solo <strong>automatizan tareas</strong>, también
+<strong>transforman competencias</strong>, procesos y formas de trabajo.
+Su impacto no consiste únicamente en hacer más rápido lo que ya
+hacíamos, sino en cambiar qué habilidades resultan más valiosas y cómo
+se organiza la actividad profesional y educativa.</p>
+<p>Cada vez será más importante saber:</p>
+<ul>
+<li><strong>Formular buenas instrucciones</strong>.</li>
+<li><strong>Verificar resultados</strong>.</li>
+<li><strong>Integrar IA</strong> en <strong>flujos reales</strong>.</li>
+<li><strong>Evaluar riesgos</strong> y <strong>límites</strong>.</li>
+<li><strong>Combinar criterio humano</strong> con <strong>asistencia
+automatizada</strong>.</li>
+<li><strong>Interpretar, supervisar y corregir</strong> salidas
+generadas por sistemas de IA.</li>
+<li><strong>Tomar decisiones informadas</strong> sobre cuándo usar IA y
+cuándo no.</li>
+</ul>
+<p>En educación, esto obliga a replantear metodologías, evaluación,
+autoría y desarrollo de competencias. En el ámbito profesional, exige
+nuevas capacidades relacionadas con la <strong>supervisión</strong>, la
+<strong>integración técnica</strong>, la <strong>gobernanza</strong> y
+el <strong>uso responsable</strong> de estas herramientas.</p>
+<h2 id="gobernanza-y-uso-responsable">Gobernanza y uso responsable</h2>
+<p>Ante todos estos retos, resulta necesario establecer marcos de
+<strong>gobernanza</strong> que orienten el uso responsable de los
+modelos. No se trata solo de disponer de una tecnología potente, sino de
+utilizarla con criterios claros, seguros y alineados con valores éticos
+y obligaciones legales.</p>
+<p>Una adopción responsable de los Grandes Modelos de Lenguaje (LLM)
+debería incluir:</p>
+<ul>
+<li>Políticas de uso claras.</li>
+<li>Evaluación de riesgos antes del despliegue.</li>
+<li>Formación de las personas usuarias.</li>
+<li>Supervisión continua del sistema.</li>
+<li>Revisión legal y de cumplimiento.</li>
+<li>Mecanismos de auditoría, trazabilidad y mejora.</li>
+</ul>
+<p>En definitiva, el valor de estos sistemas no depende únicamente de su
+capacidad técnica, sino también de cómo se diseñan, se implantan, se
+supervisan y se integran en la sociedad.</p>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</body>
+</html>

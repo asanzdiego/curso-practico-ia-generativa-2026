@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="description" content="Comparativa de modelos LLM">
+  <meta name="author" content="Adolfo Sanz De Diego" />
+  <title>Comparativa de modelos LLM</title>
+  <style type="text/css">
+    pre, code {
+      background-color: #ddd;
+      white-space: pre;
+    }
+    aside.notes{
+      background-color: yellow;
+    }
+    img.center {
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body class="container">
+<header id="title-block-header">
+<h1 class="title">Comparativa de modelos LLM</h1>
+<p class="author">Adolfo Sanz De Diego</p>
+<p class="date">Marzo 2026</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#introducción" id="toc-introducción">Introducción</a></li>
+<li><a href="#modelos-llm-de-pesos-cerrados"
+id="toc-modelos-llm-de-pesos-cerrados">Modelos LLM de pesos cerrados</a>
+<ul>
+<li><a href="#chatgpt" id="toc-chatgpt">ChatGPT</a>
+<ul>
+<li><a href="#descripción" id="toc-descripción">Descripción:</a></li>
+<li><a href="#características-principales"
+id="toc-características-principales">Características
+principales:</a></li>
+<li><a href="#pros" id="toc-pros">Pros:</a></li>
+<li><a href="#contras" id="toc-contras">Contras:</a></li>
+</ul></li>
+<li><a href="#gemini" id="toc-gemini">Gemini</a>
+<ul>
+<li><a href="#descripción-1"
+id="toc-descripción-1">Descripción:</a></li>
+<li><a href="#características-principales-1"
+id="toc-características-principales-1">Características
+principales:</a></li>
+<li><a href="#pros-1" id="toc-pros-1">Pros:</a></li>
+<li><a href="#contras-1" id="toc-contras-1">Contras:</a></li>
+</ul></li>
+<li><a href="#copilot" id="toc-copilot">Copilot</a>
+<ul>
+<li><a href="#descripción-2"
+id="toc-descripción-2">Descripción:</a></li>
+<li><a href="#características-principales-2"
+id="toc-características-principales-2">Características
+principales:</a></li>
+<li><a href="#pros-2" id="toc-pros-2">Pros:</a></li>
+<li><a href="#contras-2" id="toc-contras-2">Contras:</a></li>
+</ul></li>
+<li><a href="#grok" id="toc-grok">Grok</a>
+<ul>
+<li><a href="#descripción-3"
+id="toc-descripción-3">Descripción:</a></li>
+<li><a href="#características-principales-3"
+id="toc-características-principales-3">Características
+principales:</a></li>
+<li><a href="#pros-3" id="toc-pros-3">Pros:</a></li>
+<li><a href="#contras-3" id="toc-contras-3">Contras:</a></li>
+</ul></li>
+<li><a href="#claude" id="toc-claude">Claude</a>
+<ul>
+<li><a href="#descripción-4"
+id="toc-descripción-4">Descripción:</a></li>
+<li><a href="#características-principales-4"
+id="toc-características-principales-4">Características
+principales:</a></li>
+<li><a href="#pros-4" id="toc-pros-4">Pros:</a></li>
+<li><a href="#contras-4" id="toc-contras-4">Contras:</a></li>
+</ul></li>
+<li><a href="#sonar-perplexity" id="toc-sonar-perplexity">Sonar /
+Perplexity</a>
+<ul>
+<li><a href="#descripción-5"
+id="toc-descripción-5">Descripción:</a></li>
+<li><a href="#características-principales-5"
+id="toc-características-principales-5">Características
+principales:</a></li>
+<li><a href="#pros-5" id="toc-pros-5">Pros:</a></li>
+<li><a href="#contras-5" id="toc-contras-5">Contras:</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#modelos-llm-de-pesos-abiertos"
+id="toc-modelos-llm-de-pesos-abiertos">Modelos LLM de pesos abiertos</a>
+<ul>
+<li><a href="#deepseek" id="toc-deepseek">DeepSeek</a>
+<ul>
+<li><a href="#descripción-6"
+id="toc-descripción-6">Descripción:</a></li>
+<li><a href="#características-principales-6"
+id="toc-características-principales-6">Características
+principales:</a></li>
+<li><a href="#pros-6" id="toc-pros-6">Pros:</a></li>
+<li><a href="#contras-6" id="toc-contras-6">Contras:</a></li>
+</ul></li>
+<li><a href="#mistral" id="toc-mistral">Mistral</a>
+<ul>
+<li><a href="#descripción-7"
+id="toc-descripción-7">Descripción:</a></li>
+<li><a href="#características-principales-7"
+id="toc-características-principales-7">Características
+principales:</a></li>
+<li><a href="#pros-7" id="toc-pros-7">Pros:</a></li>
+<li><a href="#contras-7" id="toc-contras-7">Contras:</a></li>
+</ul></li>
+<li><a href="#llama" id="toc-llama">Llama</a>
+<ul>
+<li><a href="#descripción-8"
+id="toc-descripción-8">Descripción:</a></li>
+<li><a href="#características-principales-8"
+id="toc-características-principales-8">Características
+principales:</a></li>
+<li><a href="#pros-8" id="toc-pros-8">Pros:</a></li>
+<li><a href="#contras-8" id="toc-contras-8">Contras:</a></li>
+</ul></li>
+<li><a href="#qwen" id="toc-qwen">Qwen</a>
+<ul>
+<li><a href="#descripción-9"
+id="toc-descripción-9">Descripción:</a></li>
+<li><a href="#características-principales-9"
+id="toc-características-principales-9">Características
+principales:</a></li>
+<li><a href="#pros-9" id="toc-pros-9">Pros:</a></li>
+<li><a href="#contras-9" id="toc-contras-9">Contras:</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#observaciones-finales"
+id="toc-observaciones-finales">Observaciones finales</a>
+<ul>
+<li><a href="#tabla-comparativa-final"
+id="toc-tabla-comparativa-final">Tabla comparativa final</a></li>
+<li><a href="#recomendaciones-rápidas-según-el-caso-de-uso"
+id="toc-recomendaciones-rápidas-según-el-caso-de-uso">Recomendaciones
+rápidas según el caso de uso</a></li>
+<li><a href="#conclusiones-finales"
+id="toc-conclusiones-finales">Conclusiones finales</a></li>
+<li><a href="#referencias-y-recursos-recomendados"
+id="toc-referencias-y-recursos-recomendados">Referencias y recursos
+recomendados</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="introducción">Introducción</h1>
+<p>Esta comparativa ofrece una visión general de algunos de los
+<strong>LLM y asistentes conversacionales más relevantes</strong> del
+mercado. En varios casos, el nombre comercial identifica no solo un
+modelo concreto, sino también una <strong>familia de modelos</strong>,
+una <strong>interfaz de chat</strong> o un <strong>ecosistema de
+herramientas</strong>. Por eso, la comparación se centra tanto en la
+<strong>calidad del modelo</strong> como en la <strong>experiencia
+práctica de uso</strong>.</p>
+<h1 id="modelos-llm-de-pesos-cerrados">Modelos LLM de pesos
+cerrados</h1>
+<h2 id="chatgpt">ChatGPT</h2>
+<h3 id="descripción">Descripción:</h3>
+<ul>
+<li>Desarrollado por <strong>OpenAI (EE.UU.)</strong>, lanzado en
+<strong>2022</strong>.</li>
+<li>Se ha consolidado como uno de los asistentes de IA más completos
+para <strong>trabajo general, razonamiento, programación, análisis
+documental y tareas multimodales</strong>.</li>
+<li>En su evolución reciente ha reforzado la familia
+<strong>GPT-5.x</strong> en ChatGPT, con especial atención a
+<strong>razonamiento, uso de herramientas, investigación web,
+documentos, hojas de cálculo, presentaciones y flujos
+profesionales</strong>.</li>
+<li><strong>URL:</strong> <a href="https://chatgpt.com/"
+class="uri">https://chatgpt.com/</a></li>
+</ul>
+<h3 id="características-principales">Características principales:</h3>
+<ul>
+<li><strong>Multimodalidad:</strong>
+<ul>
+<li>Puede trabajar con <strong>texto, imágenes, documentos y, según el
+modo disponible, voz y generación visual</strong>.</li>
+</ul></li>
+<li><strong>Uso de herramientas:</strong>
+<ul>
+<li>Integra navegación web, análisis de archivos, programación,
+automatización asistida y creación de contenido estructurado.</li>
+</ul></li>
+<li><strong>Capacidad para trabajo profesional:</strong>
+<ul>
+<li>Destaca en <strong>redacción, síntesis, investigación, hojas de
+cálculo, presentaciones, programación y automatización de tareas
+complejas</strong>.</li>
+</ul></li>
+<li><strong>Personalización y memoria:</strong>
+<ul>
+<li>Permite adaptar respuestas mediante memoria, instrucciones
+personalizadas, proyectos y contextos de trabajo específicos.</li>
+</ul></li>
+</ul>
+<h3 id="pros">Pros:</h3>
+<ul>
+<li><strong>Muy versátil:</strong>
+<ul>
+<li>Funciona bien en tareas de escritura, docencia, análisis,
+programación, investigación y productividad.</li>
+</ul></li>
+<li><strong>Ecosistema de herramientas muy maduro:</strong>
+<ul>
+<li>Es especialmente útil cuando se combina con archivos, web,
+documentos e instrucciones detalladas.</li>
+</ul></li>
+<li><strong>Experiencia de usuario muy completa:</strong>
+<ul>
+<li>Reúne en un solo entorno conversación, investigación, creación y
+edición de materiales.</li>
+</ul></li>
+</ul>
+<h3 id="contras">Contras:</h3>
+<ul>
+<li><strong>Funciones avanzadas sujetas al plan y al producto
+concreto:</strong>
+<ul>
+<li>No todas las capacidades están disponibles en todos los planes o
+superficies.</li>
+</ul></li>
+<li><strong>Sigue existiendo riesgo de error factual:</strong>
+<ul>
+<li>Puede ofrecer respuestas convincentes pero incorrectas si no se
+verifican.</li>
+</ul></li>
+<li><strong>Modelo cerrado:</strong>
+<ul>
+<li>No está pensado para despliegues locales o ajuste fino del modelo
+base por parte del usuario final.</li>
+</ul></li>
+</ul>
+<h2 id="gemini">Gemini</h2>
+<h3 id="descripción-1">Descripción:</h3>
+<ul>
+<li>Desarrollado por <strong>Google (EE.UU.)</strong>, lanzado en
+<strong>2023</strong>.</li>
+<li>Es una familia de modelos y asistentes con fuerte orientación a la
+<strong>multimodalidad</strong>, la <strong>integración con el
+ecosistema Google</strong> y el trabajo sobre información reciente
+cuando se combina con búsqueda.</li>
+<li>En la actualidad destacan variantes como <strong>Gemini 2.5
+Pro</strong>, <strong>Gemini 2.5 Flash</strong> y <strong>Gemini 2.5
+Flash-Lite</strong>, orientadas a distintos equilibrios entre calidad,
+velocidad y coste.</li>
+<li><strong>URL:</strong> <a href="https://gemini.google.com/"
+class="uri">https://gemini.google.com/</a></li>
+</ul>
+<h3 id="características-principales-1">Características principales:</h3>
+<ul>
+<li><strong>Multimodalidad amplia:</strong>
+<ul>
+<li>Trabaja con <strong>texto, imágenes, audio, vídeo y
+documentos</strong>, según el producto y el entorno de uso.</li>
+</ul></li>
+<li><strong>Integración con Google:</strong>
+<ul>
+<li>Se beneficia de su conexión con servicios como <strong>Workspace,
+Search, AI Studio, Vertex AI y otras herramientas del ecosistema
+Google</strong>.</li>
+</ul></li>
+<li><strong>Familia de modelos escalable:</strong>
+<ul>
+<li>Ofrece variantes pensadas para <strong>razonamiento
+profundo</strong>, <strong>baja latencia</strong>, <strong>audio
+nativo</strong> o <strong>uso eficiente a gran escala</strong>.</li>
+</ul></li>
+<li><strong>Contexto largo y procesamiento complejo:</strong>
+<ul>
+<li>Resulta especialmente útil para análisis de contenido extenso y
+tareas de varios pasos.</li>
+</ul></li>
+</ul>
+<h3 id="pros-1">Pros:</h3>
+<ul>
+<li><strong>Muy fuerte en multimodalidad:</strong>
+<ul>
+<li>Es una de las propuestas más completas para combinar distintos tipos
+de entrada.</li>
+</ul></li>
+<li><strong>Buen encaje en entornos Google:</strong>
+<ul>
+<li>Aporta mucho valor a quien trabaja ya con Workspace, Search o Vertex
+AI.</li>
+</ul></li>
+<li><strong>Amplia variedad de modelos:</strong>
+<ul>
+<li>Permite elegir entre más calidad, más velocidad o menor coste según
+la necesidad.</li>
+</ul></li>
+</ul>
+<h3 id="contras-1">Contras:</h3>
+<ul>
+<li><strong>Experiencia desigual según producto, plan o región:</strong>
+<ul>
+<li>Algunas funciones pueden variar según el entorno de acceso.</li>
+</ul></li>
+<li><strong>Ecosistema complejo:</strong>
+<ul>
+<li>La diversidad de productos, modelos y nombres comerciales puede
+generar cierta confusión.</li>
+</ul></li>
+<li><strong>Modelo cerrado:</strong>
+<ul>
+<li>No está orientado a despliegues locales del modelo principal.</li>
+</ul></li>
+</ul>
+<h2 id="copilot">Copilot</h2>
+<h3 id="descripción-2">Descripción:</h3>
+<ul>
+<li>Desarrollado por <strong>Microsoft (EE. UU.)</strong>, lanzado en
+<strong>2023</strong>.</li>
+<li>Más que un único modelo, es un <strong>ecosistema de asistentes y
+agentes de IA</strong> integrado en <strong>Microsoft 365, Windows y
+servicios empresariales</strong>.</li>
+<li>Su propuesta se centra en la <strong>productividad</strong>, el
+trabajo sobre documentos corporativos y la integración con el entorno de
+trabajo habitual.</li>
+<li>Conviene recordar que <strong>Copilot no es un único LLM comparable
+de forma simple</strong>: bajo esa marca conviven varias experiencias,
+agentes y superficies de uso.</li>
+<li><strong>URL:</strong> &lt;ttps://copilot.microsoft.com/&gt;</li>
+</ul>
+<h3 id="características-principales-2">Características principales:</h3>
+<ul>
+<li><strong>Integración con Microsoft 365:</strong>
+<ul>
+<li>Ayuda en aplicaciones como <strong>Word, Excel, Outlook, Teams o
+PowerPoint</strong>.</li>
+</ul></li>
+<li><strong>Orientación a trabajo empresarial:</strong>
+<ul>
+<li>Incorpora funciones de <strong>chat, búsqueda, agentes, notebooks,
+páginas y creación de contenido</strong> dentro del ecosistema
+Microsoft.</li>
+</ul></li>
+<li><strong>Contexto organizativo:</strong>
+<ul>
+<li>Puede combinar información personal y corporativa para responder con
+mayor utilidad en flujos de trabajo reales.</li>
+</ul></li>
+<li><strong>Gobernanza y administración:</strong>
+<ul>
+<li>Tiene un enfoque fuerte en seguridad, control y despliegue en
+entornos corporativos.</li>
+</ul></li>
+</ul>
+<h3 id="pros-2">Pros:</h3>
+<ul>
+<li><strong>Muy útil en organizaciones que ya usan Microsoft:</strong>
+<ul>
+<li>Su valor crece mucho cuando se trabaja de forma intensiva con
+Microsoft 365.</li>
+</ul></li>
+<li><strong>Enfoque claro en productividad:</strong>
+<ul>
+<li>Reduce trabajo repetitivo y acelera tareas habituales de
+oficina.</li>
+</ul></li>
+<li><strong>Buena alineación con TI corporativa:</strong>
+<ul>
+<li>Resulta atractivo en entornos empresariales por su integración con
+seguridad, permisos y administración.</li>
+</ul></li>
+</ul>
+<h3 id="contras-2">Contras:</h3>
+<ul>
+<li><strong>Depende mucho del ecosistema Microsoft:</strong>
+<ul>
+<li>Fuera de ese entorno, parte de su ventaja diferencial
+disminuye.</li>
+</ul></li>
+<li><strong>Licenciamiento y costes:</strong>
+<ul>
+<li>Las capacidades más interesantes suelen depender de planes de pago o
+licencias corporativas.</li>
+</ul></li>
+<li><strong>No es un modelo único y simple de comparar:</strong>
+<ul>
+<li>Bajo la marca Copilot conviven distintas experiencias, superficies y
+capacidades.</li>
+</ul></li>
+</ul>
+<h2 id="grok">Grok</h2>
+<h3 id="descripción-3">Descripción:</h3>
+<ul>
+<li>Desarrollado por <strong>xAI (EE. UU.)</strong>, lanzado en
+<strong>2024</strong> .</li>
+<li>Es un asistente conversacional que ha evolucionado con rapidez y que
+pone el foco en <strong>búsqueda en tiempo real, razonamiento,
+documentos, voz y experiencia de trabajo directo</strong>.</li>
+<li>La familia <strong>Grok 3</strong> consolidó la apuesta de xAI por
+los <strong>modelos de razonamiento</strong> y por una interacción más
+conectada con información reciente.</li>
+<li><strong>URL:</strong> <a href="https://grok.com/"
+class="uri">https://grok.com/</a></li>
+</ul>
+<h3 id="características-principales-3">Características principales:</h3>
+<ul>
+<li><strong>Integración con búsqueda en tiempo real:</strong>
+<ul>
+<li>Está orientado a responder con apoyo en información reciente cuando
+usa sus capacidades de búsqueda.</li>
+</ul></li>
+<li><strong>Modelos de razonamiento:</strong>
+<ul>
+<li>xAI ha destacado Grok 3 y Grok 3 mini en modos de pensamiento para
+tareas complejas.</li>
+</ul></li>
+<li><strong>Experiencia conversacional distintiva:</strong>
+<ul>
+<li>Mantiene una identidad de producto más informal y directa que otros
+asistentes.</li>
+</ul></li>
+<li><strong>Capacidades multimodales y creativas:</strong>
+<ul>
+<li>Puede combinar conversación, análisis, código y generación visual
+según el modo disponible.</li>
+</ul></li>
+</ul>
+<h3 id="pros-3">Pros:</h3>
+<ul>
+<li><strong>Buena frescura informativa:</strong>
+<ul>
+<li>Resulta atractivo para preguntas sobre actualidad o temas
+dinámicos.</li>
+</ul></li>
+<li><strong>Interacción ágil:</strong>
+<ul>
+<li>Su tono y velocidad pueden hacerlo agradable para un uso
+conversacional frecuente.</li>
+</ul></li>
+<li><strong>Evolución rápida del producto:</strong>
+<ul>
+<li>Ha mejorado con rapidez en razonamiento, API y multimodalidad.</li>
+</ul></li>
+</ul>
+<h3 id="contras-3">Contras:</h3>
+<ul>
+<li><strong>Confiabilidad irregular según el caso:</strong>
+<ul>
+<li>Conviene verificar con especial atención respuestas sensibles o muy
+especializadas.</li>
+</ul></li>
+<li><strong>Menor madurez empresarial que otros grandes
+ecosistemas:</strong>
+<ul>
+<li>En empresa y flujos complejos todavía compite con plataformas más
+asentadas.</li>
+</ul></li>
+<li><strong>Modelo cerrado:</strong>
+<ul>
+<li>No es una familia pensada para despliegues locales del modelo de
+referencia.</li>
+</ul></li>
+</ul>
+<h2 id="claude">Claude</h2>
+<h3 id="descripción-4">Descripción:</h3>
+<ul>
+<li>Desarrollado por <strong>Anthropic (EE. UU.)</strong>, , lanzado en
+<strong>2023</strong>.</li>
+<li>Es una de las familias de modelos más valoradas para
+<strong>redacción de alta calidad, programación, razonamiento, análisis
+documental y seguridad</strong>.</li>
+<li>En 2025 y 2026 ha reforzado la familia <strong>Claude 4</strong>,
+con especial atención a <strong>agentes, trabajo de larga duración,
+programación y uso de herramientas</strong>. Entre las actualizaciones
+recientes destaca <strong>Claude Sonnet 4.6</strong>.</li>
+<li><strong>URL:</strong> <a href="https://claude.ai/"
+class="uri">https://claude.ai/</a></li>
+</ul>
+<h3 id="características-principales-4">Características principales:</h3>
+<ul>
+<li><strong>Fuerte orientación a seguridad y alineamiento:</strong>
+<ul>
+<li>Anthropic ha puesto mucho énfasis en la reducción de respuestas
+dañinas y en el control del comportamiento del modelo.</li>
+</ul></li>
+<li><strong>Excelente manejo de texto y documentos largos:</strong>
+<ul>
+<li>Es especialmente sólido en análisis, síntesis, escritura y
+razonamiento con grandes cantidades de información.</li>
+</ul></li>
+<li><strong>Muy buen rendimiento en programación y agentes:</strong>
+<ul>
+<li>Sus variantes recientes destacan en trabajo con código,
+planificación y tareas largas.</li>
+</ul></li>
+<li><strong>Ventanas de contexto muy amplias:</strong>
+<ul>
+<li>Está especialmente bien posicionado para trabajar con materiales
+extensos.</li>
+</ul></li>
+</ul>
+<h3 id="pros-4">Pros:</h3>
+<ul>
+<li><strong>Muy fuerte en escritura y análisis:</strong>
+<ul>
+<li>Suele ofrecer respuestas cuidadas, bien estructuradas y útiles para
+trabajo intelectual complejo.</li>
+</ul></li>
+<li><strong>Gran rendimiento en programación:</strong>
+<ul>
+<li>Se ha convertido en una referencia frecuente para tareas de
+desarrollo y revisión de código.</li>
+</ul></li>
+<li><strong>Buen equilibrio entre calidad y seguridad:</strong>
+<ul>
+<li>Es una opción muy apreciada en entornos profesionales
+exigentes.</li>
+</ul></li>
+</ul>
+<h3 id="contras-4">Contras:</h3>
+<ul>
+<li><strong>Puede ser más restrictivo que otros asistentes:</strong>
+<ul>
+<li>En algunos contextos su enfoque de seguridad limita más la
+respuesta.</li>
+</ul></li>
+<li><strong>Parte del valor diferencial está en planes de pago o
+empresa:</strong>
+<ul>
+<li>Algunas funciones avanzadas no están igualmente disponibles para
+todos los usuarios.</li>
+</ul></li>
+<li><strong>Modelo cerrado:</strong>
+<ul>
+<li>No es una familia pensada para despliegues locales del modelo de
+referencia.</li>
+</ul></li>
+</ul>
+<h2 id="sonar-perplexity">Sonar / Perplexity</h2>
+<h3 id="descripción-5">Descripción:</h3>
+<ul>
+<li>Desarrollado por <strong>Perplexity AI (EE.UU.)</strong>, lanzado en
+<strong>2022</strong>.</li>
+<li>Conviene distinguir dos niveles:
+<ul>
+<li><strong>Perplexity</strong> es el producto y la experiencia de
+uso.</li>
+<li><strong>Sonar</strong> es la familia de modelos y servicios
+orientados a <strong>búsqueda web, grounding y síntesis apoyada en
+fuentes</strong>.</li>
+</ul></li>
+<li>No es solo un chat generalista: su propuesta gira en torno a
+<strong>búsqueda integrada, respuestas fundamentadas y consultas
+complejas conectadas a la web</strong>.</li>
+<li><strong>URL:</strong> <a href="https://www.perplexity.ai/"
+class="uri">https://www.perplexity.ai/</a></li>
+</ul>
+<h3 id="características-principales-5">Características principales:</h3>
+<ul>
+<li><strong>Búsqueda web nativa:</strong>
+<ul>
+<li>Su principal valor es combinar razonamiento con recuperación de
+información actualizada.</li>
+</ul></li>
+<li><strong>Enfoque en respuestas fundamentadas:</strong>
+<ul>
+<li>Está pensado para ofrecer respuestas con trazabilidad, citas y apoyo
+en fuentes.</li>
+</ul></li>
+<li><strong>Modelos y modos orientados a investigación:</strong>
+<ul>
+<li>La línea Sonar y la plataforma de agentes priorizan consultas
+apoyadas en búsqueda, URL fetching y síntesis rápida.</li>
+</ul></li>
+<li><strong>Producto muy útil para investigación y
+descubrimiento:</strong>
+<ul>
+<li>Es especialmente fuerte en consultas donde importa la
+<strong>actualidad</strong>, la <strong>verificación rápida</strong> o
+la <strong>exploración inicial</strong> de un tema.</li>
+</ul></li>
+</ul>
+<h3 id="pros-5">Pros:</h3>
+<ul>
+<li><strong>Excelente para preguntas que requieren actualidad:</strong>
+<ul>
+<li>Destaca cuando la información cambia rápido o depende de fuentes
+recientes.</li>
+</ul></li>
+<li><strong>Muy cómodo para investigar y contrastar:</strong>
+<ul>
+<li>Puede ahorrar mucho tiempo en tareas de búsqueda y síntesis
+inicial.</li>
+</ul></li>
+<li><strong>Propuesta muy diferenciada:</strong>
+<ul>
+<li>Tiene una identidad clara frente a los chats generalistas centrados
+en creación o productividad.</li>
+</ul></li>
+</ul>
+<h3 id="contras-5">Contras:</h3>
+<ul>
+<li><strong>Menos orientado a flujos largos de creación
+compleja:</strong>
+<ul>
+<li>Para proyectos extensos de escritura, programación o automatización,
+otros asistentes pueden resultar más completos.</li>
+</ul></li>
+<li><strong>Dependencia fuerte de la calidad de la
+recuperación:</strong>
+<ul>
+<li>Su valor está muy ligado a la calidad de las fuentes y la búsqueda
+utilizada.</li>
+</ul></li>
+<li><strong>Capacidades avanzadas sujetas al plan:</strong>
+<ul>
+<li>Algunas funciones más potentes o profundas se reservan a modalidades
+superiores.</li>
+</ul></li>
+</ul>
+<h1 id="modelos-llm-de-pesos-abiertos">Modelos LLM de pesos
+abiertos</h1>
+<h2 id="deepseek">DeepSeek</h2>
+<h3 id="descripción-6">Descripción:</h3>
+<ul>
+<li>Creado por <strong>DeepSeek AI (China)</strong>, lanzado en
+<strong>2023</strong>..</li>
+<li>Se ha hecho especialmente conocido por sus modelos de <strong>pesos
+abiertos</strong> y por su excelente relación entre <strong>coste,
+razonamiento, matemáticas y programación</strong>.</li>
+<li>En el último año han destacado especialmente
+<strong>DeepSeek-R1</strong> y la serie <strong>DeepSeek-V3.x</strong>,
+incluida <strong>DeepSeek-V3.2</strong>, con mejoras en razonamiento,
+agentes y uso de herramientas.</li>
+<li><strong>URL:</strong> <a href="https://chat.deepseek.com/"
+class="uri">https://chat.deepseek.com/</a></li>
+</ul>
+<h3 id="características-principales-6">Características principales:</h3>
+<ul>
+<li><strong>Pesos abiertos en sus familias más conocidas:</strong>
+<ul>
+<li>Esto facilita el uso en local, el ajuste fino y la experimentación
+por parte de la comunidad y de organizaciones con infraestructura
+propia.</li>
+</ul></li>
+<li><strong>Muy buen rendimiento técnico:</strong>
+<ul>
+<li>Destaca especialmente en <strong>código, razonamiento y
+matemáticas</strong>.</li>
+</ul></li>
+<li><strong>Coste competitivo:</strong>
+<ul>
+<li>Ha ganado mucha atención por ofrecer un equilibrio muy atractivo
+entre calidad y eficiencia.</li>
+</ul></li>
+<li><strong>Evolución reciente hacia agentes:</strong>
+<ul>
+<li>Las versiones más nuevas refuerzan el soporte para <strong>tool
+use</strong>, razonamiento y escenarios más agentivos.</li>
+</ul></li>
+</ul>
+<h3 id="pros-6">Pros:</h3>
+<ul>
+<li><strong>Opción muy relevante en open weight:</strong>
+<ul>
+<li>Es una de las familias más influyentes del ecosistema abierto
+reciente.</li>
+</ul></li>
+<li><strong>Buen rendimiento en tareas STEM:</strong>
+<ul>
+<li>Funciona bien en programación, problemas técnicos y razonamiento
+estructurado.</li>
+</ul></li>
+<li><strong>Interesante para uso local o soberano:</strong>
+<ul>
+<li>Puede encajar en estrategias de control de infraestructura y
+personalización.</li>
+</ul></li>
+</ul>
+<h3 id="contras-6">Contras:</h3>
+<ul>
+<li><strong>Menor madurez de producto que algunos líderes
+comerciales:</strong>
+<ul>
+<li>Su experiencia final de chat y ecosistema puede ser menos refinada
+que la de plataformas más consolidadas.</li>
+</ul></li>
+<li><strong>Despliegue local exigente en modelos grandes:</strong>
+<ul>
+<li>Aunque sean abiertos, aprovechar sus mejores versiones requiere
+recursos técnicos.</li>
+</ul></li>
+<li><strong>Evaluación regulatoria y de privacidad a
+considerar:</strong>
+<ul>
+<li>En entornos sensibles conviene revisar cuidadosamente aspectos de
+cumplimiento, gobernanza y tratamiento de datos.</li>
+</ul></li>
+</ul>
+<h2 id="mistral">Mistral</h2>
+<h3 id="descripción-7">Descripción:</h3>
+<ul>
+<li>Creado por <strong>Mistral AI (Francia)</strong>, lanzado en
+<strong>2023</strong>.</li>
+<li>Es una de las compañías europeas más relevantes del sector, con una
+propuesta que combina <strong>modelos de pesos abiertos</strong>,
+modelos propietarios y un asistente propio: <strong>Le
+Chat</strong>.</li>
+<li>En el último año ha reforzado su línea de razonamiento con
+<strong>Magistral</strong> y ha ampliado Le Chat con funciones como
+<strong>Deep Research</strong>, audio y proyectos.</li>
+<li><strong>URL:</strong> <a href="https://chat.mistral.ai/"
+class="uri">https://chat.mistral.ai/</a></li>
+</ul>
+<h3 id="características-principales-7">Características principales:</h3>
+<ul>
+<li><strong>Estrategia mixta:</strong>
+<ul>
+<li>Combina modelos abiertos con productos y servicios cerrados para
+empresa.</li>
+</ul></li>
+<li><strong>Foco en eficiencia y despliegue flexible:</strong>
+<ul>
+<li>Sus modelos han destacado por una buena relación entre rendimiento y
+coste computacional.</li>
+</ul></li>
+<li><strong>Buen soporte multilingüe y europeo:</strong>
+<ul>
+<li>Resulta especialmente atractivo en contextos que valoran soberanía
+tecnológica y alternativas europeas.</li>
+</ul></li>
+<li><strong>Le Chat como producto en expansión:</strong>
+<ul>
+<li>Integra razonamiento, búsqueda, investigación, audio y otras
+capacidades en evolución.</li>
+</ul></li>
+</ul>
+<h3 id="pros-7">Pros:</h3>
+<ul>
+<li><strong>Actor europeo de referencia:</strong>
+<ul>
+<li>Es una opción muy interesante para estrategias de autonomía
+tecnológica.</li>
+</ul></li>
+<li><strong>Buen equilibrio entre apertura y producto
+comercial:</strong>
+<ul>
+<li>Puede servir tanto para investigación como para despliegues
+empresariales.</li>
+</ul></li>
+<li><strong>Multilingüe y flexible:</strong>
+<ul>
+<li>Se adapta bien a distintos contextos de uso y a necesidades de
+personalización.</li>
+</ul></li>
+</ul>
+<h3 id="contras-7">Contras:</h3>
+<ul>
+<li><strong>Ecosistema menor que el de OpenAI, Google o
+Microsoft:</strong>
+<ul>
+<li>Aunque crece rápido, aún compite con plataformas con más
+distribución global.</li>
+</ul></li>
+<li><strong>Oferta algo fragmentada:</strong>
+<ul>
+<li>La coexistencia de productos abiertos, cerrados y de empresa puede
+requerir más análisis previo.</li>
+</ul></li>
+<li><strong>Los mejores resultados dependen mucho del modelo concreto
+elegido:</strong>
+<ul>
+<li>Conviene distinguir bien entre las distintas familias de
+Mistral.</li>
+</ul></li>
+</ul>
+<h2 id="llama">Llama</h2>
+<h3 id="descripción-8">Descripción:</h3>
+<ul>
+<li>Desarrollado por <strong>Meta (EE. UU.)</strong>, lanzado en
+<strong>2023</strong>.</li>
+<li>Es una de las familias de <strong>pesos abiertos</strong> más
+influyentes del mercado y una base habitual para investigación, ajuste
+fino y despliegues propios.</li>
+<li>En el último año, <strong>Llama 4</strong> ha reforzado la apuesta
+por la <strong>multimodalidad nativa</strong>, la arquitectura de
+<strong>mezcla de expertos</strong> y contextos muy amplios.</li>
+<li>Su equivalente de consumo se experimenta sobre todo a través de
+<strong>Meta AI</strong>.</li>
+<li><strong>URL:</strong> <a href="https://www.meta.ai/"
+class="uri">https://www.meta.ai/</a></li>
+</ul>
+<h3 id="características-principales-8">Características principales:</h3>
+<ul>
+<li><strong>Pesos abiertos:</strong>
+<ul>
+<li>Permite descargar, ajustar y desplegar diferentes variantes en
+infraestructuras propias.</li>
+</ul></li>
+<li><strong>Gran ecosistema alrededor:</strong>
+<ul>
+<li>Cuenta con una comunidad enorme, abundantes herramientas y múltiples
+implementaciones.</li>
+</ul></li>
+<li><strong>Evolución hacia multimodalidad y contexto largo:</strong>
+<ul>
+<li>Las generaciones recientes amplían sus casos de uso más allá del
+texto puro.</li>
+</ul></li>
+<li><strong>Base para productos de terceros:</strong>
+<ul>
+<li>Muchas soluciones empresariales y experimentales se construyen sobre
+Llama o derivados.</li>
+</ul></li>
+</ul>
+<h3 id="pros-8">Pros:</h3>
+<ul>
+<li><strong>Muy importante para despliegues propios:</strong>
+<ul>
+<li>Es una referencia clara cuando se busca control, personalización o
+soberanía tecnológica.</li>
+</ul></li>
+<li><strong>Gran comunidad y abundancia de herramientas:</strong>
+<ul>
+<li>Resulta fácil encontrar adaptaciones, benchmarks y software
+compatible.</li>
+</ul></li>
+<li><strong>Amplia variedad de tamaños y usos:</strong>
+<ul>
+<li>Puede servir tanto para prototipos ligeros como para entornos más
+exigentes.</li>
+</ul></li>
+</ul>
+<h3 id="contras-8">Contras:</h3>
+<ul>
+<li><strong>El mejor rendimiento requiere infraestructura
+importante:</strong>
+<ul>
+<li>Las versiones más potentes no son baratas de ejecutar en local.</li>
+</ul></li>
+<li><strong>No equivale por sí solo a una experiencia de producto
+cerrada y unificada:</strong>
+<ul>
+<li>Muchas veces hay que integrar varias piezas para obtener una
+experiencia final comparable a la de los grandes chats comerciales.</li>
+</ul></li>
+<li><strong>Licencia y condiciones a revisar:</strong>
+<ul>
+<li>Aunque sean pesos abiertos, conviene analizar siempre los términos
+concretos de uso.</li>
+</ul></li>
+</ul>
+<h2 id="qwen">Qwen</h2>
+<h3 id="descripción-9">Descripción:</h3>
+<ul>
+<li>Desarrollado por <strong>Alibaba Cloud / Qwen (China)</strong>,
+lanzado en <strong>2023</strong>.</li>
+<li>Es una familia de modelos muy competitiva, con una estrategia que
+combina <strong>variantes abiertas</strong>, producto alojado y una
+evolución muy rápida en capacidades multimodales y agentivas.</li>
+<li>En el último año han destacado <strong>Qwen3</strong> y
+<strong>Qwen3.5</strong>, con avances en <strong>razonamiento híbrido,
+programación, agentes, multimodalidad y despliegues
+abiertos</strong>.</li>
+<li><strong>URL:</strong> <a href="https://chat.qwen.ai/"
+class="uri">https://chat.qwen.ai/</a></li>
+</ul>
+<h3 id="características-principales-9">Características principales:</h3>
+<ul>
+<li><strong>Familia muy amplia:</strong>
+<ul>
+<li>Incluye modelos para conversación, razonamiento, visión, agentes,
+código y otros usos especializados.</li>
+</ul></li>
+<li><strong>Buen rendimiento técnico:</strong>
+<ul>
+<li>Ha mostrado resultados muy competitivos en múltiples comparativas
+públicas y tareas reales.</li>
+</ul></li>
+<li><strong>Oferta abierta y alojada:</strong>
+<ul>
+<li>Combina pesos abiertos para la comunidad con experiencias de chat y
+servicios alojados.</li>
+</ul></li>
+<li><strong>Evolución muy rápida:</strong>
+<ul>
+<li>Es una de las familias que más deprisa ha ampliado su catálogo y
+capacidades.</li>
+</ul></li>
+</ul>
+<h3 id="pros-9">Pros:</h3>
+<ul>
+<li><strong>Muy versátil:</strong>
+<ul>
+<li>Puede encajar tanto en experimentación técnica como en producto
+final.</li>
+</ul></li>
+<li><strong>Buen equilibrio entre apertura y prestaciones:</strong>
+<ul>
+<li>Ofrece opciones atractivas para quienes quieren explorar modelos
+abiertos sin renunciar a capacidades avanzadas.</li>
+</ul></li>
+<li><strong>Especialmente interesante en multimodalidad y
+agentes:</strong>
+<ul>
+<li>Sus líneas recientes refuerzan mucho estos escenarios.</li>
+</ul></li>
+</ul>
+<h3 id="contras-9">Contras:</h3>
+<ul>
+<li><strong>Catálogo amplio y algo complejo:</strong>
+<ul>
+<li>Puede costar identificar qué variante es la más adecuada para cada
+caso.</li>
+</ul></li>
+<li><strong>Las versiones más ambiciosas exigen recursos:</strong>
+<ul>
+<li>Como ocurre con otras familias punteras, el máximo rendimiento
+requiere buena infraestructura.</li>
+</ul></li>
+<li><strong>Menor notoriedad generalista en algunos mercados
+occidentales:</strong>
+<ul>
+<li>Aunque técnicamente fuerte, su visibilidad pública sigue siendo
+desigual según la región.</li>
+</ul></li>
+</ul>
+<h1 id="observaciones-finales">Observaciones finales</h1>
+<h2 id="tabla-comparativa-final">Tabla comparativa final</h2>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>Modelo</th>
+<th>Enlace al chat</th>
+<th>Pesos</th>
+<th>Empresa (país)</th>
+<th>Característica principal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="./logos/010-chatgpt-logo.png" alt="ChatGPT" width="20">
+ChatGPT</td>
+<td><a href="https://chatgpt.com/">chatgpt.com</a></td>
+<td>Cerrados</td>
+<td>OpenAI (<strong>EE. UU.</strong>)</td>
+<td>Ecosistema muy completo para trabajo general, documentos,
+razonamiento y herramientas</td>
+</tr>
+<tr>
+<td><img src="./logos/020-gemini-logo.png" alt="Gemini" width="20">
+Gemini</td>
+<td><a href="https://gemini.google.com/">gemini.google.com</a></td>
+<td>Cerrados</td>
+<td>Google (<strong>EE. UU.</strong>)</td>
+<td>Multimodalidad muy amplia e integración con el ecosistema
+Google</td>
+</tr>
+<tr>
+<td><img src="./logos/030-copilot-logo.png" alt="Copilot" width="20">
+Copilot</td>
+<td><a
+href="https://copilot.microsoft.com/">copilot.microsoft.com</a></td>
+<td>Cerrados</td>
+<td>Microsoft (<strong>EE. UU.</strong>)</td>
+<td>Productividad empresarial integrada en Microsoft 365, Windows y
+agentes</td>
+</tr>
+<tr>
+<td><img src="./logos/040-grok-logo.png" alt="Grok" width="20">
+Grok</td>
+<td><a href="https://grok.com/">grok.com</a></td>
+<td>Cerrados</td>
+<td>xAI (<strong>EE. UU.</strong>)</td>
+<td>Búsqueda en tiempo real y experiencia conversacional ágil</td>
+</tr>
+<tr>
+<td><img src="./logos/050-claude-logo.png" alt="Claude" width="20">
+Claude</td>
+<td><a href="https://claude.ai/">claude.ai</a></td>
+<td>Cerrados</td>
+<td>Anthropic (<strong>EE. UU.</strong>)</td>
+<td>Muy alto nivel en escritura, programación, análisis documental y
+agentes</td>
+</tr>
+<tr>
+<td><img src="./logos/060-perplexity-logo.png" alt="Sonar / Perplexity" width="20">
+Sonar / Perplexity</td>
+<td><a href="https://www.perplexity.ai/">perplexity.ai</a></td>
+<td>Cerrados</td>
+<td>Perplexity (<strong>EE. UU.</strong>)</td>
+<td>Respuestas apoyadas en búsqueda web, grounding y fuentes
+recientes</td>
+</tr>
+<tr>
+<td><img src="./logos/070-deepseek-logo.png" alt="DeepSeek" width="20">
+DeepSeek</td>
+<td><a href="https://chat.deepseek.com/">chat.deepseek.com</a></td>
+<td>Abiertos</td>
+<td>DeepSeek AI (<strong>China</strong>)</td>
+<td>Gran relación calidad-coste en razonamiento, matemáticas, código y
+despliegue abierto</td>
+</tr>
+<tr>
+<td><img src="./logos/080-mistral-logo.png" alt="Mistral" width="20">
+Mistral</td>
+<td><a href="https://chat.mistral.ai/">chat.mistral.ai</a></td>
+<td>Abiertos</td>
+<td>Mistral AI (<strong>Francia</strong>)</td>
+<td>Alternativa europea con combinación de modelos abiertos y producto
+comercial</td>
+</tr>
+<tr>
+<td><img src="./logos/090-meta-ai-logo.png" alt="Llama / Meta AI" width="20">
+Llama / Meta AI</td>
+<td><a href="https://www.meta.ai/">meta.ai</a></td>
+<td>Abiertos</td>
+<td>Meta (<strong>EE. UU.</strong>)</td>
+<td>Ecosistema open weight muy extendido para despliegues propios y
+multimodalidad</td>
+</tr>
+<tr>
+<td><img src="./logos/100-qwen-logo.png" alt="Qwen" width="20">
+Qwen</td>
+<td><a href="https://chat.qwen.ai/">chat.qwen.ai</a></td>
+<td>Abiertos</td>
+<td>Alibaba Cloud / Qwen (<strong>China</strong>)</td>
+<td>Familia muy amplia y competitiva en multimodalidad, agentes y
+variantes abiertas</td>
+</tr>
+</tbody>
+</table>
+<h2 id="recomendaciones-rápidas-según-el-caso-de-uso">Recomendaciones
+rápidas según el caso de uso</h2>
+<ul>
+<li><strong>Uso general y trabajo profesional transversal:</strong>
+<ul>
+<li><strong>ChatGPT</strong>, <strong>Gemini</strong> y
+<strong>Claude</strong> siguen siendo las referencias más sólidas para
+un abanico muy amplio de tareas.</li>
+</ul></li>
+<li><strong>Productividad empresarial integrada:</strong>
+<ul>
+<li><strong>Copilot</strong> sobresale especialmente cuando la
+organización ya vive dentro del ecosistema Microsoft.</li>
+</ul></li>
+<li><strong>Actualidad, búsqueda y contraste rápido:</strong>
+<ul>
+<li><strong>Sonar / Perplexity</strong> y, en muchos casos,
+<strong>Grok</strong> son especialmente útiles cuando importa la
+información reciente.</li>
+</ul></li>
+<li><strong>Código, matemáticas y eficiencia técnica:</strong>
+<ul>
+<li><strong>DeepSeek</strong>, <strong>Claude</strong>,
+<strong>ChatGPT</strong> y algunas variantes de <strong>Qwen</strong>
+destacan de forma especial.</li>
+</ul></li>
+<li><strong>Soberanía tecnológica, despliegue propio y
+personalización:</strong>
+<ul>
+<li><strong>Llama</strong>, <strong>DeepSeek</strong>, parte del
+ecosistema <strong>Qwen</strong> y parte de <strong>Mistral</strong> son
+especialmente relevantes.</li>
+</ul></li>
+<li><strong>Alternativa europea:</strong>
+<ul>
+<li><strong>Mistral</strong> es hoy una de las referencias más claras en
+esta categoría.</li>
+</ul></li>
+</ul>
+<h2 id="conclusiones-finales">Conclusiones finales</h2>
+<p>No existe un único “mejor” LLM para todos los casos. La elección
+depende de factores como:</p>
+<ul>
+<li><strong>tipo de tarea</strong>,</li>
+<li><strong>necesidad de información actualizada</strong>,</li>
+<li><strong>nivel de seguridad y gobernanza exigido</strong>,</li>
+<li><strong>capacidad para desplegar en local o en nube
+propia</strong>,</li>
+<li><strong>coste</strong>,</li>
+<li><strong>multimodalidad</strong>,</li>
+<li><strong>integración con herramientas ya existentes</strong>,</li>
+<li><strong>necesidad de agentes, búsqueda o
+automatización</strong>.</li>
+</ul>
+<p>En términos generales:</p>
+<ul>
+<li><strong>ChatGPT, Gemini y Claude</strong> destacan como opciones muy
+completas y de alto nivel para uso general y profesional.</li>
+<li><strong>Copilot</strong> sobresale especialmente en productividad
+empresarial dentro del ecosistema Microsoft.</li>
+<li><strong>DeepSeek, Llama y parte del ecosistema Qwen/Mistral</strong>
+son especialmente relevantes cuando importan los <strong>pesos
+abiertos</strong>, la personalización o la soberanía tecnológica.</li>
+<li><strong>Sonar / Perplexity</strong> es especialmente útil cuando lo
+más importante es <strong>buscar, contrastar y sintetizar información
+reciente</strong>.</li>
+</ul>
+<h2 id="referencias-y-recursos-recomendados">Referencias y recursos
+recomendados</h2>
+<ul>
+<li><a href="https://openai.com/gpt-5/">OpenAI – GPT-5 y notas de
+versión de ChatGPT</a></li>
+<li><a
+href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">OpenAI
+Help – ChatGPT release notes</a></li>
+<li><a
+href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/google-gemini-updates-io-2025/">Google
+– Actualizaciones de Gemini 2.5</a></li>
+<li><a
+href="https://blog.google/products-and-platforms/products/gemini/gemini-2-5-model-family-expands/">Google
+– Expansión de la familia Gemini 2.5</a></li>
+<li><a
+href="https://www.microsoft.com/en-us/microsoft-365-copilot">Microsoft –
+Microsoft 365 Copilot</a></li>
+<li><a
+href="https://learn.microsoft.com/es-es/copilot/microsoft-365/release-notes">Microsoft
+Learn – Notas de versión de Microsoft 365 Copilot</a></li>
+<li><a href="https://x.ai/news/grok-3">xAI – Grok 3</a></li>
+<li><a href="https://x.ai/grok">xAI – Grok</a></li>
+<li><a href="https://www.anthropic.com/news/claude-4">Anthropic – Claude
+4</a></li>
+<li><a href="https://www.anthropic.com/news/claude-sonnet-4-6">Anthropic
+– Claude Sonnet 4.6</a></li>
+<li><a href="https://docs.perplexity.ai/docs/sonar/models">Perplexity
+API Docs – Sonar models</a></li>
+<li><a href="https://www.perplexity.ai/api-platform">Perplexity API
+Platform</a></li>
+<li><a href="https://api-docs.deepseek.com/news/news250120">DeepSeek –
+R1</a></li>
+<li><a href="https://api-docs.deepseek.com/news/news251201">DeepSeek –
+V3.2</a></li>
+<li><a href="https://mistral.ai/news/magistral">Mistral AI –
+Magistral</a></li>
+<li><a href="https://mistral.ai/news/le-chat-dives-deep">Mistral AI – Le
+Chat dives deep</a></li>
+<li><a
+href="https://ai.meta.com/blog/llama-4-multimodal-intelligence/">Meta –
+Llama 4</a></li>
+<li><a
+href="https://about.fb.com/news/2025/04/introducing-meta-ai-app-new-way-access-ai-assistant/">Meta
+– Meta AI app</a></li>
+<li><a href="https://qwenlm.github.io/blog/qwen3/">Qwen – Qwen3</a></li>
+<li><a href="https://chat.qwen.ai/">Qwen – Qwen Chat</a></li>
+</ul>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</body>
+</html>

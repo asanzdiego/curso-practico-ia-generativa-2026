@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="description" content="Introducción a la Inteligencia
+Artificial Generativa">
+  <meta name="author" content="Adolfo Sanz De Diego" />
+  <title>Introducción a la Inteligencia Artificial Generativa</title>
+  <style type="text/css">
+    pre, code {
+      background-color: #ddd;
+      white-space: pre;
+    }
+    aside.notes{
+      background-color: yellow;
+    }
+    img.center {
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body class="container">
+<header id="title-block-header">
+<h1 class="title">Introducción a la Inteligencia Artificial
+Generativa</h1>
+<p class="author">Adolfo Sanz De Diego</p>
+<p class="date">Marzo 2026</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#introducción" id="toc-introducción">Introducción</a>
+<ul>
+<li><a href="#qué-es-la-inteligencia-artificial-generativa"
+id="toc-qué-es-la-inteligencia-artificial-generativa">¿Qué es la
+Inteligencia Artificial Generativa?</a></li>
+<li><a href="#sectores-implicados-y-casos-de-uso-más-actuales"
+id="toc-sectores-implicados-y-casos-de-uso-más-actuales">Sectores
+implicados y casos de uso más actuales</a></li>
+<li><a href="#beneficios-y-desafíos"
+id="toc-beneficios-y-desafíos">Beneficios y desafíos</a></li>
+<li><a href="#limitaciones-y-riesgos-de-seguridad"
+id="toc-limitaciones-y-riesgos-de-seguridad">Limitaciones y riesgos de
+seguridad</a></li>
+<li><a href="#retos-éticos-y-competencias-clave"
+id="toc-retos-éticos-y-competencias-clave">Retos éticos y competencias
+clave</a></li>
+<li><a href="#tendencias-tecnológicas-y-regulación"
+id="toc-tendencias-tecnológicas-y-regulación">Tendencias tecnológicas y
+regulación</a></li>
+</ul></li>
+<li><a href="#historia" id="toc-historia">Historia</a>
+<ul>
+<li><a href="#orígenes-de-la-inteligencia-artificial"
+id="toc-orígenes-de-la-inteligencia-artificial">Orígenes de la
+Inteligencia Artificial</a></li>
+<li><a
+href="#surgimiento-de-la-inteligencia-artificial-generativa-moderna"
+id="toc-surgimiento-de-la-inteligencia-artificial-generativa-moderna">Surgimiento
+de la Inteligencia Artificial Generativa moderna</a></li>
+</ul></li>
+<li><a href="#modelos-generativos" id="toc-modelos-generativos">Modelos
+Generativos</a>
+<ul>
+<li><a href="#redes-generativas-adversarias-gans"
+id="toc-redes-generativas-adversarias-gans">Redes Generativas
+Adversarias (GANs)</a></li>
+<li><a href="#modelos-de-difusión" id="toc-modelos-de-difusión">Modelos
+de Difusión</a></li>
+<li><a href="#transformers" id="toc-transformers">Transformers</a></li>
+<li><a href="#modelos-autorregresivos"
+id="toc-modelos-autorregresivos">Modelos autorregresivos</a></li>
+<li><a href="#modelos-multimodales"
+id="toc-modelos-multimodales">Modelos multimodales</a></li>
+<li><a href="#modelos-mixture-of-experts-moe"
+id="toc-modelos-mixture-of-experts-moe">Modelos Mixture of Experts
+(MoE)</a></li>
+</ul></li>
+<li><a href="#conceptos-clave" id="toc-conceptos-clave">Conceptos
+clave</a>
+<ul>
+<li><a href="#tokens" id="toc-tokens">Tokens</a></li>
+<li><a href="#embeddings" id="toc-embeddings">Embeddings</a></li>
+<li><a href="#contexto" id="toc-contexto">Contexto</a></li>
+<li><a href="#prompt" id="toc-prompt">Prompt</a></li>
+<li><a href="#rag-retrieval-augmented-generation"
+id="toc-rag-retrieval-augmented-generation">RAG (Retrieval-Augmented
+Generation)</a></li>
+<li><a href="#fine-tuning-y-personalización"
+id="toc-fine-tuning-y-personalización">Fine-tuning y
+personalización</a></li>
+<li><a href="#uso-de-herramientas" id="toc-uso-de-herramientas">Uso de
+herramientas</a></li>
+<li><a href="#agentes" id="toc-agentes">Agentes</a></li>
+</ul></li>
+</ul>
+</nav>
+<p><img src="../img/010-ia-generativa.png" class="center"
+style="width:50.0%" /></p>
+<h1 id="introducción">Introducción</h1>
+<h2 id="qué-es-la-inteligencia-artificial-generativa">¿Qué es la
+Inteligencia Artificial Generativa?</h2>
+<p><img
+src="../img/010-introduccion-IA-generativa/020-ia-generativa-que.png"
+class="center" style="width:50.0%" /></p>
+<p>La Inteligencia Artificial Generativa engloba sistemas capaces de
+<strong>crear texto, imágenes, audio, vídeo, código y otros tipos de
+contenido</strong> a partir de instrucciones, ejemplos o datos de
+entrada.</p>
+<p>Se basa en <strong>modelos avanzados de aprendizaje profundo</strong>
+entrenados para identificar patrones, estructuras y relaciones presentes
+en grandes volúmenes de información.</p>
+<p>En la práctica, buena parte de la Inteligencia Artificial Generativa
+actual se sustenta en <strong>modelos fundacionales</strong>: modelos de
+gran tamaño y versatilidad que después pueden adaptarse a muchas tareas
+diferentes.</p>
+<p>No se limita a “crear desde cero”: también puede <strong>resumir,
+traducir, clasificar, transformar, completar o remezclar</strong>
+contenido ya existente.</p>
+<p>La Inteligencia Artificial más tradicional suele orientarse sobre
+todo a <strong>clasificar, predecir o recomendar</strong>, mientras que
+la Inteligencia Artificial Generativa añade la capacidad de
+<strong>producir nuevas salidas</strong> con apariencia original y
+coherente.</p>
+<p>En muchos sistemas modernos ambos enfoques conviven: por ejemplo, un
+asistente puede <strong>recuperar información</strong>, <strong>razonar
+sobre ella</strong> y, a continuación, <strong>generar una
+respuesta</strong>.</p>
+<h2 id="sectores-implicados-y-casos-de-uso-más-actuales">Sectores
+implicados y casos de uso más actuales</h2>
+<p><img
+src="../img/010-introduccion-IA-generativa/030-sectores-y-casos-de-uso.png"
+class="center" style="width:50.0%" /></p>
+<p>La Inteligencia Artificial Generativa cuenta con aplicaciones
+prácticas en numerosos sectores, por ejemplo:</p>
+<ul>
+<li>Uso en <strong>marketing, comunicación, entretenimiento y
+periodismo</strong>.</li>
+<li>Herramientas para <strong>artistas, diseñadores, desarrolladores y
+creadores audiovisuales</strong>.</li>
+<li>Creación de <strong>material educativo personalizado</strong> y
+adaptado al nivel del alumnado.</li>
+<li>Uso en <strong>desarrollo de software</strong>, generación de
+código, documentación técnica y automatización de tareas.</li>
+<li>Asistentes para <strong>búsqueda, análisis documental y atención al
+usuario</strong>.</li>
+<li>Aplicaciones en <strong>accesibilidad</strong>, por ejemplo
+subtitulado, lectura en voz alta, simplificación de textos o descripción
+de imágenes.</li>
+</ul>
+<p>Además, cada vez aparecen más casos de uso prácticos, como por
+ejemplo:</p>
+<ul>
+<li><strong>Copilotos de productividad</strong> integrados en suites
+ofimáticas, navegadores, buscadores y herramientas empresariales.</li>
+<li><strong>Chatbots avanzados</strong> capaces de mantener
+conversaciones, consultar herramientas y trabajar con documentos.</li>
+<li>Generación de <strong>imágenes, música, locuciones y vídeo</strong>
+a partir de texto.</li>
+<li>Creación de <strong>material sintético</strong> para pruebas,
+simulación, entrenamiento y prototipado.</li>
+<li>Sistemas de <strong>apoyo a la programación</strong> que sugieren
+funciones, detectan errores y explican código.</li>
+<li>Motores de <strong>búsqueda semántica</strong> y asistentes basados
+en <strong>RAG</strong> (Retrieval-Augmented Generation).</li>
+</ul>
+<h2 id="beneficios-y-desafíos">Beneficios y desafíos</h2>
+<p><img
+src="../img/010-introduccion-IA-generativa/040-beneficios-y-desafios.png"
+class="center" style="width:50.0%" /></p>
+<p>La Inteligencia Artificial Generativa aporta múltiples
+<strong>beneficios</strong>, entre los que destacan:</p>
+<ul>
+<li>Aceleración de <strong>procesos creativos y de
+producción</strong>.</li>
+<li>Reducción de <strong>costes y tiempos</strong> en tareas repetitivas
+o de baja complejidad.</li>
+<li>Creación de <strong>contenidos y productos</strong> altamente
+personalizados.</li>
+<li>Mejora de la <strong>experiencia del usuario</strong> mediante
+interfaces conversacionales más naturales.</li>
+<li>Apertura de <strong>nuevas posibilidades creativas</strong>.</li>
+<li>Facilita el <strong>descubrimiento de ideas</strong>, variaciones y
+prototipos.</li>
+<li>Creación de <strong>recursos accesibles</strong> para personas con
+<strong>discapacidad</strong>.</li>
+<li>Posibilidad de construir <strong>asistentes virtuales, tutores y
+copilotos</strong> para multitud de contextos.</li>
+</ul>
+<p>La Inteligencia Artificial Generativa también llega acompañada de
+<strong>desafíos</strong> importantes:</p>
+<ul>
+<li>Dificultad para garantizar la <strong>precisión y veracidad</strong>
+de los contenidos generados.</li>
+<li>Riesgo de <strong>alucinaciones</strong>, respuestas inventadas o
+exceso de confianza aparente.</li>
+<li>Riesgos asociados con la <strong>desinformación</strong>, la
+manipulación y los <strong>deepfakes</strong>.</li>
+<li>Preocupaciones sobre la <strong>protección de datos
+personales</strong> y la confidencialidad.</li>
+<li>Preocupaciones relacionadas con los <strong>derechos de
+autor</strong> y la <strong>propiedad intelectual</strong>.</li>
+<li>Posibles efectos en el <strong>mercado laboral</strong> y en las
+<strong>industrias creativas</strong>.</li>
+<li>Riesgo de <strong>reproducción y amplificación</strong> de sesgos
+existentes.</li>
+<li>Importancia de la <strong>justicia, explicabilidad y no
+discriminación</strong> en los sistemas de Inteligencia Artificial.</li>
+</ul>
+<h2 id="limitaciones-y-riesgos-de-seguridad">Limitaciones y riesgos de
+seguridad</h2>
+<p><img
+src="../img/010-introduccion-IA-generativa/050-limitaciones-y-riesgos-de-seguridad.png"
+class="center" style="width:50.0%" /></p>
+<p>La Inteligencia Artificial Generativa presenta todavía hoy varias
+<strong>limitaciones</strong>:</p>
+<ul>
+<li>Los modelos no “entienden” el mundo como una persona: operan sobre
+<strong>patrones estadísticos</strong>.</li>
+<li>Pueden fallar en tareas que requieren <strong>verificación
+externa</strong>, <strong>conocimiento muy reciente</strong> o
+<strong>razonamiento complejo</strong> sostenido.</li>
+<li>Son sensibles a <strong>instrucciones ambiguas</strong>, contexto
+mal estructurado o datos de mala calidad.</li>
+<li>También plantean retos de <strong>latencia, coste, consumo
+energético y evaluación objetiva</strong>.</li>
+</ul>
+<p>La Inteligencia Artificial Generativa también implica <strong>riesgos
+de seguridad</strong> relevantes:</p>
+<ul>
+<li><strong>Prompt injection</strong> y manipulación de instrucciones en
+sistemas conectados a documentos o herramientas.</li>
+<li>Filtración accidental de <strong>información sensible</strong>.</li>
+<li>Automatización de campañas de <strong>phishing</strong>,
+suplantación o generación masiva de contenido engañoso.</li>
+<li>Dependencia excesiva del modelo sin <strong>supervisión
+humana</strong>.</li>
+</ul>
+<h2 id="retos-éticos-y-competencias-clave">Retos éticos y competencias
+clave</h2>
+<p><img
+src="../img/010-introduccion-IA-generativa/060-retos-y-competencias.png"
+class="center" style="width:50.0%" /></p>
+<p>La Inteligencia Artificial Generativa plantea importantes
+<strong>retos éticos</strong>, tales como:</p>
+<ul>
+<li><strong>Sesgos:</strong> Los modelos generativos pueden perpetuar o
+amplificar sesgos presentes en los datos de entrenamiento.</li>
+<li><strong>Desinformación:</strong> Riesgo de crear contenido falso
+extremadamente convincente, incluidos <strong>deepfakes</strong>.</li>
+<li><strong>Propiedad intelectual:</strong> Continúan los debates sobre
+entrenamiento con obras protegidas y autoría de contenidos
+generados.</li>
+<li><strong>Privacidad y seguridad:</strong> Será clave limitar fugas de
+datos y reforzar los controles de uso.</li>
+<li><strong>Consumo de energía:</strong> Tanto el entrenamiento como la
+inferencia requieren recursos computacionales significativos.</li>
+</ul>
+<p>De cara al futuro, y también al presente, conviene reforzar las
+siguientes <strong>competencias clave</strong>:</p>
+<ul>
+<li>Saber <strong>formular instrucciones, revisar resultados y detectar
+errores</strong>.</li>
+<li>Verificar información con <strong>fuentes fiables</strong>.</li>
+<li>Comprender <strong>límites técnicos, sesgos y riesgos de
+seguridad</strong>.</li>
+<li>Diseñar flujos de trabajo con <strong>humano en el
+circuito</strong>.</li>
+<li>Integrar la Inteligencia Artificial Generativa con <strong>criterio
+pedagógico, ético, legal y organizativo</strong>.</li>
+</ul>
+<h2 id="tendencias-tecnológicas-y-regulación">Tendencias tecnológicas y
+regulación</h2>
+<p><img
+src="../img/010-introduccion-IA-generativa/070-tendencias-tecnologicas-y-regulacion.png"
+class="center" style="width:50.0%" /></p>
+<p>En la evolución de la Inteligencia Artificial Generativa se perfilan
+varias <strong>tendencias tecnológicas</strong>:</p>
+<ul>
+<li><strong>Multimodalidad nativa:</strong> Modelos capaces de entender
+y generar texto, imagen, audio y vídeo de manera integrada.</li>
+<li><strong>Inteligencia Artificial basada en agentes:</strong> Sistemas
+con planificación, uso de herramientas y ejecución de flujos
+complejos.</li>
+<li><strong>Modelos más eficientes:</strong> Más rendimiento con menos
+coste mediante cuantización, destilación, MoE y optimización de
+inferencia.</li>
+<li><strong>Modelos pequeños y on-device:</strong> Más casos de uso en
+dispositivos locales, con menor latencia y mejor privacidad.</li>
+<li><strong>Contenido con procedencia verificable:</strong> Más uso de
+metadatos y estándares para indicar origen, edición y generación del
+contenido.</li>
+<li><strong>Chips especializados:</strong> Desarrollo de hardware
+específico para entrenamiento e inferencia de Inteligencia
+Artificial.</li>
+</ul>
+<p>La expansión de la Inteligencia Artificial Generativa también ha
+impulsado su <strong>regulación</strong>:</p>
+<ul>
+<li>La regulación ya forma parte del despliegue real de la Inteligencia
+Artificial Generativa.</li>
+<li>En la <strong>Unión Europea</strong>, el <strong>EU AI Act</strong>
+introduce un enfoque basado en riesgo y obligaciones específicas para
+ciertos sistemas y modelos de propósito general.</li>
+<li>Su calendario de aplicación ya condiciona el despliegue real de
+muchos productos: algunas obligaciones comenzaron a aplicarse en
+<strong>2025</strong>.</li>
+<li>El marco general será plenamente aplicable en
+<strong>2026</strong>.</li>
+<li>Ganan importancia los marcos de <strong>gestión del riesgo</strong>,
+evaluación, documentación, supervisión humana y auditoría.</li>
+<li>También crece el interés por estándares de <strong>procedencia del
+contenido</strong>, transparencia y trazabilidad.</li>
+</ul>
+<h1 id="historia">Historia</h1>
+<h2 id="orígenes-de-la-inteligencia-artificial">Orígenes de la
+Inteligencia Artificial</h2>
+<p><img src="../img/010-introduccion-IA-generativa/080-origenes.png"
+class="center" style="width:50.0%" /></p>
+<p>En las décadas de 1950 y 1960 surgieron <strong>grandes expectativas
+sobre el potencial de la Inteligencia Artificial</strong>, entre las que
+destacan los siguientes hitos:</p>
+<ul>
+<li><strong>1950:</strong>
+<ul>
+<li><strong>Alan Turing</strong> publica su célebre propuesta sobre
+máquinas pensantes y el conocido <strong>Test de Turing</strong>.</li>
+</ul></li>
+<li><strong>1956:</strong>
+<ul>
+<li>Se consolida el término <strong>Inteligencia Artificial</strong> en
+la conferencia de <strong>Dartmouth</strong>, impulsada por <strong>John
+McCarthy</strong>.</li>
+</ul></li>
+<li><strong>1966:</strong>
+<ul>
+<li>Aparece <strong>ELIZA</strong>, uno de los primeros chatbots
+conocidos.</li>
+</ul></li>
+</ul>
+<p>Durante las décadas de 1970 y 1980, la Inteligencia Artificial vivió
+un período conocido como “invierno de la Inteligencia Artificial”,
+caracterizado por una <strong>disminución significativa de la
+financiación y del interés público debido a expectativas no
+cumplidas</strong>.</p>
+<p>La década de 1990 marca un resurgimiento de la Inteligencia
+Artificial gracias a avances en <strong>aprendizaje automático</strong>,
+al aumento de la capacidad computacional y a una mayor disponibilidad de
+datos.</p>
+<p>En la década de 2000 se produjeron avances en <strong>redes
+neuronales profundas</strong>, algoritmos complejos y mejora del
+hardware para entrenamiento.</p>
+<h2
+id="surgimiento-de-la-inteligencia-artificial-generativa-moderna">Surgimiento
+de la Inteligencia Artificial Generativa moderna</h2>
+<p><img
+src="../img/010-introduccion-IA-generativa/090-historia-moderna.png"
+class="center" style="width:50.0%" /></p>
+<p>En los últimos años se ha producido una expansión exponencial de la
+Inteligencia Artificial Generativa:</p>
+<ul>
+<li><strong>2017:</strong>
+<ul>
+<li>Se presentan los <strong>transformadores</strong> en el artículo
+<strong>Attention Is All You Need</strong>.</li>
+</ul></li>
+<li><strong>2018:</strong>
+<ul>
+<li>OpenAI populariza la familia <strong>GPT</strong> (Generative
+Pre-trained Transformer).</li>
+</ul></li>
+<li><strong>2021:</strong>
+<ul>
+<li>Lanzamiento de <strong>DALL·E</strong>, que impulsa la generación de
+imágenes a partir de texto.</li>
+</ul></li>
+<li><strong>2022:</strong>
+<ul>
+<li>El lanzamiento de <strong>ChatGPT</strong> de OpenAI impulsa el uso
+de estos chats entre el gran público.</li>
+</ul></li>
+<li><strong>2023:</strong>
+<ul>
+<li>Se extiende el uso de modelos <strong>multimodales</strong>, capaces
+de combinar texto, imagen, audio y vídeo.</li>
+</ul></li>
+<li><strong>2024:</strong>
+<ul>
+<li>Se popularizan modelos abiertos y de alto rendimiento como
+<strong>Llama 3</strong>, aparecen versiones más ligeras para uso local
+y emergen modelos especializados en <strong>razonamiento</strong>.</li>
+</ul></li>
+<li><strong>2025:</strong>
+<ul>
+<li>El lanzamiento de <strong>DeepSeek</strong>, un modelo chino de
+pesos abiertos mucho más barato tanto para entrenamiento como para
+inferencia, revoluciona el mercado.</li>
+</ul></li>
+<li><strong>2026:</strong>
+<ul>
+<li>Avanzan los sistemas basados en <strong>agentes</strong>, el uso de
+<strong>herramientas externas</strong>, las ventanas de
+<strong>contexto</strong> más amplias y la integración de los modelos en
+<strong>productos, procesos y ecosistemas completos</strong>, con foco
+en seguridad, gobernanza y valor real.</li>
+</ul></li>
+</ul>
+<h1 id="modelos-generativos">Modelos Generativos</h1>
+<h2 id="redes-generativas-adversarias-gans">Redes Generativas
+Adversarias (GANs)</h2>
+<p><img src="../img/010-introduccion-IA-generativa/100-gan2.png"
+class="center" style="width:50.0%" /></p>
+<p>Introducidas por <strong>Ian Goodfellow</strong> en 2014, consisten
+en <strong>dos redes neuronales</strong>: el generador y el
+discriminador, que <strong>compiten entre sí para mejorar la calidad de
+las muestras generadas</strong>.</p>
+<ul>
+<li>El <strong>generador</strong> crea datos falsos que se asemejan a
+los datos reales.</li>
+<li>El <strong>discriminador</strong> evalúa si los datos son reales o
+generados.</li>
+</ul>
+<p>Fueron especialmente importantes en generación de imágenes y
+transferencia de estilo, aunque hoy conviven con otros enfoques más
+robustos.</p>
+<h2 id="modelos-de-difusión">Modelos de Difusión</h2>
+<p><img src="../img/010-introduccion-IA-generativa/110-difusion2.png"
+class="center" style="width:50.0%" /></p>
+<p>Introducidos en 2015, estos modelos se basan en las cadenas de Markov
+y <strong>transforman datos estructurados en ruido para después aprender
+a revertir ese proceso y generar nuevo contenido</strong>. Presentan,
+por tanto, 2 fases:</p>
+<ul>
+<li><strong>Fase Forward (Difusión):</strong> Los datos originales se
+corrompen añadiendo ruido en múltiples pasos.</li>
+<li><strong>Fase Backward (Reversión):</strong> El modelo aprende a
+eliminar el ruido para reconstruir una muestra coherente.</li>
+</ul>
+<p>Han sido fundamentales en el auge reciente de la <strong>generación
+de imágenes</strong> y también avanzan en audio, vídeo y 3D.</p>
+<h2 id="transformers">Transformers</h2>
+<p><img src="../img/010-introduccion-IA-generativa/120-transformers.png"
+class="center" style="width:50.0%" /></p>
+<p>Fueron introducidos en el artículo <strong>Attention Is All You
+Need</strong> en 2017, y utilizan <strong>mecanismos de
+atención</strong> para procesar y generar secuencias con gran calidad
+mediante:</p>
+<ul>
+<li><strong>Codificador</strong>: Procesa la entrada y genera una
+representación.</li>
+<li><strong>Descodificador</strong>: Toma la representación del
+codificador y genera la salida.</li>
+</ul>
+<p>Son la base de gran parte de los <strong>LLM</strong> actuales y de
+muchos modelos multimodales.</p>
+<h2 id="modelos-autorregresivos">Modelos autorregresivos</h2>
+<p><img
+src="../img/010-introduccion-IA-generativa/130-autorregresivos.png"
+class="center" style="width:50.0%" /></p>
+<p>Son modelos que generan contenido <strong>token a token</strong>,
+prediciendo el siguiente elemento más probable a partir del contexto
+anterior.</p>
+<p>Resultan especialmente eficaces en <strong>texto, código y tareas
+conversacionales</strong>.</p>
+<p>Suelen pasar por varias fases:</p>
+<ul>
+<li><strong>Preentrenamiento</strong> con grandes corpus.</li>
+<li><strong>Ajuste fino</strong> o adaptación a tareas concretas.</li>
+<li><strong>Alineamiento</strong> para seguir instrucciones y mejorar
+seguridad y utilidad.</li>
+</ul>
+<h2 id="modelos-multimodales">Modelos multimodales</h2>
+<p><img src="../img/010-introduccion-IA-generativa/140-multimodales.png"
+class="center" style="width:50.0%" /></p>
+<p>Pueden recibir y combinar <strong>texto, imágenes, audio, vídeo o
+documentos</strong>.</p>
+<p>Permiten casos de uso más naturales: por ejemplo, <strong>preguntar
+sobre una imagen</strong>, <strong>resumir un audio</strong> o
+<strong>generar un vídeo a partir de notas</strong>.</p>
+<p>Son una de las grandes tendencias actuales porque acercan la
+Inteligencia Artificial a la forma en que las personas trabajan
+realmente.</p>
+<h2 id="modelos-mixture-of-experts-moe">Modelos Mixture of Experts
+(MoE)</h2>
+<p><img src="../img/010-introduccion-IA-generativa/150-moe.png"
+class="center" style="width:50.0%" /></p>
+<p>En lugar de activar todo el modelo en cada paso, activan solo
+<strong>parte de sus componentes internos</strong>.</p>
+<p>Esto permite mejorar la <strong>eficiencia computacional</strong> y
+escalar el tamaño del modelo sin aumentar proporcionalmente el coste de
+inferencia.</p>
+<p>Se han vuelto frecuentes en modelos avanzados recientes, tanto
+cerrados como abiertos.</p>
+<h1 id="conceptos-clave">Conceptos clave</h1>
+<h2 id="tokens">Tokens</h2>
+<p><img src="../img/010-introduccion-IA-generativa/160-tokens2.png"
+class="center" style="width:50.0%" /></p>
+<p>Son las <strong>unidades básicas que los modelos procesan</strong>,
+como palabras, subpalabras o símbolos. Por ejemplo, una palabra larga
+puede dividirse en varios tokens según el modelo. El coste de muchos
+modelos en la nube suele depender del número de <strong>tokens
+procesados</strong> y generados.</p>
+<p><a href="https://platform.openai.com/tokenizer"
+class="uri">https://platform.openai.com/tokenizer</a></p>
+<h2 id="embeddings">Embeddings</h2>
+<p><img src="../img/010-introduccion-IA-generativa/170-embeddings2.png"
+class="center" style="width:50.0%" /></p>
+<p>Son una <strong>representación matemática que convierte datos
+complejos en vectores</strong>, capturando similitudes y relaciones en
+un espacio multidimensional. Resultan fundamentales para tareas como
+<strong>búsqueda semántica, recomendación, clasificación y
+agrupamiento</strong>. Permiten comparar significado, no solo
+coincidencias exactas de palabras.</p>
+<p>Dos palabras con significados parecidos tendrán embeddings situados
+cerca dentro de su mismo espacio multidimensional. Además, al ser
+vectores, si sumamos los embeddings de un texto obtenemos otro embedding
+que representa su significado global, de modo que <strong>la
+representación en forma de embedding de dos textos similares tenderá a
+situarse próxima dentro de ese espacio multidimensional</strong>.</p>
+<h2 id="contexto">Contexto</h2>
+<p><img src="../img/010-introduccion-IA-generativa/180-contexto.png"
+class="center" style="width:50.0%" /></p>
+<p>Se refiere a la <strong>información proporcionada como
+entrada</strong> que guía la generación de respuestas. El contexto
+incluye el texto previo, las instrucciones específicas y datos
+relevantes que ayudan al modelo a entender el propósito y mantener la
+coherencia.</p>
+<p>Los modelos tienen un <strong>límite de tokens de contexto</strong>
+que pueden procesar en una sola interacción, lo que se conoce como
+<strong>ventana de contexto</strong>. Una ventana mayor permite trabajar
+mejor con <strong>documentos largos, conversaciones extensas o bases de
+conocimiento amplias</strong>.</p>
+<p>Aun así, disponer de mucho contexto no garantiza por sí solo una
+mejor calidad: también importa <strong>cómo se selecciona y
+estructura</strong> la información de entrada.</p>
+<h2 id="prompt">Prompt</h2>
+<p><img src="../img/010-introduccion-IA-generativa/190-prompt.png"
+class="center" style="width:50.0%" /></p>
+<p>Es la <strong>instrucción o entrada</strong> que damos al modelo. Un
+buen prompt suele especificar:</p>
+<ul>
+<li><strong>Contexto</strong>.</li>
+<li><strong>Cómo quién debe actuar</strong>.</li>
+<li><strong>Para qué público hay que dirigir la respuesta</strong>.</li>
+<li><strong>Tono y estilo de la respuesta</strong>.</li>
+<li><strong>Acción a realizar</strong>.</li>
+<li><strong>Formato de salida</strong>.</li>
+<li><strong>Longitud de la respuesta</strong>.</li>
+<li><strong>Ejemplos de qué es lo que se quiere</strong>.</li>
+<li><strong>Restricciones</strong>.</li>
+</ul>
+<h2 id="rag-retrieval-augmented-generation">RAG (Retrieval-Augmented
+Generation)</h2>
+<p><img src="../img/010-introduccion-IA-generativa/200-rag.png"
+class="center" style="width:50.0%" /></p>
+<p>Es una técnica que combina un modelo generativo con un sistema de
+<strong>recuperación de información</strong>. Antes de responder, el
+sistema busca fragmentos relevantes en documentos, bases de datos o webs
+autorizadas. Resulta muy útil para reducir alucinaciones y trabajar con
+información <strong>actualizada, privada o específica de una
+organización</strong>.</p>
+<h2 id="fine-tuning-y-personalización">Fine-tuning y
+personalización</h2>
+<p><img
+src="../img/010-introduccion-IA-generativa/210-fine-tuning-y-personalizacion.png"
+class="center" style="width:50.0%" /></p>
+<p>El <strong>fine-tuning</strong> adapta un modelo a un dominio, tarea
+o estilo concretos. No siempre es la primera opción: en muchos casos
+basta con personalización.</p>
+<p>La personalización actual suele combinar: - <strong>Instrucciones del
+sistema</strong>. - <strong>Recuperación de contexto (RAG)</strong>. -
+<strong>Herramientas externas</strong>.</p>
+<h2 id="uso-de-herramientas">Uso de herramientas</h2>
+<p><img src="../img/010-introduccion-IA-generativa/220-herramientas.png"
+class="center" style="width:50.0%" /></p>
+<p>Los modelos actuales ya no solo generan texto: también pueden
+<strong>usar herramientas</strong>, como por ejemplo: - Consultar la
+web. - Ejecutar código. - Buscar en archivos. - Llamar a APIs. -
+Rellenar formularios o automatizar pasos.</p>
+<p>Esto amplía mucho su utilidad práctica, pero también introduce retos
+de <strong>seguridad, permisos y trazabilidad</strong>.</p>
+<h2 id="agentes">Agentes</h2>
+<p><img src="../img/010-introduccion-IA-generativa/230-agentes.png"
+class="center" style="width:50.0%" /></p>
+<p>Un agente es un sistema que combina un modelo con <strong>objetivos,
+memoria, herramientas y capacidad de ejecutar acciones</strong>. Puede
+descomponer una tarea en pasos, consultar recursos externos y revisar
+resultados. En la práctica, muchos “agentes” actuales funcionan mejor
+como <strong>flujos orquestados y supervisados</strong> que como
+autonomía completa.</p>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</body>
+</html>

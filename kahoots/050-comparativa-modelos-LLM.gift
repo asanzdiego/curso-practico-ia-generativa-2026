@@ -1,0 +1,139 @@
+// Pregunta 1
+::ChatGPT_Lanzamiento::
+¿En qué año fue lanzado ChatGPT por OpenAI?
+{
+    =2022
+    ~2021
+    ~2023
+    ~2024
+}
+
+// Pregunta 2
+::Gemini_Multimodalidad::
+¿Qué rasgo destaca especialmente en Gemini según el documento?
+{
+    =Su multimodalidad y la integración con Google
+    ~Su carácter de modelo de pesos abiertos
+    ~Su dependencia de Microsoft 365
+    ~Su enfoque exclusivo en despliegues locales
+}
+
+// Pregunta 3
+::Copilot_Entorno::
+¿Dónde aporta más valor Copilot según el documento?
+{
+    =En entornos que ya usan Microsoft 365 y Windows
+    ~En despliegues locales con modelos abiertos
+    ~En proyectos centrados en Google Workspace
+    ~En búsquedas web con citas como función principal
+}
+
+// Pregunta 4
+::Grok_Busqueda::
+¿Qué característica principal se asocia a Grok?
+{
+    =La búsqueda en tiempo real y la información reciente
+    ~La apertura de pesos para ajuste fino local
+    ~La integración nativa con Microsoft Excel
+    ~El foco en soberanía tecnológica europea
+}
+
+// Pregunta 5
+::Claude_Fortalezas::
+¿En qué destaca especialmente Claude?
+{
+    =En escritura, programación y análisis documental
+    ~En ser un modelo europeo de pesos abiertos
+    ~En integrarse sobre todo con Google Search
+    ~En estar pensado solo para despliegues locales
+}
+
+// Pregunta 6
+::Sonar_Perplexity_Enfoque::
+¿Qué distingue a Sonar / Perplexity?
+{
+    =Búsqueda web con respuestas apoyadas en fuentes
+    ~Su orientación a hojas de cálculo de Microsoft 365
+    ~Su licencia abierta para ajuste fino local
+    ~Su foco exclusivo en generación de imágenes
+}
+
+// Pregunta 7
+::DeepSeek_Perfil::
+¿Qué combinación describe mejor a DeepSeek?
+{
+    =Pesos abiertos y buen nivel en razonamiento, mates y código
+    ~Modelo cerrado centrado en Google Workspace
+    ~Asistente para humor y redes sociales
+    ~Producto europeo orientado solo a ofimática
+}
+
+// Pregunta 8
+::Mistral_Europa::
+¿Qué afirmación es correcta sobre Mistral?
+{
+    =Es una empresa francesa y referente europeo en IA
+    ~Es una empresa estadounidense de modelos cerrados
+    ~Es la familia de modelos abierta de Meta
+    ~Es el producto de búsqueda de Perplexity
+}
+
+// Pregunta 9
+::Llama_OpenWeight::
+¿Qué caracteriza a Llama?
+{
+    =Familia abierta usada en despliegues propios y ajuste fino
+    ~Es un asistente exclusivo de Microsoft 365
+    ~Es un modelo cerrado centrado en búsqueda web
+    ~Es la marca comercial de Anthropic
+}
+
+// Pregunta 10
+::Qwen_Origen::
+¿Quién desarrolla Qwen?
+{
+    =Alibaba Cloud, en China
+    ~OpenAI, en Estados Unidos
+    ~Mistral AI, en Francia
+    ~xAI, en Estados Unidos
+}
+
+// Pregunta 11
+::Pesos_Cerrados_Ejemplo::
+¿Cuál de estos modelos aparece en el documento como modelo de pesos cerrados?
+{
+    =Gemini
+    ~Llama
+    ~Mistral
+    ~Qwen
+}
+
+// Pregunta 12
+::Pesos_Abiertos_Ejemplo::
+¿Cuál de estos modelos aparece en el documento como modelo de pesos abiertos?
+{
+    =DeepSeek
+    ~Claude
+    ~Copilot
+    ~Grok
+}
+
+// Pregunta 13
+::Actualidad_Contraste::
+Según las recomendaciones finales, ¿qué opción resulta especialmente útil cuando importa la actualidad y el contraste rápido?
+{
+    =Sonar / Perplexity
+    ~Mistral
+    ~Llama
+    ~Copilot
+}
+
+// Pregunta 14
+::Eleccion_LLM_Conclusion::
+Según el documento, ¿qué idea resume mejor la elección de un LLM?
+{
+    =Depende de la tarea y del contexto; no hay uno mejor siempre
+    ~Siempre conviene elegir el modelo más reciente
+    ~Los modelos abiertos son siempre superiores
+    ~Los asistentes con búsqueda sustituyen a todos
+}

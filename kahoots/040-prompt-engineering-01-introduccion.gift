@@ -1,0 +1,111 @@
+¿Qué describe mejor el Prompt Engineering?
+{
+=Diseñar y optimizar instrucciones para modelos de IA.
+~Entrenar modelos desde cero con grandes datos.
+~Programar el hardware que ejecuta la IA.
+~Depurar redes neuronales a nivel de código.
+}
+
+¿Por qué es importante diseñar bien un prompt?
+{
+=Porque influye en la calidad y utilidad de la respuesta.
+~Porque la instrucción ambigua da igual.
+~Porque un prompt más largo siempre es mejor.
+~Porque solo cambia la velocidad de respuesta.
+}
+
+¿Qué se recomienda el contexto en un prompt?
+{
+=Aportar contexto útil y evitar información irrelevante.
+~Añadir todo el contexto posible sin filtrar.
+~No dar contexto para ganar creatividad.
+~Sustituir contexto por fórmulas de cortesía.
+}
+
+¿Qué ayuda a adaptar mejor la respuesta del modelo?
+{
+=Indicar rol del modelo y público destinatario.
+~Especificar la marca del ordenador.
+~Indicar solo la velocidad de Internet.
+~Pedir respuesta sin pensar en el destinatario.
+}
+
+¿Qué característica debe tener la acción pedida en un prompt efectivo?
+{
+=Debe ser específica y observable.
+~Debe ser abstracta y abierta siempre.
+~Debe evitar verbos de acción concretos.
+~Debe centrarse en el funcionamiento interno del modelo.
+}
+
+¿Cuál es un ejemplo de restricción útil en un prompt?
+{
+=Indicar idioma, temas a evitar o no inventar datos.
+~Pedir que ignore el formato requerido.
+~Dejar las decisiones al azar.
+~Evitar cualquier limitación.
+}
+
+¿Para qué sirven especialmente los ejemplos dentro de un prompt?
+{
+=Muestran formato, tono o criterio esperado.
+~Sustituyen siempre el objetivo de la tarea.
+~Hacen innecesarios contexto y restricciones.
+~Obligan a responder al azar.
+}
+
+¿Por qué conviene indicar el formato exacto de salida?
+{
+=Facilita leer, reutilizar y validar la respuesta.
+~Solo funciona bien si se pide en PDF.
+~Da igual el formato aunque no se indique.
+~Solo importa en tareas artísticas.
+}
+
+¿Qué aspecto controla principalmente el tono en un prompt?
+{
+=Cómo suena el mensaje: formal, cercano o didáctico.
+~El número exacto de palabras.
+~La arquitectura interna del modelo.
+~Solo importa en tareas divulgativas.
+}
+
+¿Qué puede influir el estilo pedido en un prompt?
+{
+=La organización, vocabulario y densidad del texto.
+~Solo importa en tareas científicas.
+~Solo afecta a la generación de imágenes.
+~Solo importa si el prompt está en inglés.
+}
+
+¿Qué recomienda el documento sobre la longitud de la respuesta?
+{
+=Conviene concretarla según el objetivo.
+~Siempre debe ser muy corta.
+~Nunca debe limitarse.
+~Siempre debe ser muy larga.
+}
+
+¿Qué aporta incluir criterios de calidad en un prompt?
+{
+=Define qué se considera una buena respuesta.
+~Hace innecesario revisar la salida.
+~Garantiza exactitud absoluta.
+~Solo sirve en traducción automática.
+}
+
+¿Por qué es útil separar un prompt largo en bloques bien delimitados?
+{
+=Ayuda al modelo a distinguir las distintas partes del prompt.
+~Obliga a responder siempre con tablas.
+~Elimina la necesidad de definir la tarea.
+~Solo sirve en prompts de una frase.
+}
+
+¿Qué es recomendable cuando una tarea depende de información concreta?
+{
+=Aportar fuentes y aclarar si hay que ceñirse a ellas.
+~Evitar fuentes y dejar que el modelo intuya.
+~Priorizar siempre información no verificada.
+~Usar apoyo solo en tareas creativas.
+}

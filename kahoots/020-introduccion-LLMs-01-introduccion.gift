@@ -1,0 +1,72 @@
+
+¿Qué es un Gran Modelo de Lenguaje (LLM)?
+{
+=Es un sistema de IA generativa que comprende y genera lenguaje.
+~Es una base de datos para almacenar documentos empresariales.
+~Es un editor de texto que corrige automáticamente todo error humano.
+~Es un buscador cuya única función es localizar webs en tiempo real.
+}
+
+¿Cómo funciona un Gran Modelo de Lenguaje (LLM)?
+{
+=Genera texto token a token según la instrucción, contexto y entrenamiento.
+~Recupera siempre una respuesta exacta de una base de datos fija.
+~Analiza imágenes únicamente y después las convierte en sonido.
+~Responde copiando fragmentos completos de sus datos de entrenamiento.
+}
+
+¿Cómo se entrena un Gran Modelo de Lenguaje (LLM)?
+{
+=Preentrenamiento, ajuste fino, alineamiento e integración en sistemas.
+~Tokenización, compresión de disco, renderizado y exportación multimedia.
+~Etiquetado manual, impresión, auditoría visual y publicación automática.
+~Búsqueda web, traducción simultánea, navegación GPS y generación de vídeo.
+}
+
+¿Cuál es una capacidad propia de generación de lenguaje en un LLM?
+{
+=Redactar informes, correos y resúmenes en distintos tonos y estilos.
+~Medir la temperatura de un servidor físico sin sensores externos.
+~Garantizar jurídicamente que todo lo que escribe es verdadero.
+~Sustituir por completo la revisión humana en cualquier contexto crítico.
+}
+
+¿Qué capacidad de comprensión y transformación textual tiene un LLM?
+{
+=Resumir textos extensos, simplificarlos o convertirlos en esquemas.
+~Reparar de forma automática el hardware de un ordenador averiado.
+~Detectar virus biológicos en laboratorio sin instrumentación externa.
+~Incrementar por sí solo la memoria RAM de un dispositivo.
+}
+
+¿Qué capacidad de razonamiento guiado y resolución tiene un LLM?
+{
+=Puede comparar opciones y proponer soluciones con buen contexto.
+~Piensa igual que una persona y comprende el mundo con conciencia.
+~Solo repite respuestas memorizadas sin adaptarse al problema.
+~No puede ayudar en decisiones asistidas ni en análisis de casos.
+}
+
+¿Qué significa que un LLM presente inconsistencia en sus respuestas?
+{
+=Que puede dar respuestas distintas ante la misma pregunta.
+~Que siempre responde exactamente igual, sin importar el contexto.
+~Que solo puede responder una vez por conversación.
+~Que únicamente cambia sus respuestas cuando se desconecta de internet.
+}
+
+¿Qué son las alucinaciones en un LLM?
+{
+=Respuestas incorrectas o inventadas, aunque parezcan convincentes.
+~Errores de conexión entre el teclado y la pantalla del usuario.
+~Mensajes cifrados que el modelo introduce para proteger la privacidad.
+~Capacidad del modelo para imaginar historias siempre verdaderas.
+}
+
+¿Qué implica la limitación de la ventana de contexto de un LLM?
+{
+=Que solo maneja una cantidad limitada de información por interacción.
+~Que únicamente puede mostrar texto en ventanas pequeñas del navegador.
+~Que no puede procesar más de una palabra por respuesta.
+~Que debe reiniciarse cada vez que cambia de idioma.
+}

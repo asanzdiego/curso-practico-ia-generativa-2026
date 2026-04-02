@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="description" content="De un PDF a la web de notas de corte
+de las universidades de Madrid con ayuda de IA">
+  <title>De un PDF a la web de notas de corte de las universidades de Madrid con ayuda de IA</title>
+  <style type="text/css">
+    pre,
+    code {
+      background-color: #ddd;
+      white-space: pre;
+    }
+
+    aside.notes {
+      background-color: yellow;
+    }
+
+    img.center {
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+  <style>
+    code {
+      white-space: pre-wrap;
+    }
+
+    span.smallcaps {
+      font-variant: small-caps;
+    }
+
+    span.underline {
+      text-decoration: underline;
+    }
+
+    div.column {
+      display: inline-block;
+      vertical-align: top;
+      width: 50%;
+    }
+
+    div.hanging-indent {
+      margin-left: 1.5em;
+      text-indent: -1.5em;
+    }
+
+    ul.task-list {
+      list-style: none;
+    }
+  </style>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+
+<body class="container">
+  <header id="title-block-header">
+    <h1 class="title">De un PDF a la web de notas de corte de las
+      universidades de Madrid con ayuda de IA</h1>
+  </header>
+  <nav id="TOC" role="doc-toc">
+    <ul>
+      <li><a href="#introducción" id="toc-introducción">Introducción</a></li>
+      <li><a href="#contexto-del-proyecto" id="toc-contexto-del-proyecto">Contexto del proyecto</a></li>
+      <li><a href="#fase-1-del-pdf-al-csv" id="toc-fase-1-del-pdf-al-csv">Fase
+          1: del PDF al CSV</a></li>
+      <li><a href="#fase-2-del-csv-al-json" id="toc-fase-2-del-csv-al-json">Fase 2: del CSV al JSON</a></li>
+      <li><a href="#fase-3-del-json-a-una-web-responsive" id="toc-fase-3-del-json-a-una-web-responsive">Fase 3: del JSON
+          a una web
+          responsive</a></li>
+      <li><a href="#publicación-de-la-web-con-github-pages" id="toc-publicación-de-la-web-con-github-pages">Publicación
+          de la web
+          con GitHub Pages</a></li>
+      <li><a href="#qué-aportó-la-ia-en-cada-fase" id="toc-qué-aportó-la-ia-en-cada-fase">Qué aportó la IA en cada
+          fase</a></li>
+      <li><a href="#retos-correcciones-y-validación-humana" id="toc-retos-correcciones-y-validación-humana">Retos,
+          correcciones y
+          validación humana</a></li>
+      <li><a href="#conclusión" id="toc-conclusión">Conclusión</a></li>
+    </ul>
+  </nav>
+  <h1 id="introducción">Introducción</h1>
+  <p>Hay proyectos pequeños que explican muy bien qué significa usar
+    inteligencia artificial de forma realista en desarrollo de software. La
+    web <a href="https://asanzdiego.github.io/notas-de-corte-universidades-madrid-25-26/">Notas
+      de corte de las universidades de Madrid curso 2025-2026</a> es uno de
+    ellos. No por su complejidad técnica, sino porque muestra cómo la IA
+    puede actuar como copiloto para convertir una fuente difícil de explotar
+    en una aplicación web clara, útil y publicada en abierto.</p>
+  <p>Lo más interesante no es solo la interfaz final, sino la forma de
+    trabajar. El proyecto se organizó en <strong>tres fases</strong>:</p>
+  <ol type="1">
+    <li>extraer datos desde un <strong>PDF a CSV</strong>,</li>
+    <li>transformar ese <strong>CSV a JSON</strong> y</li>
+    <li>construir la <strong>interfaz web</strong>.</li>
+  </ol>
+  <p>Esa separación ayudó mucho a colaborar con la IA, revisar resultados
+    intermedios y reducir fricción técnica.</p>
+  <h1 id="contexto-del-proyecto">Contexto del proyecto</h1>
+  <p>El <a href="https://github.com/asanzdiego/notas-de-corte-universidades-madrid-25-26">repositorio
+      del proyecto</a> reúne tanto la preparación de datos como la parte
+    front-end. En la carpeta <a
+      href="https://github.com/asanzdiego/notas-de-corte-universidades-madrid-25-26/tree/main/data">data</a>
+    aparecen el <a
+      href="https://github.com/asanzdiego/notas-de-corte-universidades-madrid-25-26/blob/main/data/notas-de-corte-universidades-madrid-25-26.pdf">PDF
+      de origen</a>, el <a
+      href="https://github.com/asanzdiego/notas-de-corte-universidades-madrid-25-26/blob/main/data/notas-de-corte-universidades-madrid-25-26.csv">CSV
+      resultante</a>, el <a
+      href="https://github.com/asanzdiego/notas-de-corte-universidades-madrid-25-26/blob/main/data/notas-de-corte-universidades-madrid-25-26.json">JSON
+      consumido por la aplicación</a> y dos cuadernos de Jupyter: uno para la
+    <a
+      href="https://github.com/asanzdiego/notas-de-corte-universidades-madrid-25-26/blob/main/data/extraccion-notas-de-corte-de-pdf-a-csv.ipynb">extracción
+      de PDF a CSV</a> y otro para la <a
+      href="https://github.com/asanzdiego/notas-de-corte-universidades-madrid-25-26/blob/main/data/extraccion-notas-de-corte-de-pdf-a-csv.ipynb">transformación
+      de CSV a JSON</a>
+  </p>
+  <p>La <a href="(https://asanzdiego.github.io/notas-de-corte-universidades-madrid-25-26/)">aplicación
+      publicada</a> permite consultar las notas de corte mediante
+    <strong>filtros por universidad, rama de estudios, titulación y
+      nota</strong>, además de ordenar los resultados. La interfaz responde a
+    esa necesidad con filtros en la parte superior y una tabla de resultados
+    abajo, pensada para consultar la información de forma cómoda.
+  </p>
+  <h1 id="fase-1-del-pdf-al-csv">Fase 1: del PDF al CSV</h1>
+  <p>La primera fase fue una de las más importantes del proyecto. El punto
+    de partida era un <a
+      href="https://github.com/asanzdiego/notas-de-corte-universidades-madrid-25-26/blob/main/data/notas-de-corte-universidades-madrid-25-26.pdf">PDF
+      con la información de las notas de corte</a>. A partir de ahí, con ayuda
+    de IA, se diseñó y refinó un <a
+      href="https://github.com/asanzdiego/notas-de-corte-universidades-madrid-25-26/blob/main/data/extraccion-notas-de-corte-de-pdf-a-csv.ipynb">cuaderno
+      de Jupyter para extraer los datos relevantes y volcarlos en un fichero
+      CSV estructurado</a>.</p>
+  <p>Aquí hay una idea clave: <strong>pasar de PDF a CSV ya aporta mucho
+      valor</strong>. Un PDF puede ser cómodo para leer, pero no para
+    reutilizar. En cambio, un CSV permite revisar, filtrar, corregir,
+    analizar y reutilizar los datos con mucha más facilidad. Incluso sin
+    llegar a construir la web, esta conversión inicial ya habría sido útil
+    por sí misma.</p>
+  <p>Además, esta fase muestra bien el papel real de la IA. Puede ayudar a
+    plantear la extracción y proponer una primera solución, pero después
+    hace falta revisar si los campos se han interpretado bien y si la
+    estructura resultante es correcta. La IA acelera, pero no sustituye el
+    criterio humano.</p>
+  <h1 id="fase-2-del-csv-al-json">Fase 2: del CSV al JSON</h1>
+  <p>Una vez <a
+      href="https://github.com/asanzdiego/notas-de-corte-universidades-madrid-25-26/blob/main/data/notas-de-corte-universidades-madrid-25-26.csv">obtenido
+      el CSV</a>, el siguiente paso fue transformarlo en un <a
+      href="https://github.com/asanzdiego/notas-de-corte-universidades-madrid-25-26/blob/main/data/notas-de-corte-universidades-madrid-25-26.json">JSON
+      listo para ser consumido por la web</a>. En el proyecto esto se resolvió
+    con un segundo <a
+      href="https://github.com/asanzdiego/notas-de-corte-universidades-madrid-25-26/blob/main/data/extraccion-notas-de-corte-de-pdf-a-csv.ipynb">cuaderno
+      de Jupyter para transformar el CSV a JSON</a>-</p>
+  <p>Este paso fue muy acertado desde el punto de vista de la
+    mantenibilidad. El CSV funciona bien como formato intermedio de trabajo
+    y revisión, mientras que el JSON encaja mejor con una aplicación web en
+    cliente. Separar ambos formatos hace que el proyecto sea más claro,
+    reutilizable y fácil de evolucionar.</p>
+  <p>También refuerza una idea importante: el reto no estaba solo en la
+    interfaz. <strong>Preparar bien los datos</strong> era una parte
+    esencial del proyecto, y ese trabajo previo condicionaba el buen
+    funcionamiento de la web.</p>
+  <h1 id="fase-3-del-json-a-una-web-responsive">Fase 3: del JSON a una web
+    responsive</h1>
+  <p>Con los datos ya preparados, la última fase consistió en generar la
+    parte front-end usando exclusivamente 3 fihceros:</p>
+  <ol type="1">
+    <li>un <a
+        href="https://github.com/asanzdiego/notas-de-corte-universidades-madrid-25-26/blob/main/index.html">index.html</a>,
+    </li>
+    <li>un <a
+        href="https://github.com/asanzdiego/notas-de-corte-universidades-madrid-25-26/blob/main/script.js">script.js</a>
+      y</li>
+    <li>un <a
+        href="https://github.com/asanzdiego/notas-de-corte-universidades-madrid-25-26/blob/main/styles.css">styles.css</a>.
+    </li>
+  </ol>
+  <p>Esa decisión ayudó a mantener la aplicación sencilla, portable y
+    fácil de entender.</p>
+  <p>La interfaz no se limita a mostrar una tabla. Incluye filtros por
+    universidad y rama, búsqueda por titulación, control del rango de nota y
+    ordenación de resultados. Todo ello permite consultar la información de
+    manera práctica y clara. Además, la web se planteó como una
+    <strong>interfaz responsive</strong>, pensada para adaptarse
+    correctamente a distintos tamaños de pantalla.
+  </p>
+  <p>Esta fase deja otra lección útil: la parte visual era importante,
+    pero no era el único desafío. La calidad de la experiencia final
+    dependía también de haber construido antes una base de datos limpia y
+    bien estructurada.</p>
+  <h1 id="publicación-de-la-web-con-github-pages">Publicación de la web
+    con GitHub Pages</h1>
+  <p>El proyecto se cerró con la publicación de la aplicación mediante <a href="https://docs.github.com/es/pages">GitHub
+      Pages</a>. Esto permitió
+    utilizar el propio repositorio no solo como fuente del código, sino
+    también como canal de despliegue.</p>
+  <p>Tiene bastante valor práctico y didáctico. El repositorio reúne los
+    datos, los cuadernos de transformación, los archivos del front-end y la
+    web ya publicada. Gracias a <a href="https://docs.github.com/es/pages">GitHub Pages</a>, el proyecto
+    completa todo el ciclo: preparación de datos, interfaz y puesta en
+    producción en un formato accesible desde navegador.</p>
+  <h1 id="qué-aportó-la-ia-en-cada-fase">Qué aportó la IA en cada
+    fase</h1>
+  <p>La IA aportó valor de forma distinta en cada etapa. En la extracción
+    ayudó a estructurar el cuaderno para convertir el PDF en un formato
+    utilizable. En la transformación facilitó la limpieza y normalización
+    necesarias para generar un JSON coherente. Y en la fase final aceleró la
+    creación de una interfaz funcional, responsive y fácil de usar.</p>
+  <p>Pero quizá su mayor aportación fue ayudar a <strong>ordenar el
+      trabajo</strong>. Dividir el proyecto en fases permitió plantear mejor
+    las peticiones, validar cada resultado intermedio y construir la
+    solución con más control. Pedir primero los cuadernos de transformación
+    y después la interfaz fue una estrategia especialmente acertada.</p>
+  <h1 id="retos-correcciones-y-validación-humana">Retos, correcciones y
+    validación humana</h1>
+  <p>Conviene insistir en que aquí no hubo magia, sino iteración. En un
+    flujo de este tipo siempre hay que comprobar si el PDF se ha
+    interpretado bien, si el CSV quedó correctamente estructurado, si el
+    JSON conserva los campos necesarios y si los filtros y la ordenación
+    funcionan como se espera.</p>
+  <p>Eso resume bien el papel real de la IA en este proyecto:
+    <strong>aceleró el desarrollo, redujo fricción y propuso soluciones
+      útiles</strong>, pero <strong>fue necesaria una supervisión
+      humana</strong> constante para revisar, corregir, probar y ajustar. La
+    IA actuó como copiloto técnico, no como sustituto del trabajo
+    humano.
+  </p>
+  <h1 id="conclusión">Conclusión</h1>
+  <p>La web de notas de corte de las universidades de Madrid 2025-2026 es
+    un buen ejemplo de uso práctico de IA aplicada al desarrollo de
+    software. No por su tamaño, sino porque muestra que, con una estrategia
+    clara por fases, la IA puede ayudar de verdad en proyectos sencillos y
+    útiles.</p>
+  <p>También deja una enseñanza importante: el valor del proyecto
+    <strong>empieza antes de la web</strong>. Empieza cuando una información
+    encerrada en un PDF se convierte en un CSV reutilizable, continúa con su
+    transformación a JSON y culmina con una interfaz accesible publicada con
+    GitHub Pages.
+  </p>
+  <p>A veces se habla de IA aplicada al desarrollo como si solo tuviera
+    sentido en proyectos grandes. Este caso demuestra lo contrario. Un
+    proyecto pequeño y bien acotado puede ser un excelente ejemplo de uso
+    realista y productivo de IA: <strong>no para sustituir el trabajo
+      técnico, sino para hacerlo más fluido, ordenado y
+      eficiente</strong>.</p>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</body>
+
+</html>

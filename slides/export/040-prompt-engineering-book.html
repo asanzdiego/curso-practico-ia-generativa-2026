@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="description" content="Prompt Engineering">
+  <meta name="author" content="Adolfo Sanz De Diego" />
+  <title>Prompt Engineering</title>
+  <style type="text/css">
+    pre, code {
+      background-color: #ddd;
+      white-space: pre;
+    }
+    aside.notes{
+      background-color: yellow;
+    }
+    img.center {
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body class="container">
+<header id="title-block-header">
+<h1 class="title">Prompt Engineering</h1>
+<p class="author">Adolfo Sanz De Diego</p>
+<p class="date">Marzo 2026</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#introducción" id="toc-introducción">Introducción</a>
+<ul>
+<li><a href="#qué-es-prompt-engineering"
+id="toc-qué-es-prompt-engineering">¿Qué es Prompt Engineering?</a></li>
+<li><a href="#importancia-de-los-prompts"
+id="toc-importancia-de-los-prompts">Importancia de los prompts</a></li>
+</ul></li>
+<li><a href="#partes-más-importantes"
+id="toc-partes-más-importantes">Partes más importantes</a>
+<ul>
+<li><a href="#contexto" id="toc-contexto">Contexto</a></li>
+<li><a href="#actor-y-público" id="toc-actor-y-público">Actor y
+público</a></li>
+<li><a href="#acción" id="toc-acción">Acción</a></li>
+<li><a href="#restricciones"
+id="toc-restricciones">Restricciones</a></li>
+<li><a href="#ejemplos" id="toc-ejemplos">Ejemplos</a></li>
+<li><a href="#formato-de-salida" id="toc-formato-de-salida">Formato de
+salida</a></li>
+<li><a href="#tono" id="toc-tono">Tono</a></li>
+<li><a href="#estilo" id="toc-estilo">Estilo</a></li>
+<li><a href="#longitud-de-la-respuesta"
+id="toc-longitud-de-la-respuesta">Longitud de la respuesta</a></li>
+<li><a href="#criterios-de-calidad-y-verificación"
+id="toc-criterios-de-calidad-y-verificación">Criterios de calidad y
+verificación</a></li>
+<li><a href="#delimitadores-y-estructura"
+id="toc-delimitadores-y-estructura">Delimitadores y estructura</a></li>
+<li><a href="#fuentes-documentos-y-materiales-de-apoyo"
+id="toc-fuentes-documentos-y-materiales-de-apoyo">Fuentes, documentos y
+materiales de apoyo</a></li>
+</ul></li>
+<li><a href="#técnicas-avanzadas" id="toc-técnicas-avanzadas">Técnicas
+avanzadas</a>
+<ul>
+<li><a href="#zero-shot" id="toc-zero-shot">Zero-shot</a></li>
+<li><a href="#few-shot" id="toc-few-shot">Few-shot</a></li>
+<li><a href="#cadena-de-pensamiento-cot"
+id="toc-cadena-de-pensamiento-cot">Cadena de pensamiento (CoT)</a></li>
+<li><a href="#cadena-de-prompting" id="toc-cadena-de-prompting">Cadena
+de prompting</a></li>
+<li><a href="#verificación-y-revisión"
+id="toc-verificación-y-revisión">Verificación y revisión</a></li>
+<li><a href="#prompting-multimodal"
+id="toc-prompting-multimodal">Prompting multimodal</a></li>
+<li><a href="#prompts-reutilizables-y-plantillas"
+id="toc-prompts-reutilizables-y-plantillas">Prompts reutilizables y
+plantillas</a></li>
+<li><a href="#evaluación-e-iteración"
+id="toc-evaluación-e-iteración">Evaluación e iteración</a></li>
+<li><a href="#prompting-para-herramientas-y-agentes"
+id="toc-prompting-para-herramientas-y-agentes">Prompting para
+herramientas y agentes</a></li>
+</ul></li>
+<li><a href="#otras-consideraciones"
+id="toc-otras-consideraciones">Otras consideraciones</a>
+<ul>
+<li><a href="#errores-frecuentes" id="toc-errores-frecuentes">Errores
+frecuentes</a></li>
+<li><a href="#plantilla-base-de-prompt"
+id="toc-plantilla-base-de-prompt">Plantilla base de prompt</a></li>
+</ul></li>
+<li><a href="#ejemplos-prácticos" id="toc-ejemplos-prácticos">Ejemplos
+prácticos</a>
+<ul>
+<li><a href="#ejemplo-1-resumen-ajustado-a-un-público"
+id="toc-ejemplo-1-resumen-ajustado-a-un-público">Ejemplo 1: resumen
+ajustado a un público</a></li>
+<li><a href="#ejemplo-2-revisión-de-un-documento"
+id="toc-ejemplo-2-revisión-de-un-documento">Ejemplo 2: revisión de un
+documento</a></li>
+<li><a href="#ejemplo-3-extracción-estructurada"
+id="toc-ejemplo-3-extracción-estructurada">Ejemplo 3: extracción
+estructurada</a></li>
+<li><a href="#ejemplo-4-trabajo-multimodal"
+id="toc-ejemplo-4-trabajo-multimodal">Ejemplo 4: trabajo
+multimodal</a></li>
+</ul></li>
+<li><a href="#conclusión" id="toc-conclusión">Conclusión</a></li>
+<li><a href="#referencias-y-recursos-recomendados"
+id="toc-referencias-y-recursos-recomendados">Referencias y recursos
+recomendados</a></li>
+</ul>
+</nav>
+<h1 id="introducción">Introducción</h1>
+<h2 id="qué-es-prompt-engineering">¿Qué es Prompt Engineering?</h2>
+<ul>
+<li><strong>Definición</strong>:
+<ul>
+<li>Disciplina orientada a <strong>diseñar, estructurar y optimizar
+instrucciones</strong> para modelos de IA generativa con el fin de
+obtener respuestas <strong>más útiles, precisas, consistentes y
+adaptadas al contexto</strong>.</li>
+</ul></li>
+<li><strong>Qué incluye realmente</strong>:
+<ul>
+<li>No consiste solo en “hacer una buena pregunta”. Implica también
+decidir, entre otras, <strong>qué contexto aportar</strong>, <strong>qué
+rol asignar</strong>, <strong>que público objetivo</strong>, <strong>qué
+restricciones fijar</strong>, <strong>qué formato exigir</strong>,
+<strong>qué ejemplos mostrar</strong>, <strong>que acciones
+realizar</strong>, etc.</li>
+</ul></li>
+<li><strong>Ámbito actual</strong>:
+<ul>
+<li>Hoy un prompt puede incluir no solo <strong>texto</strong>, sino
+también <strong>imágenes, audio, vídeo, tablas, documentos,
+código</strong> u otros materiales, según el sistema utilizado.</li>
+</ul></li>
+<li><strong>Objetivo principal</strong>:
+<ul>
+<li>Reducir ambigüedad, orientar mejor el comportamiento del modelo y
+conseguir salidas <strong>más fiables y aprovechables</strong>.</li>
+</ul></li>
+<li><strong>Ejemplo básico</strong>:
+<ul>
+<li>Comparar: <strong>“Resume el texto”</strong> frente a
+<strong>“Resume este artículo en 3 ideas clave, en formato Markdown,
+para un público técnico, para publicarlo en LinkedIn”</strong>.</li>
+</ul></li>
+<li><strong>Idea clave</strong>:
+<ul>
+<li>Un prompt no es solo una orden: es una <strong>especificación de
+tarea</strong>.</li>
+</ul></li>
+</ul>
+<h2 id="importancia-de-los-prompts">Importancia de los prompts</h2>
+<ul>
+<li><strong>Impacto directo en los resultados</strong>:
+<ul>
+<li>La forma en que se formula la petición influye de manera decisiva en
+la <strong>calidad, profundidad, estructura y utilidad</strong> de la
+respuesta.</li>
+</ul></li>
+<li><strong>Mayor precisión</strong>:
+<ul>
+<li>Un buen prompt ayuda al modelo a entender, entre otras, <strong>qué
+se quiere</strong>, <strong>para quién</strong>, <strong>con qué
+nivel</strong>, <strong>en qué formato</strong>, <strong>con qué
+límites</strong>, etc.</li>
+</ul></li>
+<li><strong>Eficiencia</strong>:
+<ul>
+<li>Prompts bien diseñados reducen iteraciones innecesarias y ahorran
+<strong>tiempo, coste y esfuerzo</strong>.</li>
+</ul></li>
+<li><strong>Consistencia</strong>:
+<ul>
+<li>Cuando se usan plantillas o instrucciones estables, resulta más
+fácil obtener respuestas <strong>repetibles</strong> y comparables.</li>
+</ul></li>
+<li><strong>Flexibilidad</strong>:
+<ul>
+<li>Permiten adaptar la salida a tareas muy distintas:
+<strong>redacción</strong>, <strong>resumen</strong>,
+<strong>clasificación</strong>, <strong>extracción</strong>,
+<strong>traducción</strong>, <strong>programación</strong>,
+<strong>análisis documental</strong>, <strong>generación de
+ideas</strong> o <strong>creación multimodal</strong>.</li>
+</ul></li>
+<li><strong>Fiabilidad operativa</strong>:
+<ul>
+<li>En contextos profesionales, un buen prompting mejora la
+<strong>robustez del flujo de trabajo</strong>, sobre todo cuando las
+respuestas se reutilizan en procesos, informes, formularios,
+aplicaciones o automatizaciones.</li>
+</ul></li>
+<li><strong>Importancia creciente</strong>:
+<ul>
+<li>Aunque los modelos actuales suelen seguir instrucciones cada vez
+mejor, el <strong>prompt engineering sigue siendo clave</strong> en
+tareas complejas, especializadas, largas o con requisitos
+estrictos.</li>
+</ul></li>
+</ul>
+<h1 id="partes-más-importantes">Partes más importantes</h1>
+<h2 id="contexto">Contexto</h2>
+<ul>
+<li>Añade <strong>el contexto relevante</strong> para que el modelo
+entienda mejor la tarea:
+<ul>
+<li>Objetivo.</li>
+<li>Tema o dominio.</li>
+<li>Información previa.</li>
+<li>Restricciones del entorno.</li>
+<li>Materiales de referencia.</li>
+</ul></li>
+<li>Puedes aportar:
+<ul>
+<li><strong>Texto</strong>.</li>
+<li><strong>Documentos</strong>.</li>
+<li><strong>Tablas</strong>.</li>
+<li><strong>Imágenes</strong>.</li>
+<li><strong>Código</strong>.</li>
+<li><strong>Enlaces</strong>.</li>
+<li><strong>Datos estructurados</strong>.</li>
+</ul></li>
+<li>No se trata de añadir “todo” sin criterio, sino de aportar
+<strong>todo lo necesario y útil</strong>.</li>
+<li>Cuanto más ambiguo sea el problema, más importante suele ser el
+contexto.</li>
+<li>Es recomendable separar con claridad:
+<ul>
+<li><strong>Instrucciones</strong>.</li>
+<li><strong>Contexto</strong>.</li>
+<li><strong>Datos de entrada</strong>.</li>
+<li><strong>Ejemplos</strong>.</li>
+</ul></li>
+<li>La cortesía no es lo más importante; lo esencial es la
+<strong>claridad</strong>, la <strong>precisión</strong> y la
+<strong>ausencia de ambigüedad</strong>.</li>
+</ul>
+<h2 id="actor-y-público">Actor y público</h2>
+<ul>
+<li>Indica <strong>qué papel o perspectiva</strong> debe adoptar el
+modelo:
+<ul>
+<li>Profesor.</li>
+<li>Analista.</li>
+<li>Programador.</li>
+<li>Traductor.</li>
+<li>Revisor.</li>
+<li>Experto jurídico.</li>
+<li>Divulgador.</li>
+</ul></li>
+<li>Definir el actor ayuda a ajustar:
+<ul>
+<li>El nivel técnico.</li>
+<li>El vocabulario.</li>
+<li>La profundidad.</li>
+<li>El enfoque.</li>
+<li>El tipo de explicación.</li>
+</ul></li>
+<li>También conviene indicar <strong>a quién va dirigida la
+respuesta</strong>:
+<ul>
+<li>Un alumno de primaria.</li>
+<li>Un estudiante de secundaria.</li>
+<li>Un público universitario.</li>
+<li>Un equipo técnico.</li>
+<li>Un directivo.</li>
+<li>Un usuario sin conocimientos previos.</li>
+</ul></li>
+<li>Cuanto mejor se defina el público, más fácil será obtener una
+respuesta adecuada en:
+<ul>
+<li><strong>registro</strong>,</li>
+<li><strong>complejidad</strong>,</li>
+<li><strong>densidad conceptual</strong>,</li>
+<li><strong>ejemplificación</strong>.</li>
+</ul></li>
+<li>Ejemplo:
+<ul>
+<li><strong>“Actúa como profesor de secundaria y explica este concepto
+para alumnado de 4.º de ESO con ejemplos sencillos y lenguaje
+claro.”</strong></li>
+</ul></li>
+</ul>
+<h2 id="acción">Acción</h2>
+<ul>
+<li>Indica claramente <strong>la acción que quieres que realice</strong>
+el modelo:
+<ul>
+<li>Escribe.</li>
+<li>Genera.</li>
+<li>Crea.</li>
+<li>Resume.</li>
+<li>Expande.</li>
+<li>Corrige.</li>
+<li>Reescribe.</li>
+<li>Traduce.</li>
+<li>Convierte.</li>
+<li>Clasifica.</li>
+<li>Identifica.</li>
+<li>Compara.</li>
+<li>Evalúa.</li>
+<li>Extrae.</li>
+<li>Ordena.</li>
+</ul></li>
+<li>La acción debe ser <strong>específica y observable</strong>.</li>
+<li>Es mejor pedir:
+<ul>
+<li><strong>“Clasifica estas incidencias en 4 categorías y justifica
+cada clasificación en una frase”</strong></li>
+<li>que pedir solo:</li>
+<li><strong>“Analiza estas incidencias”</strong>.</li>
+</ul></li>
+<li>Si la tarea es compleja, conviene descomponerla en pasos o
+subacciones.</li>
+</ul>
+<h2 id="restricciones">Restricciones</h2>
+<ul>
+<li>Indica lo que <strong>debe</strong> y lo que <strong>no
+debe</strong> hacer el modelo.</li>
+<li>Algunas restricciones útiles son:
+<ul>
+<li>Idioma de salida.</li>
+<li>Extensión máxima o mínima.</li>
+<li>Temas que debe evitar.</li>
+<li>Nivel técnico permitido.</li>
+<li>Estructura obligatoria.</li>
+<li>Prohibición de inventar datos.</li>
+<li>Necesidad de reconocer incertidumbre.</li>
+</ul></li>
+<li>Ejemplos:
+<ul>
+<li><strong>“Responde en español de España.”</strong></li>
+<li><strong>“No inventes referencias bibliográficas.”</strong></li>
+<li><strong>“Si falta información, indícalo
+explícitamente.”</strong></li>
+<li><strong>“No uses tablas.”</strong></li>
+<li><strong>“No superes las 200 palabras.”</strong></li>
+</ul></li>
+<li>Las restricciones son especialmente importantes cuando el resultado:
+<ul>
+<li>se publicará,</li>
+<li>se evaluará,</li>
+<li>se integrará en un sistema,</li>
+<li>o se reutilizará automáticamente.</li>
+</ul></li>
+</ul>
+<h2 id="ejemplos">Ejemplos</h2>
+<ul>
+<li>Indica <strong>uno o varios ejemplos</strong> de cómo quieres la
+respuesta.</li>
+<li>Los ejemplos ayudan a mostrar:
+<ul>
+<li>el formato esperado,</li>
+<li>el nivel de detalle,</li>
+<li>el tono,</li>
+<li>el criterio de clasificación,</li>
+<li>el tipo de transformación deseada.</li>
+</ul></li>
+<li>Suelen ser muy útiles cuando quieres:
+<ul>
+<li>respuestas homogéneas,</li>
+<li>salidas estructuradas,</li>
+<li>clasificación consistente,</li>
+<li>o adaptación a un estilo concreto.</li>
+</ul></li>
+<li>Conviene que los ejemplos sean:
+<ul>
+<li><strong>claros</strong>,</li>
+<li><strong>correctos</strong>,</li>
+<li><strong>representativos</strong>,</li>
+<li><strong>diversos</strong>.</li>
+</ul></li>
+<li>Un mal ejemplo puede empeorar el resultado, porque el modelo tenderá
+a imitarlo.</li>
+</ul>
+<h2 id="formato-de-salida">Formato de salida</h2>
+<ul>
+<li>Indica el <strong>formato exacto</strong> en que quieres la
+respuesta:
+<ul>
+<li>Lista.</li>
+<li>Tabla.</li>
+<li>Esquema.</li>
+<li>Mapa mental.</li>
+<li>Párrafos.</li>
+<li>Markdown.</li>
+<li>HTML.</li>
+<li>JSON.</li>
+<li>CSV.</li>
+<li>XML.</li>
+<li>Código.</li>
+</ul></li>
+<li>Cuanto más explícito sea el formato, más fácil será:
+<ul>
+<li>leer la respuesta,</li>
+<li>reutilizarla,</li>
+<li>validarla,</li>
+<li>procesarla automáticamente.</li>
+</ul></li>
+<li>En tareas técnicas o integradas en aplicaciones, puede ser
+preferible pedir una <strong>estructura rígida</strong>.</li>
+<li>Ejemplo:
+<ul>
+<li><strong>“Devuelve la respuesta en JSON con los campos
+<code>titulo</code>, <code>resumen</code>, <code>riesgos</code> y
+<code>recomendaciones</code>.”</strong></li>
+</ul></li>
+<li>Cuando el resultado deba ser consumido por software, conviene
+definir:
+<ul>
+<li>campos obligatorios,</li>
+<li>valores permitidos,</li>
+<li>y tratamiento de datos ausentes.</li>
+</ul></li>
+</ul>
+<h2 id="tono">Tono</h2>
+<ul>
+<li>Indica el <strong>tono</strong> deseado:
+<ul>
+<li>Formal.</li>
+<li>Informal.</li>
+<li>Profesional.</li>
+<li>Cercano.</li>
+<li>Persuasivo.</li>
+<li>Expositivo.</li>
+<li>Crítico.</li>
+<li>Motivador.</li>
+<li>Neutral.</li>
+</ul></li>
+<li>El tono influye en la percepción del mensaje, aunque no cambie el
+contenido esencial.</li>
+<li>Puede adaptarse al contexto:
+<ul>
+<li>educativo,</li>
+<li>institucional,</li>
+<li>comercial,</li>
+<li>divulgativo,</li>
+<li>técnico.</li>
+</ul></li>
+<li>Ejemplo:
+<ul>
+<li><strong>“Explica el tema con tono didáctico, claro y profesional,
+sin sonar demasiado académico.”</strong></li>
+</ul></li>
+</ul>
+<h2 id="estilo">Estilo</h2>
+<ul>
+<li>Indica el <strong>estilo de redacción</strong>:
+<ul>
+<li>Científico.</li>
+<li>Técnico.</li>
+<li>Argumentativo.</li>
+<li>Periodístico.</li>
+<li>Académico.</li>
+<li>Divulgativo.</li>
+<li>Literario.</li>
+<li>Publicitario.</li>
+</ul></li>
+<li>El estilo afecta a:
+<ul>
+<li>la organización del discurso,</li>
+<li>la selección léxica,</li>
+<li>la densidad conceptual,</li>
+<li>el tipo de ejemplos,</li>
+<li>la forma de enlazar ideas.</li>
+</ul></li>
+<li>También puede ser útil pedir características concretas del estilo:
+<ul>
+<li>frases cortas,</li>
+<li>lenguaje sencillo,</li>
+<li>estructura muy visual,</li>
+<li>uso moderado de tecnicismos,</li>
+<li>presencia o ausencia de metáforas.</li>
+</ul></li>
+</ul>
+<h2 id="longitud-de-la-respuesta">Longitud de la respuesta</h2>
+<ul>
+<li>Indica el <strong>número aproximado</strong> de:
+<ul>
+<li>palabras,</li>
+<li>caracteres,</li>
+<li>frases,</li>
+<li>párrafos,</li>
+<li>apartados,</li>
+<li>viñetas.</li>
+</ul></li>
+<li>También puedes pedir el grado de desarrollo:
+<ul>
+<li><strong>breve</strong>,</li>
+<li><strong>conciso</strong>,</li>
+<li><strong>ampliado</strong>,</li>
+<li><strong>detallado</strong>,</li>
+<li><strong>profundo</strong>.</li>
+</ul></li>
+<li>Es mejor concretar:
+<ul>
+<li><strong>“En 5 viñetas”</strong>,</li>
+<li><strong>“En un máximo de 150 palabras”</strong>,</li>
+<li><strong>“En 3 apartados y una conclusión”</strong>,</li>
+<li>que limitarse a decir:</li>
+<li><strong>“Hazlo corto”</strong>.</li>
+</ul></li>
+<li>En tareas complejas, la longitud debe alinearse con el objetivo
+real: una respuesta demasiado corta puede ser incompleta y una demasiado
+larga puede dificultar su uso.</li>
+</ul>
+<h2 id="criterios-de-calidad-y-verificación">Criterios de calidad y
+verificación</h2>
+<ul>
+<li>Además de pedir una tarea, conviene indicar <strong>cómo debe
+considerarse correcta</strong> la respuesta.</li>
+<li>Puedes fijar criterios como:
+<ul>
+<li>exactitud factual,</li>
+<li>claridad,</li>
+<li>completitud,</li>
+<li>coherencia,</li>
+<li>ausencia de repeticiones,</li>
+<li>neutralidad,</li>
+<li>trazabilidad,</li>
+<li>uso de fuentes.</li>
+</ul></li>
+<li>Ejemplos:
+<ul>
+<li><strong>“Separa hechos, inferencias y opiniones.”</strong></li>
+<li><strong>“Indica dudas o lagunas de información.”</strong></li>
+<li><strong>“Comprueba al final si has cumplido todos los
+requisitos.”</strong></li>
+<li><strong>“No cites normas o artículos que no estés seguro de poder
+identificar correctamente.”</strong></li>
+</ul></li>
+<li>Esto resulta especialmente útil en tareas de:
+<ul>
+<li>análisis,</li>
+<li>revisión,</li>
+<li>clasificación,</li>
+<li>extracción,</li>
+<li>asesoramiento,</li>
+<li>documentación.</li>
+</ul></li>
+</ul>
+<h2 id="delimitadores-y-estructura">Delimitadores y estructura</h2>
+<ul>
+<li>En prompts largos o complejos, conviene separar bien cada bloque
+mediante:
+<ul>
+<li>títulos,</li>
+<li>listas,</li>
+<li>comillas triples,</li>
+<li>etiquetas,</li>
+<li>bloques XML,</li>
+<li>secciones numeradas.</li>
+</ul></li>
+<li>Esta separación ayuda a distinguir:
+<ul>
+<li>las instrucciones,</li>
+<li>los documentos de referencia,</li>
+<li>los ejemplos,</li>
+<li>y la entrada variable.</li>
+</ul></li>
+<li>Ejemplo de estructura útil:</li>
+</ul>
+<pre class="text"><code>[INSTRUCCIONES]
+...
+
+[CONTEXTO]
+...
+
+[DATOS DE ENTRADA]
+...
+
+[FORMATO DE SALIDA]
+...</code></pre>
+<ul>
+<li>Una buena estructura mejora la interpretación y reduce errores de
+lectura del prompt.</li>
+</ul>
+<h2 id="fuentes-documentos-y-materiales-de-apoyo">Fuentes, documentos y
+materiales de apoyo</h2>
+<ul>
+<li>Cuando la tarea depende de información concreta, es recomendable
+aportar:
+<ul>
+<li>documentos,</li>
+<li>normativa,</li>
+<li>artículos,</li>
+<li>datos,</li>
+<li>tablas,</li>
+<li>ejemplos reales.</li>
+</ul></li>
+<li>Si el modelo debe basarse solo en cierto material, conviene decirlo
+expresamente.</li>
+<li>Ejemplos:
+<ul>
+<li><strong>“Responde únicamente con base en el documento
+adjunto.”</strong></li>
+<li><strong>“Si el dato no aparece en las fuentes aportadas,
+indícalo.”</strong></li>
+<li><strong>“Prioriza la normativa más reciente.”</strong></li>
+</ul></li>
+<li>En tareas con documentación extensa, también ayuda indicar:
+<ul>
+<li>qué partes son prioritarias,</li>
+<li>qué documentos son más fiables,</li>
+<li>y qué información debe ignorarse.</li>
+</ul></li>
+</ul>
+<h1 id="técnicas-avanzadas">Técnicas avanzadas</h1>
+<h2 id="zero-shot">Zero-shot</h2>
+<ul>
+<li>Consiste en pedir una tarea <strong>sin aportar ejemplos
+previos</strong>.</li>
+<li>En muchos casos funciona bien, sobre todo con tareas sencillas o muy
+conocidas.</li>
+<li>Es una buena forma de empezar cuando quieres comprobar si el modelo
+ya entiende la instrucción con claridad.</li>
+<li>Suele ser suficiente para:
+<ul>
+<li>resúmenes simples,</li>
+<li>reformulaciones,</li>
+<li>traducciones,</li>
+<li>lluvia de ideas,</li>
+<li>explicaciones generales.</li>
+</ul></li>
+<li>Aun así, incluso en zero-shot conviene especificar:
+<ul>
+<li>objetivo,</li>
+<li>público,</li>
+<li>formato,</li>
+<li>restricciones.</li>
+</ul></li>
+</ul>
+<h2 id="few-shot">Few-shot</h2>
+<ul>
+<li>Consiste en añadir <strong>uno o varios ejemplos</strong> de entrada
+y salida.</li>
+<li>Es especialmente útil cuando quieres enseñar al modelo:
+<ul>
+<li>un patrón,</li>
+<li>un formato,</li>
+<li>un criterio de clasificación,</li>
+<li>un estilo,</li>
+<li>o una convención propia.</li>
+</ul></li>
+<li>Suele mejorar la consistencia en tareas como:
+<ul>
+<li>etiquetado,</li>
+<li>extracción,</li>
+<li>normalización,</li>
+<li>corrección,</li>
+<li>generación con formato fijo.</li>
+</ul></li>
+<li>Los ejemplos deben parecerse al tipo de casos reales que esperas
+procesar.</li>
+<li>No conviene abusar de ejemplos repetitivos o poco
+representativos.</li>
+</ul>
+<h2 id="cadena-de-pensamiento-cot">Cadena de pensamiento (CoT)</h2>
+<ul>
+<li>Tradicionalmente, la <strong>cadena de pensamiento</strong> se ha
+usado para pedir al modelo que razone paso a paso.</li>
+<li>Esta técnica puede ayudar en algunos contextos, sobre todo cuando la
+tarea requiere:
+<ul>
+<li>descomposición lógica,</li>
+<li>cálculos,</li>
+<li>planificación,</li>
+<li>comparación entre alternativas.</li>
+</ul></li>
+<li>Sin embargo, conviene actualizar esta idea:
+<ul>
+<li>en algunos <strong>modelos de razonamiento actuales</strong>, pedir
+explícitamente <strong>“piensa paso a paso”</strong> no siempre mejora
+el resultado y puede ser innecesario.</li>
+</ul></li>
+<li>En muchos casos es preferible pedir:
+<ul>
+<li><strong>una respuesta final clara</strong>,</li>
+<li><strong>una comprobación breve</strong>,</li>
+<li>o <strong>una justificación resumida</strong>,</li>
+<li>en lugar de solicitar un razonamiento extenso en todos los
+casos.</li>
+</ul></li>
+<li>Una alternativa más útil puede ser:
+<ul>
+<li><strong>“Resuelve el problema y verifica al final si cumples todas
+las restricciones.”</strong></li>
+</ul></li>
+</ul>
+<h2 id="cadena-de-prompting">Cadena de prompting</h2>
+<ul>
+<li>Consiste en <strong>dividir una tarea compleja en tareas más
+pequeñas</strong> y resolverlas una a una.</li>
+<li>Puede hacerse de dos formas:
+<ul>
+<li>diseñando varios prompts sucesivos,</li>
+<li>o pidiendo al propio modelo que organice el trabajo por fases.</li>
+</ul></li>
+<li>Resulta útil cuando una tarea mezcla varios objetivos, por ejemplo:
+<ul>
+<li>leer,</li>
+<li>analizar,</li>
+<li>clasificar,</li>
+<li>sintetizar,</li>
+<li>redactar.</li>
+</ul></li>
+<li>Ejemplo de cadena:
+<ol type="1">
+<li>Extraer ideas principales.</li>
+<li>Agruparlas por temas.</li>
+<li>Detectar repeticiones.</li>
+<li>Redactar una versión final.</li>
+</ol></li>
+<li>Esta estrategia suele mejorar la calidad en tareas complejas y
+reduce la confusión.</li>
+</ul>
+<h2 id="verificación-y-revisión">Verificación y revisión</h2>
+<ul>
+<li>Una técnica muy útil es pedir una <strong>segunda fase de
+comprobación</strong>.</li>
+<li>Por ejemplo, después de generar una respuesta, se puede pedir que
+revise:
+<ul>
+<li>si ha cumplido el formato,</li>
+<li>si faltan datos,</li>
+<li>si hay contradicciones,</li>
+<li>si existen repeticiones,</li>
+<li>si se han respetado las restricciones.</li>
+</ul></li>
+<li>Esto no garantiza exactitud absoluta, pero sí puede mejorar la
+<strong>coherencia</strong> y el <strong>cumplimiento de
+requisitos</strong>.</li>
+<li>Ejemplo:
+<ul>
+<li><strong>“Tras redactar la respuesta, revisa si has cumplido los 6
+criterios indicados y corrige lo que no se ajuste.”</strong></li>
+</ul></li>
+</ul>
+<h2 id="prompting-multimodal">Prompting multimodal</h2>
+<ul>
+<li>En muchos sistemas actuales, los prompts pueden combinar
+<strong>texto con imágenes, documentos, audio o vídeo</strong>.</li>
+<li>Esto amplía mucho las posibilidades del prompt engineering.</li>
+<li>Algunos usos habituales son:
+<ul>
+<li>analizar una imagen,</li>
+<li>resumir un PDF,</li>
+<li>describir una gráfica,</li>
+<li>comparar capturas de pantalla,</li>
+<li>extraer información de formularios,</li>
+<li>comentar una tabla o documento.</li>
+</ul></li>
+<li>En prompting multimodal conviene indicar con claridad:
+<ul>
+<li>qué elemento debe analizarse,</li>
+<li>qué relación hay entre los materiales,</li>
+<li>y qué tipo de salida se espera.</li>
+</ul></li>
+<li>Ejemplo:
+<ul>
+<li><strong>“Analiza la imagen adjunta y extrae únicamente los elementos
+visibles del diagrama, sin inferir información no
+representada.”</strong></li>
+</ul></li>
+</ul>
+<h2 id="prompts-reutilizables-y-plantillas">Prompts reutilizables y
+plantillas</h2>
+<ul>
+<li>Cuando una tarea se repite con frecuencia, conviene convertir el
+prompt en una <strong>plantilla</strong>.</li>
+<li>Una plantilla permite mantener fijos:
+<ul>
+<li>el objetivo,</li>
+<li>el formato,</li>
+<li>los criterios,</li>
+<li>el tono,</li>
+<li>las restricciones,</li>
+<li>y dejar variables solo los datos de entrada.</li>
+</ul></li>
+<li>Ejemplo sencillo:</li>
+</ul>
+<pre class="text"><code>Actúa como [ROL].
+
+Objetivo:
+[OBJETIVO]
+
+Contexto:
+[CONTEXTO]
+
+Entrada:
+[ENTRADA]
+
+Formato de salida:
+[FORMATO]
+
+Restricciones:
+[RESTRICCIONES]</code></pre>
+<ul>
+<li>Esto favorece respuestas más consistentes y facilita la mejora
+incremental.</li>
+</ul>
+<h2 id="evaluación-e-iteración">Evaluación e iteración</h2>
+<ul>
+<li>El prompting rara vez se resuelve a la primera en tareas
+complejas.</li>
+<li>Lo normal es trabajar de forma iterativa:
+<ol type="1">
+<li>Se redacta un prompt inicial.</li>
+<li>Se observa la salida.</li>
+<li>Se detectan fallos.</li>
+<li>Se ajusta el prompt.</li>
+<li>Se vuelve a probar.</li>
+</ol></li>
+<li>En entornos profesionales, conviene evaluar los prompts con ejemplos
+de prueba y criterios definidos.</li>
+<li>Esta práctica ayuda a mantener la calidad cuando:
+<ul>
+<li>cambia el modelo,</li>
+<li>cambia el contexto,</li>
+<li>o cambia el tipo de entrada.</li>
+</ul></li>
+<li>Un prompt bueno no solo “suena bien”: <strong>funciona bien de forma
+repetida</strong>.</li>
+</ul>
+<h2 id="prompting-para-herramientas-y-agentes">Prompting para
+herramientas y agentes</h2>
+<ul>
+<li>En sistemas que usan herramientas externas, funciones o agentes, el
+prompt también debe dejar claro:
+<ul>
+<li>cuándo usar una herramienta,</li>
+<li>para qué,</li>
+<li>con qué límites,</li>
+<li>y cómo presentar el resultado.</li>
+</ul></li>
+<li>En estos casos importa mucho especificar:
+<ul>
+<li>el objetivo operativo,</li>
+<li>el criterio de éxito,</li>
+<li>la necesidad de verificar resultados,</li>
+<li>y la persistencia de restricciones importantes.</li>
+</ul></li>
+<li>Este tipo de prompting suele ser más cercano a la
+<strong>orquestación de tareas</strong> que a una simple pregunta.</li>
+</ul>
+<h1 id="otras-consideraciones">Otras consideraciones</h1>
+<h2 id="errores-frecuentes">Errores frecuentes</h2>
+<ul>
+<li>Pedir algo demasiado genérico.</li>
+<li>No indicar el público destinatario.</li>
+<li>Mezclar varias tareas distintas en una sola instrucción
+desordenada.</li>
+<li>Dar contexto irrelevante y ocultar la información importante.</li>
+<li>No definir el formato de salida.</li>
+<li>No imponer restricciones cuando el resultado debe cumplir requisitos
+estrictos.</li>
+<li>Aportar ejemplos confusos o incorrectos.</li>
+<li>No revisar la salida antes de reutilizarla.</li>
+<li>Tratar el primer resultado como definitivo sin iterar.</li>
+<li>Pedir exactitud factual sin aportar fuentes ni mecanismos de
+verificación.</li>
+</ul>
+<h2 id="plantilla-base-de-prompt">Plantilla base de prompt</h2>
+<pre class="text"><code>Actúa como [ROL].
+
+Tu objetivo es [TAREA ESPECÍFICA].
+
+El público destinatario es [PÚBLICO].
+
+Contexto relevante:
+[CONTEXTO]
+
+Material de entrada:
+[ENTRADA]
+
+Instrucciones específicas:
+- [INSTRUCCIÓN 1]
+- [INSTRUCCIÓN 2]
+- [INSTRUCCIÓN 3]
+
+Restricciones:
+- [RESTRICCIÓN 1]
+- [RESTRICCIÓN 2]
+- [RESTRICCIÓN 3]
+
+Formato de salida:
+[FORMATO]
+
+Criterios de calidad:
+- [CRITERIO 1]
+- [CRITERIO 2]
+
+Si falta información suficiente, indícalo de forma explícita.</code></pre>
+<h1 id="ejemplos-prácticos">Ejemplos prácticos</h1>
+<h2 id="ejemplo-1-resumen-ajustado-a-un-público">Ejemplo 1: resumen
+ajustado a un público</h2>
+<pre class="text"><code>Actúa como docente universitario.
+
+Resume el siguiente texto en 5 viñetas para alumnado de primer curso.
+Usa lenguaje claro, mantén los conceptos clave y añade una breve conclusión final.
+No superes las 180 palabras.
+
+Texto:
+[PEGAR TEXTO]</code></pre>
+<h2 id="ejemplo-2-revisión-de-un-documento">Ejemplo 2: revisión de un
+documento</h2>
+<pre class="text"><code>Actúa como revisor editorial.
+
+Analiza el documento adjunto y detecta:
+1. errores de claridad,
+2. repeticiones,
+3. cambios bruscos de tema,
+4. apartados mal titulados.
+
+Devuelve la respuesta en Markdown con los apartados:
+- Problemas detectados
+- Propuestas de mejora
+- Versión reescrita del fragmento más problemático</code></pre>
+<h2 id="ejemplo-3-extracción-estructurada">Ejemplo 3: extracción
+estructurada</h2>
+<pre class="text"><code>Extrae la información del texto y devuélvela en JSON con esta estructura:
+{
+  &quot;tema&quot;: &quot;&quot;,
+  &quot;ideas_clave&quot;: [],
+  &quot;riesgos&quot;: [],
+  &quot;acciones_recomendadas&quot;: []
+}
+
+Si algún campo no puede completarse con seguridad, déjalo vacío.
+
+Texto:
+[PEGAR TEXTO]</code></pre>
+<h2 id="ejemplo-4-trabajo-multimodal">Ejemplo 4: trabajo multimodal</h2>
+<pre class="text"><code>Analiza la imagen y el documento adjuntos.
+
+Objetivo:
+- identificar coincidencias entre ambos,
+- detectar contradicciones,
+- resumir la información común.
+
+Formato de salida:
+1. Coincidencias
+2. Contradicciones
+3. Resumen final
+
+No deduzcas datos que no estén respaldados por los materiales aportados.</code></pre>
+<h1 id="conclusión">Conclusión</h1>
+<ul>
+<li>El <strong>prompt engineering</strong> no consiste en memorizar
+fórmulas mágicas, sino en <strong>aprender a dar instrucciones
+mejores</strong>.</li>
+<li>Cuanto más clara esté la tarea, mejor definido el contexto y más
+explícito sea el resultado esperado, más probable será obtener una
+salida útil.</li>
+<li>En la práctica, un buen prompt combina:
+<ul>
+<li><strong>claridad</strong>,</li>
+<li><strong>contexto</strong>,</li>
+<li><strong>estructura</strong>,</li>
+<li><strong>criterios</strong>,</li>
+<li><strong>verificación</strong>,</li>
+<li><strong>iteración</strong>.</li>
+</ul></li>
+<li>Por eso, más que preguntar “¿cuál es el prompt perfecto?”, suele ser
+mejor preguntarse:
+<ul>
+<li><strong>“¿qué necesita exactamente el modelo para resolver bien esta
+tarea?”</strong></li>
+</ul></li>
+</ul>
+<h1 id="referencias-y-recursos-recomendados">Referencias y recursos
+recomendados</h1>
+<ul>
+<li><a
+href="https://developers.openai.com/api/docs/guides/prompt-engineering/">OpenAI
+- Prompt engineering</a></li>
+<li><a
+href="https://developers.openai.com/api/docs/guides/reasoning-best-practices/">OpenAI
+- Reasoning best practices</a></li>
+<li><a
+href="https://developers.openai.com/api/docs/guides/structured-outputs/">OpenAI
+- Structured outputs</a></li>
+<li><a
+href="https://help.openai.com/en/articles/10032626-prompt-engineering-best-practices-for-chatgpt">OpenAI
+- Prompt engineering best practices for ChatGPT</a></li>
+<li><a
+href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/introduction-prompt-design">Google
+Cloud - Introduction to prompting</a></li>
+<li><a
+href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/multimodal/design-multimodal-prompts">Google
+Cloud - Design multimodal prompts</a></li>
+<li><a
+href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices">Anthropic
+- Prompting best practices</a></li>
+</ul>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+¿Qué caracteriza al enfoque zero-shot?
+{
+=Pedir la tarea sin ejemplos previos.
+~Añadir varios ejemplos completos.
+~Obligar a usar herramientas externas.
+~Dividir la tarea en subtareas secuenciales.
+}
+
+¿Cuándo resulta especialmente útil el few-shot prompting?
+{
+=Cuando quieres enseñar un patrón con ejemplos.
+~Cuando quieres ignorar el formato de salida.
+~Cuando buscas el mínimo contexto posible.
+~Cuando quieres respuestas aleatorias.
+}
+
+¿Qué afirmación refleja mejor el uso actual de la cadena de pensamiento?
+{
+=En modelos de razonamiento actuales no siempre mejora la respuesta.
+~Siempre mejora cualquier tarea sin excepciones.
+~Está prohibida en tareas de razonamiento.
+~Solo sirve para describir imágenes.
+}
+
+¿Qué ventaja ofrece la cadena de prompting?
+{
+=Divide tareas complejas en fases más pequeñas.
+~Hace respuestas más largas aunque peores.
+~Evita usar contexto o restricciones.
+~Solo sirve para traducir textos largos.
+}
+
+¿Qué persigue una segunda fase de comprobación tras generar la respuesta?
+{
+=Revisar formato, restricciones y coherencia.
+~Cambiar siempre la respuesta final.
+~Eliminar el contexto original.
+~Sustituir todos los ejemplos.
+}
+
+¿Qué describe mejor el prompting multimodal?
+{
+=Combinar texto con imágenes, audio o documentos.
+~Usar solo texto sin material adicional.
+~Solo funciona con imágenes y vídeos.
+~Comprimir prompts para poder meter más contexto.
+}
+
+¿Qué ventaja principal tienen las plantillas de prompts?
+{
+=Fijan estructura y dejan variables los datos de entrada.
+~Obligan a usar siempre el mismo tema.
+~Impiden iterar y mejorar el prompt.
+~Solo sirven si el modelo falla en lo básico.
+}
+
+¿Cómo se mejora normalmente un prompt en tareas complejas?
+{
+=Probándolo, ajustándolo y repitiendo.
+~Escribiéndolo una vez y no tocándolo más.
+~Añadiendo palabras sin revisar la salida.
+~Quitando siempre todas las restricciones.
+}
+
+En prompting para herramientas y agentes, ¿qué conviene especificar?
+{
+=Cuándo usar una herramienta y con qué límites.
+~Solo el color de la interfaz.
+~Sólo si necesitamos búsqueda en Internet.
+~Solo el idioma de salida.
+}
+
+¿Cuál de los siguientes aparece como error frecuente en Prompt Engineering?
+{
+=Mezclar varias tareas en una instrucción desordenada.
+~Definir el formato de salida.
+~Indicar el público destinatario.
+~Revisar la salida antes de usarla.
+}
